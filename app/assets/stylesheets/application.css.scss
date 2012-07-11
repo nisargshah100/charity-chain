@@ -4,10 +4,118 @@
 @import "1140/styles";
 @import "variables";
 
+@import url(http://fonts.googleapis.com/css?family=Lobster);
+
+body {
+  background-color: $whale;
+}
+
 h1{
-	font-size: 96px;
-	font-family: $arial-rounded;
+	font-size: 62px;
+	font-family: "Lobster", cursive;
 	padding-bottom: 15px;
-	background-color: $honeycomb;
 	text-align: center;
+  color: $whale;
+}
+
+#main_content {
+  margin-top: 90px;
+  border: 1px solid black;
+  padding: 10px;
+  background-color: white;
+  @include border-radius(6px);
+  @include box-shadow(0 0 5px 3px hsla(0, 0%, 0%, 0.65));
+}
+
+// Form
+
+.box
+{
+  background:#fefefe;
+  border: 1px solid #C3D4DB;
+  border-top:1px;
+  -webkit-border-radius:5px;
+  -moz-border-radius:5px;
+  border-radius:5px;
+  -moz-box-shadow:rgba(0,0,0,0.15) 0 0 1px;
+  -webkit-box-shadow:rgba(0,0,0,0.15) 0 0 1px;
+  box-shadow:rgba(0,0,0,0.15) 0 0 1px;
+  color:#444;
+  font:normal 12px/14px Arial, Helvetica, Sans-serif;
+  margin:0 auto 30px;
+  overflow:hidden;
+}
+
+.box h2 {
+  font-size: 24px;
+  padding: 15px;
+  font-family: $arial-rounded;
+  background-color: lighten($frosting, 20);
+  color: white;
+}
+
+.boxBody
+{
+  background:#fefefe;
+  border-top:1px solid #dde0e8;
+  border-bottom:1px solid #dde0e8;
+  padding:10px 20px;
+}
+
+.box footer
+{
+  background:#eff4f6;
+  border-top:1px solid #fff;
+  padding:22px 26px;
+  overflow:hidden;
+  height:32px;
+}
+
+.box label
+{
+  display:block;
+  font:14px/22px Arial, Helvetica, Sans-serif;
+  margin:10px 0 0 6px;
+}
+
+.box footer label{
+  float:left;
+  margin:4px 0 0;
+}
+
+.box footer input[type=checkbox] {
+  vertical-align:sub;
+  *vertical-align:middle;
+  margin-right:10px;
+}
+
+.box input[type=text],
+.box input[type=password]
+{
+    border:6px solid #F7F9FA;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    border-radius:3px;
+    -moz-box-shadow:2px 3px 3px rgba(0, 0, 0, 0.06) inset, 0 0 1px #95a2a7 inset;
+    -webkit-box-shadow:2px 3px 3px rgba(0, 0, 0, 0.06) inset, 0 0 1px #95a2a7 inset;
+    box-shadow:2px 3px 3px rgba(0, 0, 0, 0.06) inset, 0 0 1px #95a2a7 inset;
+    margin:3px 0 4px;
+    padding:8px 6px;
+    display:block;
+    width: 100%;
+}
+
+.box input[type=text]:focus,
+.box input[type=password]:focus
+{
+  border:6px solid #f0f7fc;
+  -moz-box-shadow:2px 3px 3px rgba(0, 0, 0, 0.04) inset, 0 0 1px #0d6db6 inset;
+  -webkit-box-shadow:2px 3px 3px rgba(0, 0, 0, 0.04) inset, 0 0 1px #0d6db6 inset;
+  box-shadow:2px 3px 3px rgba(0, 0, 0, 0.04) inset, 0 0 1px #0d6db6 inset;
+  color:#333;
+}
+
+.box input[type=submit] {
+  @include button;
+  float: right;
 }
