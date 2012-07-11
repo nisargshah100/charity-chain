@@ -2,3 +2,12 @@
 @import "1140/1140";
 @import "1140/ie";
 @import "1140/styles";
+@import "variables";
+
+h1{
+	font-size: 96px;
+	font-family: $arial-rounded;
+	padding-bottom: 15px;
+	background-color: $honeycomb;
+	text-align: center;
+}
