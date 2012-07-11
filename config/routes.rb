@@ -1,5 +1,5 @@
 CharityChain::Application.routes.draw do
-  resources :chains, only: [:show]
+  resources :goals, only: [:show]
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
