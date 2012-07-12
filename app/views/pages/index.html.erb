@@ -6,7 +6,7 @@
   <div class="navbar">
     <div class="row">
       <span class="logo">CharityStreak</span>
-      <span class="user-info">Sign In</span>
+      <span class="user-info" style="font-weight:bold">Sign In</span>
     </div>
     <span class="underliner" style="height: 5px;"></span>
   </div>
@@ -20,7 +20,7 @@
       </div>
       <form>
         <input type="text" name="email" placeholder="email" /><br />
-        <input type="text" name="password" placeholder="password" /><br />
+        <input type="password" name="password" placeholder="password" /><br />
         <button type="submit" style="width:300px">Get Started</button>
       </form>
     </div>
@@ -38,6 +38,7 @@
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    z-index: -1000;
   }
 
   body {
@@ -47,11 +48,14 @@
   input {
     font-size:40px;
     margin-bottom:30px;
+    padding:5px;
+    border-radius: 5px;
   }
 
   .signup-form {
-    padding-top:150px;
+    padding-top:100px;
     text-align:center;
+
   }
 
   .underliner{
@@ -63,15 +67,17 @@
   .well {
     background: #eee;
     width: 500px;
-    height: 200px;
+    height: 220px;
     padding: 50px;
     margin: 0 auto;
     opacity: 0.7;
-    z-index: -100;
+    z-index: -1;
+    position: relative;
+    border-radius: 20px;
   }
 
   form {
-    margin-top:-250px;
+    margin-top:-270px;
     z-index: 100;
     opacity: 1;
   }
