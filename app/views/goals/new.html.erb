@@ -16,7 +16,7 @@
       <div class="threecol"></div>
       <div class="sixcol">
         <div class="form-well">
-          <form>
+          <form id="goal_create_form">
             <div class="form-line">
               <div class="form-label">Goal</div>
               <div class="form-field"><input type="text" name="goal_name" placeholder="Walk a mile a day" /></div>
@@ -29,7 +29,7 @@
               <div class="form-label">What's it worth?</div>
               <div class="form-field">
                 <%= select_tag(:donation_amount, options_for_select(@donation_amount_options)) %>
-                 every
+                <span style="padding: 0px 10px 0px 10px;">every</span>
                 <%= select_tag(:donation_period, options_for_select(@donation_period_options)) %>
               </div>
             </div>
@@ -54,3 +54,10 @@
     background: url(http://subtlepatterns.com/patterns/handmadepaper.png);
   }
 </style>
+
+<script type="text/javascript">
+  $("#goal_create_form").submit(function(e) {
+    e.preventDefault();
+    location.href = '/goals/1';
+  });
+</script>
