@@ -3,11 +3,21 @@
 @import "1140/ie";
 @import "1140/styles";
 @import "variables";
+@import "splash";
 
 h1{
-	font-size: 96px;
+	font-size: 90px;
 	font-family: $arial-rounded;
 	padding-bottom: 15px;
+	padding-left: 8px;
+	padding-right: 8px;
 	background-color: $honeycomb;
 	text-align: center;
+	border: dotted;
+	border-radius: 12px;
+	color:$whale;
+}
+
+body{
+	background-color: $whale;
 }

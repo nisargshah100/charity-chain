@@ -1,0 +1,74 @@
+#logo_title{
+	margin-top: 15px;
+	font-family: $arial-rounded;
+	padding: 20px;
+}
+
+#bucket{
+	background-color: $aloe;
+	border-radius: 12px;
+	padding-top:25px;
+	padding-bottom: 25px;
+	margin-top: 25px;
+}
+
+.sign_up_form{
+	margin-top: 15px;
+	background-color: $aloe;
+	border: dotted;
+	border-radius: 12px;
+	padding: 35px;
+	margin-right:70px;
+	height: 165px;
+}
+
+.sign_in_form{
+	margin-top: 15px;
+	background-color: $aloe;
+	border: dotted;
+	border-radius: 12px;
+	padding-top: 35px;
+	padding-right: 35px;
+	padding-left: 35px;
+	padding-bottom: 32px;
+	margin-left:0px;
+}
+
+#sign_up{
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+
+#email_input{
+	width: 220px;
+	height: 35px;
+	margin-bottom: 15px;
+}
+
+#sign_up_submit{
+	width:140px;
+	font-size: 30px;
+	background-color: $grape;
+	font-family: $arial-rounded;
+	color: $whale;
+}
+
+#sign_up_title{
+	color: $frosting;
+	font-size: 36px;
+	margin-top:15px;
+}
+
+#sign_in{
+	margin-left:45px;
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+#sign_in_title{
+	margin-left:45px;
+	margin-top:15px;
+}
+
+#pitch{
+	margin-top: 15px;
+}
