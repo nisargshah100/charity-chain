@@ -1,1 +1,263 @@
-boo!
+  <% content_for :head do %>
+    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+  <% end %>
+
+  <div class="navbar">
+    <div class="row">
+      <span class="logo">CharityStreak</span>
+      <span class="user-info"><img src="/assets/icons/glyphicons_003_user.png" alt="icon" class="icon"/> Conan Rimmer</span>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="fourcol">
+        <div class="col-title">
+          <span class="title capitalize">streak</span>
+          <span class="underliner" style="height: 5px;"></span>
+        </div>
+        <div class="col-content">
+          <div class="col-box">
+            <div class="day-count">20</div>
+            <span class="day-label capitalize">days</span>
+          </div>
+          <div class="button-container">
+            <button>I Did It!</button>
+          </div>
+          <div class="col-stats">
+            <div class="stat-wrapper">
+              <span class="stat-title">Longest</span>
+              <div class="stat-two">
+                <div class="day-count-stat">30</div>
+                <span class="day-label-stat capitalize">days</span>
+              </div>
+            </div>
+            <div class="stat-wrapper">
+              <span class="stat-title">Average</span>
+              <div class="stat-two" style="border-left:1px solid">
+                <div class="day-count-stat">15</div>
+                <span class="day-label-stat capitalize">days</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="fourcol">
+        <div class="col-title">
+          <span class="capitalize title">Wallet</span>
+          <span class="underliner" style="height: 5px;"></span>
+        </div>
+        <div class="col-content">
+          <div class="col-box">
+            <div class="dollar-sign" style="float:left; padding-left:10px; position:absolute; left: 20px; top: 20px; font-size: 50px; font-family: impact;">$</div>
+            <div class="day-count">90</div>
+            <span class="day-label capitalize">raised</span>
+          </div>
+          <div class="button-container">
+            <button>Donate It!</button>
+          </div>
+          <div class="col-stats">
+            <div class="stat-wrapper">
+              <span class="stat-title">Funded</span>
+              <div class="stat-three">
+                <div class="count-stat">5</div>
+              </div>
+            </div>
+            <div class="stat-wrapper">
+              <span class="stat-title">Total</span>
+              <div class="stat-three" style="border-left:1px solid">
+                <div class="count-stat">$15</div>
+              </div>
+            </div>
+            <div class="stat-wrapper">
+              <span class="stat-title">Sponsors</span>
+              <div class="stat-three" style="border-left:1px solid">
+                <div class="count-stat">15</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="fourcol last">
+        <div class="col-title">
+          <span class="capitalize title">Project</span>
+          <span class="underliner" style="height: 5px;"></span>
+        </div>
+        <div class="col-content">
+          <div class="col-box">
+            <div class="project-image"></div>
+            <div class="project-title">Making Music With Technology</div>
+          </div>
+          <div class="project-container">
+            <span class="project-alert">
+              Only $30 to go!
+            </span>
+            <div class="project-info">
+              I am fortunate to have a sound proof room in my music class. This space is ideal for the items I am requesting as students will be able to set up and create a music studio. I...
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<style>
+  * {
+    padding: 0;
+    margin: 0;
+  }
+
+  body {
+    font-family: 'Century Gothic', sans-serif;
+    background: url(http://subtlepatterns.com/patterns/handmadepaper.png);
+  }
+
+
+  .project-info {
+    display:block;
+    text-align:left;
+    padding:10px;
+    font-size: 20px;
+  }
+
+  .project-container {
+    padding-top: 20px;
+    background: #FFF;
+  }
+
+  .project-alert {
+    font-size: 25px;
+    color: #FF0000;
+  }
+
+  .project-title {
+    font-size: 25px;
+    position: absolute;
+    bottom:0px;
+    background: #333;
+    opacity: 0.85;
+    padding-bottom:10px;
+    color: #59F0FF;
+  }
+
+  .project-image {
+    height:315px;
+    background: url('http://cdn.donorschoose.net/images/proposal/uploads/med/715000/715353/p715353_002_md.jpg') no-repeat;
+    background-size: 420px;
+  }
+
+  .underliner{
+    display:block;
+    margin-top:0px;
+    background: transparent url(assets/10-black.png) repeat scroll 0 0;
+  }
+
+  .navbar{
+    background: #46C06D;
+    height: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #FFF;
+    opacity:0.95;
+  }
+
+  .logo{
+    text-transform: lowercase;
+    font-family: 'Lobster', cursive;
+    font-size: 40px;
+    padding-left:2px;
+  }
+
+  .col-title {
+    text-align:center;
+    background: #46B5C0;
+    height: 35px;
+    color: #FFF;
+    padding-top:10px;
+  }
+
+  .col-content {
+    padding-top:10px;
+    text-align:center;
+  }
+
+  .col-box {
+    text-align: center;
+    border: #DDD 3px solid;
+    height:315px;
+    background: #FFF;
+    position: relative;
+  }
+
+  .user-info{
+    float:right;
+    padding-top:20px;
+    font-size: 20px;
+  }
+
+  .icon{
+    margin-right:10px;
+  }
+
+  .container{
+    padding-top:30px;
+  }
+
+  .capitalize{
+    text-transform: uppercase;
+  }
+
+  .day-count{
+    font-size:200px;
+    font-family:'impact';
+  }
+
+  .day-label{
+    font-size:30px;
+  }
+
+  .day-label-stat{
+    font-size:15px;
+  }
+
+  .stat-wrapper {
+    float:left;
+    padding-top:30px;
+    font-size:40px;
+    line-height:20px;
+    color: #222;
+  }
+
+  .stat-title {
+    font-size: 20px;
+    text-transform:uppercase;
+    line-height:40px;
+    font-weight:bold;
+  }
+
+  .stat-two {
+    padding: 0px 65px;
+  }
+
+  .stat-three {
+    padding: 0px 35px;
+    height:50px;
+  }
+
+  .count-stat {
+    padding-top: 10px;
+    font-family: 'impact';
+  }
+
+  .day-count-stat {
+    font-family: 'impact';
+  }
+
+  .title {
+    font-size: 25px;
+  }
+
+  .button-container{
+    padding-top:10px;
+  }
+</style>

@@ -2,3 +2,11 @@
 @import "1140/1140";
 @import "1140/ie";
 @import "1140/styles";
+
+button {
+  @include button(shiny, #1214A1);
+  width: 100%;
+  font-size: 25px;
+  text-transform:uppercase;
+  font-family: 'Century Gothic', sans-serif;
+}
