@@ -2,11 +2,6 @@
 @import "1140/1140";
 @import "1140/ie";
 @import "1140/styles";
-
-button {
-  @include button(#E76427);
-  width: 100%;
-  font-size: 25px;
-  text-transform:uppercase;
-  font-family: 'Century Gothic', sans-serif;
-}
+@import "variables";
+@import "goals";
+@import "splash";

@@ -1,0 +1,225 @@
+.project-to-go-text {
+  font-size: 20px;
+  font-weight:bold;
+  text-transform:uppercase;
+}
+
+.project-progress-well {
+  background: lighten($endive, 12);
+  overflow: auto;
+  margin-top:8px;
+  border: #DDD 3px solid;
+  padding: 10px;
+  height:60px;
+}
+
+.progress {
+  background-color: #F7F7F7;
+  background-image: -webkit-linear-gradient(top, whiteSmoke, #F9F9F9);
+  background-repeat: repeat-x;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.0976563) 0px 1px 2px 0px inset;
+  color: #333;
+  display: block;
+  font-size: 13px;
+  height: 25px;
+  line-height: 25px;
+  overflow-x: auto;
+  width: 100%;
+  margin-bottom:10px;
+}
+
+.bar {
+  background-color: #5BC0DE;
+  background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.148438) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.148438) 50%, rgba(255, 255, 255, 0.148438) 75%, transparent 75%, transparent);
+  background-repeat: repeat-x;
+  background-size: 40px 40px;
+  box-shadow: rgba(0, 0, 0, 0.148438) 0px -1px 0px 0px inset;
+  box-sizing: border-box;
+  color: white;
+  display: block;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  height: 25px;
+  line-height: 25px;
+  text-align: center;
+  text-shadow: rgba(0, 0, 0, 0.246094) 0px -1px 0px;
+  width: 54px;
+}
+
+.stat-well {
+  //background: #FFF;
+  background: lighten($endive, 12);
+  overflow: auto;
+  margin-top:15px;
+  border: #DDD 3px solid;
+  padding-left:5px;
+}
+
+.goal-title {
+  font-size:30px;
+  padding-bottom:20px;
+  text-transform: uppercase;
+}
+
+.project-info {
+  display:block;
+  text-align:left;
+  font-size: 20px;
+  padding: 10px;
+}
+
+.project-title {
+  font-size: 25px;
+  position: absolute;
+  bottom:0px;
+  background: #333;
+  opacity: 0.85;
+  padding-bottom:10px;
+  color: #59F0FF;
+}
+
+.project-image {
+  height:315px;
+  background: url('http://cdn.donorschoose.net/images/proposal/uploads/med/715000/715353/p715353_002_md.jpg') no-repeat;
+  background-size: 420px;
+}
+
+.underliner{
+  display:block;
+  margin-top:0px;
+  background: transparent url(/assets/10-black.png) repeat scroll 0 0;
+}
+
+.navbar{
+  background: $cloudless;
+  height: 50px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: #FFF;
+  opacity:0.95;
+}
+
+.logo{
+  text-transform: lowercase;
+  font-family: 'Cookie', cursive;
+  font-size: 45px;
+  padding-left:2px;
+}
+
+.col-title-streak, .col-title-wallet, .col-title-project {
+  text-align:center;
+  height: 35px;
+  color: #FFF;
+  padding-top:10px;
+  background: darken($pencil,5);
+}
+
+/*.col-title-streak {
+  background: $ladybug;
+}
+
+.col-title-wallet {
+  background: lighten($pencil,0px);
+}
+
+.col-title-project {
+  background: darken($rosa,0);
+}
+*/
+.col-content {
+  padding-top:10px;
+  text-align:center;
+}
+
+.col-box {
+  text-align: center;
+  border: #DDD 3px solid;
+  height:315px;
+  background: #FFF;
+  position: relative;
+}
+
+.user-info{
+  float:right;
+  padding-top:20px;
+  font-size: 20px;
+}
+
+.icon{
+  margin-right:10px;
+}
+
+.container{
+  padding-top:30px;
+}
+
+.capitalize{
+  text-transform: uppercase;
+}
+
+.day-count{
+  font-size:200px;
+  font-family:'impact';
+}
+
+.day-label{
+  font-size:30px;
+}
+
+.day-label-stat{
+  font-size:15px;
+}
+
+.stat-wrapper {
+  float:left;
+  padding-top:10px;
+  font-size:40px;
+  line-height:20px;
+  color: #222;
+  padding-bottom:20px;
+}
+
+.stat-title {
+  font-size: 15px;
+  text-transform:uppercase;
+  line-height:40px;
+  font-weight:bold;
+}
+
+.stat-two {
+  width: 160px;
+}
+
+.stat-three {
+  height:50px;
+  width: 110px;
+}
+
+.count-stat {
+  padding-top: 10px;
+  font-family: 'impact';
+}
+
+.day-count-stat {
+  font-family: 'impact';
+}
+
+.title {
+  font-size: 25px;
+}
+
+.button-container{
+  padding-top:10px;
+}
+
+button {
+  @include button($lilypad);
+  width: 100%;
+  font-size: 25px;
+  text-transform:uppercase;
+  font-family: 'Century Gothic', sans-serif;
+}

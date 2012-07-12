@@ -6,7 +6,7 @@
   <div class="navbar">
     <div class="row">
       <span class="logo">CharityStreak</span>
-      <span class="user-info"><img src="/assets/icons/glyphicons_003_user.png" alt="icon" class="icon"/> Conan Rimmer</span>
+      <span class="user-info">Sign In</span>
     </div>
     <span class="underliner" style="height: 5px;"></span>
   </div>
@@ -15,6 +15,15 @@
   </div>
   <div class="splash-container">
     <p class="splash-text">A better you. A better us.</p>
+    <div class="signup-form">
+      <div class="well">
+      </div>
+      <form>
+        <input type="text" name="email" placeholder="email" /><br />
+        <input type="text" name="password" placeholder="password" /><br />
+        <button type="submit" style="width:300px">Get Started</button>
+      </form>
+    </div>
   </div>
 
 <style>
@@ -24,7 +33,7 @@
   }
 
   html {
-    background: url(assets/splash2.jpg) no-repeat center center fixed; 
+    background: url(assets/splash4.jpg) no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -35,48 +44,35 @@
     font-family: 'Century Gothic', sans-serif;
   }
 
-  .splash-container > .splash-text {
-    font-size: 150px;
-    color: #FFF;
-    font-family: 'Cookie', cursive;
+  input {
+    font-size:40px;
+    margin-bottom:30px;
+  }
+
+  .signup-form {
+    padding-top:150px;
     text-align:center;
-    margin: -300px;
-  }
-
-  .splash {
-    margin-top:100px;
-    background: #666;
-    opacity:0.5;
-    height: 300px;
-    position:relative;
-    z-index: -100;
-  }
-
-  .navbar{
-    background: #5AB349;
-    height: 50px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    color: #FFF;
-    opacity:0.95;
-  }
-
-  .logo{
-    text-transform: lowercase;
-    font-family: 'Cookie', cursive;
-    font-size: 45px;
-    padding-left:2px;
-  }
-
-  .user-info{
-    float:right;
-    padding-top:20px;
-    font-size: 20px;
   }
 
   .underliner{
     display:block;
     margin-top:5px;
     background: transparent url(assets/10-black.png) repeat scroll 0 0;
+  }
+
+  .well {
+    background: #eee;
+    width: 500px;
+    height: 200px;
+    padding: 50px;
+    margin: 0 auto;
+    opacity: 0.7;
+    z-index: -100;
+  }
+
+  form {
+    margin-top:-250px;
+    z-index: 100;
+    opacity: 1;
   }
 </style>
