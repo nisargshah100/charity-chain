@@ -1,0 +1,82 @@
+  <% content_for :head do %>
+    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
+  <% end %>
+
+  <div class="navbar">
+    <div class="row">
+      <span class="logo">CharityStreak</span>
+      <span class="user-info"><img src="/assets/icons/glyphicons_003_user.png" alt="icon" class="icon"/> Conan Rimmer</span>
+    </div>
+    <span class="underliner" style="height: 5px;"></span>
+  </div>
+
+  <div class="splash">
+  </div>
+  <div class="splash-container">
+    <p class="splash-text">A better you. A better us.</p>
+  </div>
+
+<style>
+  * {
+    padding: 0;
+    margin: 0;
+  }
+
+  html {
+    background: url(assets/splash2.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+  body {
+    font-family: 'Century Gothic', sans-serif;
+  }
+
+  .splash-container > .splash-text {
+    font-size: 150px;
+    color: #FFF;
+    font-family: 'Cookie', cursive;
+    text-align:center;
+    margin: -300px;
+  }
+
+  .splash {
+    margin-top:100px;
+    background: #666;
+    opacity:0.5;
+    height: 300px;
+    position:relative;
+    z-index: -100;
+  }
+
+  .navbar{
+    background: #5AB349;
+    height: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #FFF;
+    opacity:0.95;
+  }
+
+  .logo{
+    text-transform: lowercase;
+    font-family: 'Cookie', cursive;
+    font-size: 45px;
+    padding-left:2px;
+  }
+
+  .user-info{
+    float:right;
+    padding-top:20px;
+    font-size: 20px;
+  }
+
+  .underliner{
+    display:block;
+    margin-top:5px;
+    background: transparent url(assets/10-black.png) repeat scroll 0 0;
+  }
+</style>
