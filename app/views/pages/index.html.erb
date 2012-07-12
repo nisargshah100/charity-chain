@@ -18,7 +18,7 @@
     <div class="signup-form">
       <div class="well">
       </div>
-      <form>
+      <form id='signup_form'>
         <input type="text" name="email" placeholder="email" /><br />
         <input type="password" name="password" placeholder="password" /><br />
         <button type="submit" style="width:300px">Get Started</button>
@@ -82,3 +82,10 @@
     opacity: 1;
   }
 </style>
+
+<script type="text/javascript">
+  $("#signup_form").submit(function(e) {
+    e.preventDefault();
+    location.href = '/goals/1';
+  });
+</script>
