@@ -1,1 +1,136 @@
-boo!
+  <% content_for :head do %>
+    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
+  <% end %>
+
+  <div class="navbar">
+    <div class="row">
+      <span class="logo">CharityStreak</span>
+      <span class="user-info"><img src="/assets/icons/glyphicons_003_user.png" alt="icon" class="icon"/> Conan Rimmer</span>
+    </div>
+    <span class="underliner" style="margin-top:5px; height: 5px;"></span>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="twelvecol">
+        <p class="goal-title">Get in Shape</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="fourcol">
+        <div class="col-title-streak" style="position:relative">
+          <img src="/assets/icons/glyphicons_074_cup.png" style="position:absolute; left: 25%;"/>
+          <span class="title capitalize">streak</span>
+          <span class="underliner" style="height: 5px;"></span>
+        </div>
+        <div class="col-content">
+          <div class="col-box">
+            <div class="day-count">20</div>
+            <span class="day-label capitalize">days</span>
+          </div>
+          <div class="button-container">
+            <button>+1 Day</button>
+          </div>
+          <div class="col-stats">
+            <div class="stat-well">
+
+              <div class="stat-wrapper">
+                <span class="stat-title">Longest</span>
+                <div class="stat-two">
+                  <div class="day-count-stat">30</div>
+                  <span class="day-label-stat capitalize">days</span>
+                </div>
+              </div>
+              <div class="stat-wrapper">
+                <span class="stat-title">Average</span>
+                <div class="stat-two" style="border-left:1px solid">
+                  <div class="day-count-stat">15</div>
+                  <span class="day-label-stat capitalize">days</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="fourcol">
+        <div class="col-title-wallet">
+          <span class="capitalize title">Wallet</span>
+          <span class="underliner" style="height: 5px;"></span>
+        </div>
+        <div class="col-content">
+          <div class="col-box">
+            <div class="dollar-sign" style="float:left; padding-left:10px; position:absolute; left: 20px; top: 20px; font-size: 50px; font-family: impact;">$</div>
+            <div class="day-count">90</div>
+            <span class="day-label capitalize">earned</span>
+          </div>
+          <div class="button-container">
+            <button>Donate It!</button>
+          </div>
+          <div class="col-stats">
+            <div class="stat-well">
+              <div class="stat-wrapper">
+                <span class="stat-title">Projects</span>
+                <div class="stat-three">
+                  <div class="count-stat">5</div>
+                </div>
+              </div>
+              <div class="stat-wrapper">
+                <span class="stat-title">Total</span>
+                <div class="stat-three" style="border-left:1px solid">
+                  <div class="count-stat">$15</div>
+                </div>
+              </div>
+              <div class="stat-wrapper">
+                <span class="stat-title">Sponsors</span>
+                <div class="stat-three" style="border-left:1px solid">
+                  <div class="count-stat">15</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="fourcol last">
+        <div class="col-title-project">
+          <span class="capitalize title">Project</span>
+          <span class="underliner" style="height: 5px;"></span>
+        </div>
+        <div class="col-content">
+          <div class="col-box">
+            <div class="project-image"></div>
+            <div class="project-title">Making Music With Technology</div>
+          </div>
+          <div class="col-stats">
+            <div class="project-progress-well">
+              <div class="progress progress-striped">
+                <div class="bar" style="width: 20%;"></div>
+              </div>
+              <div class="project-to-go-text"><span style="color:green">$310</span> to go</div>
+            </div>
+            <div class="stat-well">
+              <div class="project-container">
+                <div class="project-info">
+                  <p>High Poverty</p>
+                  <p>Learning Center - Linlee</p>
+                  <p>Lexington, KY</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<style>
+  * {
+    padding: 0;
+    margin: 0;
+  }
+
+  body {
+    font-family: 'Century Gothic', sans-serif;
+    background: url(http://subtlepatterns.com/patterns/handmadepaper.png);
+  }
+</style>

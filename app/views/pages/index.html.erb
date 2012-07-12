@@ -1,0 +1,84 @@
+  <% content_for :head do %>
+    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
+  <% end %>
+
+  <div class="navbar">
+    <div class="row">
+      <span class="logo">CharityStreak</span>
+      <span class="user-info" style="font-weight:bold">Sign In</span>
+    </div>
+    <span class="underliner" style="height: 5px;"></span>
+  </div>
+
+  <div class="splash">
+  </div>
+  <div class="splash-container">
+    <p class="splash-text">A better you. A better us.</p>
+    <div class="signup-form">
+      <div class="well">
+      </div>
+      <form>
+        <input type="text" name="email" placeholder="email" /><br />
+        <input type="password" name="password" placeholder="password" /><br />
+        <button type="submit" style="width:300px">Get Started</button>
+      </form>
+    </div>
+  </div>
+
+<style>
+  * {
+    padding: 0;
+    margin: 0;
+  }
+
+  html {
+    background: url(assets/splash4.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    z-index: -1000;
+  }
+
+  body {
+    font-family: 'Century Gothic', sans-serif;
+  }
+
+  input {
+    font-size:40px;
+    margin-bottom:30px;
+    padding:5px;
+    border-radius: 5px;
+  }
+
+  .signup-form {
+    padding-top:100px;
+    text-align:center;
+
+  }
+
+  .underliner{
+    display:block;
+    margin-top:5px;
+    background: transparent url(assets/10-black.png) repeat scroll 0 0;
+  }
+
+  .well {
+    background: #eee;
+    width: 500px;
+    height: 220px;
+    padding: 50px;
+    margin: 0 auto;
+    opacity: 0.7;
+    z-index: -1;
+    position: relative;
+    border-radius: 20px;
+  }
+
+  form {
+    margin-top:-270px;
+    z-index: 100;
+    opacity: 1;
+  }
+</style>
