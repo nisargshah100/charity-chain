@@ -1,3 +1,32 @@
+.form-well {
+  background: lighten($endive, 12);
+  border: #DDD 3px solid;
+  margin-top: 100px;
+}
+
+.form-line {
+  display: block;
+  
+  input {
+    width: 80%;
+  }
+}
+
+.form-label {
+  float: left;
+  width: 40%;
+  text-align: right;
+}
+
+.form-field {
+  float: right;
+  width: 55%;
+}
+
+.form-goal-line {
+  padding-top: 10px;
+}
+
 .project-to-go-text {
   font-size: 20px;
   font-weight:bold;
