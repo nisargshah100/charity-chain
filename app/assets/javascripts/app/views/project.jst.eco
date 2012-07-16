@@ -1,0 +1,27 @@
+<div class="col-title-project">
+  <span class="capitalize title">Project</span>
+  <span class="underliner" style="height: 5px;"></span>
+</div>
+<div class="col-content">
+  <div class="col-box">
+    <div class="project-image"></div>
+    <div class="project-title">Making Music With Technology</div>
+  </div>
+  <div class="col-stats">
+    <div class="project-progress-well">
+      <div class="progress progress-striped">
+        <div class="bar" style="width: 20%;"></div>
+      </div>
+      <div class="project-to-go-text"><span style="color:green">$310</span> to go</div>
+    </div>
+    <div class="stat-well">
+      <div class="project-container">
+        <div class="project-info">
+          <p>High Poverty</p>
+          <p>Learning Center - Linlee</p>
+          <p>Lexington, KY</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
