@@ -22,6 +22,9 @@
  * payment made by a sponsor that is applied to a user's reserve amount
  * this can be a self-contribution if the sponsor is the same person as the user
 
+### "donation"
+ * user-defined amount subtracted from a user's wallet (& reserve) that is donated to a specific project
+
 ### "payment"
  * credit card transaction used to fund a contribution
 
