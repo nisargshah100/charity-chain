@@ -10,17 +10,18 @@ class App.Controller.Goals_New extends Spine.Controller
     App.Goal.bind('refresh', @fetched)
 
   fetched: =>
-    @show() if App.Goal.all().length == 0
+    @show()
+    # @show() if App.Goal.all().length == 0
 
   render: ->
     $(".dialogs").append @view('goals/new')(@)
     $('#new_goal_modal').modal(show: false);
 
   toggle_day: ->
-    if $(this).hasClass('not-selected')
-      $(this).removeClass('not-selected')
+    if $(this).hasClass('selected')
+      $(this).removeClass('selected')
     else
-      $(this).addClass('not-selected') 
+      $(this).addClass('selected') 
 
   show: ->
     $('#new_goal_modal').modal('show');

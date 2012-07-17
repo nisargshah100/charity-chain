@@ -287,17 +287,22 @@ button {
     border: 1px solid white;
     width: 55px;
     border-left: 0px;
-    color: white;
     text-align: center;
-    font-weight: bold;
-    background-color: darken($cloudless, 35);
     cursor: pointer;
-  }
-
-  .not-selected {
     background-color: white;
     color: black;
     font-weight: normal;
+
+  }
+
+  .selected {
+    font-weight: bold;
+    background-color: darken($cloudless, 35);
+    color: white;
+  }
+
+  td:hover {
+    background-color: darken($cloudless, 1)
   }
 }
 

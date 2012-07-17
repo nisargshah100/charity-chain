@@ -35,3 +35,6 @@ window.App.Controller = {}
 
 window.access_token = ->
   $('.user-meta').data('token')
+
+window.current_goal = ->
+  $('.user-meta').data('goal_id')
