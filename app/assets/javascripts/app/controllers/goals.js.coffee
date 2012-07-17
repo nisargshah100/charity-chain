@@ -10,8 +10,8 @@ class App.Controller.Goals_New extends Spine.Controller
     App.Goal.bind('refresh', @fetched)
 
   fetched: =>
-    @show()
-    # @show() if App.Goal.all().length == 0
+    # @show()
+    @show() if App.Goal.all().length == 0
 
   render: ->
     $(".dialogs").append @view('goals/new')(@)
@@ -63,7 +63,9 @@ class App.Controller.Goals extends Spine.Controller
     App.Goal.bind 'refresh', @fetched
 
   fetched: =>
-    goal = App.Goal.first()
+    window.goal = App.Goal.first()
+    App.Goal.trigger('goal-selected')
+
     if goal
       $(".goal-title").text(goal.name)
       @show()

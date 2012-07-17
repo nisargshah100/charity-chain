@@ -8,6 +8,7 @@ class Api::V1::GoalsController < Api::ApiController
 
   def create
     goal = current_user.goals.create(JSON.parse(params[:goal]))
+    goal.create_scheduler(JSON.parse(params[:scheduler]))
     render :json => goal
   end
 end

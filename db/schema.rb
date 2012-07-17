@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120717180725) do
+ActiveRecord::Schema.define(:version => 20120717225129) do
 
   create_table "check_ins", :force => true do |t|
     t.integer  "goal_id"
@@ -27,6 +27,19 @@ ActiveRecord::Schema.define(:version => 20120717180725) do
     t.integer  "reserve_amount_cents"
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false
+  end
+
+  create_table "schedulers", :force => true do |t|
+    t.integer  "goal_id"
+    t.boolean  "sunday"
+    t.boolean  "monday"
+    t.boolean  "tuesday"
+    t.boolean  "wednesday"
+    t.boolean  "thursday"
+    t.boolean  "friday"
+    t.boolean  "saturday"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|

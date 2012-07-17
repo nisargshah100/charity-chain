@@ -2,18 +2,19 @@ class App.Controller.Streaks extends Spine.Controller
 
   constructor: ->
     super
-    @render()
+    # @render()
     @events()
 
   events: ->
     $("#check-in-button").live('click', @checkIn)
     App.CheckIn.bind('create', @updateStreak)
+    App.Goal.bind('goal-selected', @render)
 
-  render: ->
+  render: =>
     $("#streak").html @view('streak')(@)
 
   checkIn: =>
-    check_in = new App.CheckIn(goal_id: 1)
+    check_in = new App.CheckIn({goal_id: goal.id})
     check_in.save()
 
   updateStreak: (btn) ->
