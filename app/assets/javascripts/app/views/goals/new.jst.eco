@@ -1,0 +1,29 @@
+<div class="modal hide" id="new_goal_modal">
+  <div class="modal-header">
+    <h3>New Goal</h3>
+  </div>
+  <div class="modal-body">
+    <form id='new_goal_form'>
+      <p>
+        <input type='text' placeholder='Goal (ex/ Walk a mile)' />
+      </p>
+      <p>
+        <br />
+        <table id='days' cellpadding='0' cellspacing='0'>
+          <tr>
+            <td>M</td>
+            <td>T</td>
+            <td>W</td>
+            <td>Th</td>
+            <td>F</td>
+            <td>Sa</td>
+            <td>Su</td>
+          </tr>
+        </table>
+      </p>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <a href="#" class="btn" id='create_new_goal_button'>Create Goal</a>
+  </div>
+</div>

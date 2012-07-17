@@ -263,7 +263,44 @@ button {
   font-family: 'Century Gothic', sans-serif;
 }
 
-.big-input {
-  padding: 6px;
-  font-size: 16px;
+.btn {
+  @include button($lilypad);
+  font-size: 14px;
+}
+
+.btn-cancel {
+  @include button($grey);
+  font-size: 14px;
+}
+
+#new_goal_modal {
+  input[type=text] {
+    font-size: 16px;
+    padding: 6px;
+    width: 97%;
+  }
+}
+
+#days {
+  td {
+    padding: 10px;
+    border: 1px solid white;
+    width: 55px;
+    border-left: 0px;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    background-color: darken($cloudless, 35);
+    cursor: pointer;
+  }
+
+  .not-selected {
+    background-color: white;
+    color: black;
+    font-weight: normal;
+  }
+}
+
+.hide {
+  display: none;
 }
