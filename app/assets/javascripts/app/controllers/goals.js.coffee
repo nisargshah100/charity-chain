@@ -37,7 +37,8 @@ class App.Controller.Goals_New extends Spine.Controller
       type: 'POST',
       url: '/api/v1/goals.json',
       data: {
-        goal: @getFormValues(),
+        goal: @getFormGoal(),
+        scheduler: @getFormDays(),
         token: access_token()
       },
       success: (resp) =>
@@ -47,10 +48,17 @@ class App.Controller.Goals_New extends Spine.Controller
         App.Goal.fetch()
     }
 
-  getFormValues: ->
+  getFormGoal: ->
     JSON.stringify({
       name: $('#goal-name').val()
     })
+
+  getFormDays: ->
+    days = {}
+    $(".selected").each ->
+      days[$(this).data('day')] = true
+
+    JSON.stringify(days)
 
 class App.Controller.Goals extends Spine.Controller
   constructor: ->
