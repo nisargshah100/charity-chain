@@ -110,6 +110,21 @@
 
 <script type="text/javascript">
   $("#signin_submit").click(function(e) {
-    $("#signin_form").submit();
+    var email = $("#signin_email").val();
+    var password = $("#signin_password").val();
+    var dataString = 'email='+ email + '&password=' + password
+    $.ajax({
+      type: "POST",
+      url: "/sessions",
+      data: dataString,
+      success: function(data) {
+        console.log(data);
+        if (data.logged_in == true) {
+          location.href = '/goals';
+        } else {
+          alert('Bad login');
+        };
+      }
+    });
   });
 </script>
