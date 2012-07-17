@@ -15,6 +15,8 @@
   </div>
   <div class="splash-container">
     <p class="splash-text">A better you. A better us.</p>
+    <%= image_tag "charitychain.png", :class => "charity-image" %>
+    
     <div class="signup-form">
       <div class="well">
       </div>
@@ -46,16 +48,24 @@
   }
 
   input {
-    font-size:40px;
+    font-size:30px;
     margin-bottom:30px;
     padding:5px;
     border-radius: 5px;
   }
 
   .signup-form {
-    padding-top:100px;
+    padding-top:0px;
     text-align:center;
 
+  }
+
+  .charity-image{
+    width:750px;
+    height:250px;
+    margin-left:275px;
+    z-index: -1;
+    position: relative;
   }
 
   .underliner{
@@ -66,8 +76,8 @@
 
   .well {
     background: #eee;
-    width: 500px;
-    height: 220px;
+    width: 645px;
+    height: 200px;
     padding: 50px;
     margin: 0 auto;
     opacity: 0.7;
