@@ -1,4 +1,11 @@
 CharityChain::Application.routes.draw do
+
+  namespace :api do
+    namespace :v1 do
+      resources :goals, only: [:create, :index]
+    end
+  end
+
   resources :goals, only: [:show, :new]
   root :to => 'pages#index'
   
