@@ -6,7 +6,7 @@ CharityChain::Application.routes.draw do
     end
   end
 
-  resources :goals, only: [:show, :new]
+  resources :goals, only: [:index, :new]
   
   get "logout" => "sessions#destroy", :as => "logout"
   resources :sessions, only: [:create, :destroy]

@@ -9,6 +9,6 @@ class GoalsController < ApplicationController
     @donation_period_options = ['day', 'week', 'month']
   end
   
-  def show
+  def index
   end
 end
