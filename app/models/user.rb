@@ -1,20 +1,10 @@
-class User
-  attr_accessor :id
+class User < ActiveRecord::Base
+  authenticates_with_sorcery!
+  attr_accessible :email, :password, :authentication_token
+  has_many :goals
+  before_create :ensure_authentication_token
 
-  def initialize(params)
-    @id = params[:id]
-  end
-
-  def self.find_by_authentication_token(token)
-    User.new(:id => 1)
-  end
-
-  def goals
-    [ Goal.new, Goal.new, Goal.new ]
-  end
-
-  def create_goal(params)
-    params.merge({:user => self})
-    Goal.create(params)
+  def ensure_authentication_token
+    self.authentication_token = rand(72**8).to_s(36)
   end
 end

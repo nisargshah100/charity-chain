@@ -7,6 +7,11 @@ CharityChain::Application.routes.draw do
   end
 
   resources :goals, only: [:show, :new]
+  
+  get "logout" => "sessions#destroy", :as => "logout"
+  resources :sessions, only: [:create, :destroy]
+  resources :users, only: [:create]
+  
   root :to => 'pages#index'
   
   # The priority is based upon order of creation:

@@ -20,11 +20,11 @@
     <div class="signup-form">
       <div class="well">
       </div>
-      <form id='signup_form'>
-        <input type="text" name="email" placeholder="email" /><br />
-        <input type="password" name="password" placeholder="password" /><br />
+      <%= form_tag users_path, method: "post", id:'signup_form' do %>
+        <input type="text" id="user_email" name="user[email]" placeholder="email" /><br />
+        <input type="password" id="user_password" name="user[password]" placeholder="password" /><br />
         <button type="submit" style="width:300px">Get Started</button>
-      </form>
+      <% end %>
     </div>
   </div>
 
@@ -90,9 +90,9 @@
   }
 </style>
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
   $("#signup_form").submit(function(e) {
     e.preventDefault();
     location.href = '/goals/new';
   });
-</script>
+</script> -->
