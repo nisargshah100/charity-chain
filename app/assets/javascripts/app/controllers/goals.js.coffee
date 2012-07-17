@@ -44,7 +44,7 @@ class App.Controller.Goals_New extends Spine.Controller
         @hide()
         $("#alert-bar").addClass('alert-success').text('Congratulations on creating a goal!').hide()
         $("#alert-bar").slideDown().delay(3000).slideUp()
-        App.Goal.trigger('create')
+        App.Goal.fetch()
     }
 
   getFormValues: ->
@@ -57,3 +57,17 @@ class App.Controller.Goals extends Spine.Controller
     super
     @new_goal_dialog = new App.Controller.Goals_New()
     App.Goal.fetch()
+    @events()
+
+  events: ->
+    App.Goal.bind 'refresh', @fetched
+
+  fetched: =>
+    goal = App.Goal.first()
+    if goal
+      $(".goal-title").text(goal.name)
+      @show()
+
+  show: ->
+    $("#main-container").removeClass('hide')
+
