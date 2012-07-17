@@ -9,3 +9,24 @@
 .splash-container {
   text-align:center;
 }
+
+#signin_link {
+  color: #FFF;
+  text-decoration: none;
+}
+
+#signin_modal {
+  width: 400px;
+}
+
+#signin_form {
+  margin-top: 10px;
+  line-height: 16px;
+  
+  input {
+    width: 98%;
+    margin-bottom: 10px;
+    font-size: 16px;
+    padding: 2px;
+  }
+}

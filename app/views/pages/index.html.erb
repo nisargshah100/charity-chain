@@ -6,9 +6,27 @@
   <div class="navbar">
     <div class="row">
       <span class="logo">CharityStreak</span>
-      <span class="user-info" style="font-weight:bold">Sign In</span>
+      <span class="user-info" style="font-weight:bold">
+        <a id="signin_link" data-toggle="modal" href="#signin_modal">Sign In</a>
+      </span>
     </div>
     <span class="underliner" style="height: 5px;"></span>
+  </div>
+
+  <div class="modal hide" id="signin_modal">
+    <div class="modal-header">
+      <h3>Sign in</h3>
+    </div>
+    <div class="modal-body">
+      <%= form_tag sessions_path, method: "post", id:'signin_form' do %>
+        <input type="text" id="signin_email" name="email" placeholder="email" />
+        <input type="password" id="signin_password" name="password" placeholder="password" />
+      <% end %>
+    </div> 
+    <div class="modal-footer">
+      <a href="#" class="btn-cancel" data-dismiss="modal">Close</a>
+      <a href="#" class="btn" id="signin_submit">Sign Up</a>
+    </div>
   </div>
 
   <div class="splash">
@@ -90,9 +108,8 @@
   }
 </style>
 
-<!-- <script type="text/javascript">
-  $("#signup_form").submit(function(e) {
-    e.preventDefault();
-    location.href = '/goals/new';
+<script type="text/javascript">
+  $("#signin_submit").click(function(e) {
+    $("#signin_form").submit();
   });
-</script> -->
+</script>
