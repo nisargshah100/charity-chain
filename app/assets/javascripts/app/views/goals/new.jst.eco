@@ -5,7 +5,7 @@
   <div class="modal-body">
     <form id='new_goal_form'>
       <p>
-        <input type='text' placeholder='Goal (ex/ Walk a mile)' />
+        <input type='text' id='goal-name' placeholder='Goal (ex/ Walk a mile)' />
       </p>
       <p>
         <br />

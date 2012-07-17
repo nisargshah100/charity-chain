@@ -28,7 +28,23 @@ class App.Controller.Goals_New extends Spine.Controller
 
   save: (e) =>
     e.preventDefault();
-    @hide()
+    $.ajax({
+      type: 'POST',
+      url: '/api/v1/goals.json',
+      data: { 
+              goal: @getFormValues(),
+              token: $('.user-meta').data('token')
+            },
+      success: (response) =>
+        @hide()
+        $("#alert-bar").addClass('alert-success').text('Congratulations on creating a goal!').hide()
+        $("#alert-bar").slideDown().delay(3000).slideUp()
+    });
+
+  getFormValues: ->
+    JSON.stringify({
+      name: $('#goal-name').val()
+    })
 
 class App.Controller.Goals extends Spine.Controller
   constructor: ->

@@ -8,6 +8,9 @@
   <%= yield :head %>
 </head>
 <body>
-    <%= yield %>
+  <% if current_user %>
+    <%= content_tag "div", class: "user-meta", data: { token: current_user.authentication_token } do %><% end %>
+  <% end %>
+  <%= yield %>
 </body>
 </html>

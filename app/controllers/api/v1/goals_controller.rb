@@ -7,7 +7,7 @@ class Api::V1::GoalsController < Api::ApiController
   end
 
   def create
-    goal = current_user.create_goal(JSON.parse(params[:goal]))
+    goal = current_user.goals.create(JSON.parse(params[:goal]))
     render :json => goal
   end
 end
