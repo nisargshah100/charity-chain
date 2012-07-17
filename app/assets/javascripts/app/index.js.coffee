@@ -12,6 +12,12 @@
 #= require_tree ./controllers
 #= require_tree ./views
 
+Spine.Model.host = "/api/v1";
+
+$(document).ajaxError (e, xhr) ->
+  if xhr.status == 403
+    alert 'You may have been logged out or you dont have the access to do that.'
+
 class App extends Spine.Controller
   constructor: ->
     super
@@ -22,7 +28,10 @@ class App extends Spine.Controller
     @append(new App.Controller.Projects)
     @append(new App.Controller.Goals)
     
-    Spine.Route.setup()    
+    Spine.Route.setup()  
 
 window.App = App
 window.App.Controller = {}
+
+window.access_token = ->
+  $('.user-meta').data('token')

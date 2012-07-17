@@ -7,5 +7,6 @@ class Api::ApiController < ActionController::Base
 
   def authenticate
     @current_user = User.find_by_authentication_token(params[:token])
+    render :json => false, :status => 403 if not @current_user
   end
 end
