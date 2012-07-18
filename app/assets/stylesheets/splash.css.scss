@@ -1,15 +1,3 @@
-.splash-text {
-  font-size: 100px;
-  color: #FFF;
-  font-family: 'Cookie', cursive;
-  text-shadow: 3px 3px 3px #666;
-  margin-bottom:20px;
-}
-
-.splash-container {
-  text-align:center;
-}
-
 #signin_link {
   color: #FFF;
   text-decoration: none;
@@ -24,18 +12,60 @@
   width: 400px;
 }
 
+.splash-text {
+  font-size: 100px;
+  color: #FFF;
+  font-family: 'Cookie', cursive;
+  text-shadow: 3px 3px 3px #666;
+  margin-bottom:20px;
+}
+
+.splash-container {
+  text-align:center;
+}
+
+.signup-form {
+  padding-top:0px;
+  text-align:center;
+}
+
+.charity-image{
+  width:750px;
+  height:250px;
+}
+
 .pitch {
   font-size: 18px;
   font-weight: bold;
   text-align: left;
+  
+  h2 {
+    line-height: 1em;
+    padding-bottom: 10px;
+  };
+  h4 {  };
+}
+
+.well {
+  background: #eee;
+  width: 670px;
+  height: 200px;
+  padding: 27px 35px 35px 35px;
+  margin: 0 auto;
+  opacity: 0.7;
+  position: relative;
+  border-radius: 20px;
 }
 
 .well.signup-well {
-  opacity: 0.85;
+  background: $pondwater;
+  opacity: 0.8;
+  padding-bottom: 60px;
+  border: solid 5px $goldfish;
 }
 
 .signup {
-  margin-top: 15px;
+  margin-top: 25px;
 }
 
 .modal_form {
