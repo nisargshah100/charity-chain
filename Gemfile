@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.6'
 gem 'bourbon'
 gem 'sorcery'
+gem 'money-rails'
 
 group :production do
   gem 'pg'

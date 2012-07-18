@@ -72,9 +72,9 @@ class App.Controller.Goals extends Spine.Controller
 
   fetched: =>
     window.goal = App.Goal.first()
-    App.Goal.trigger('goal-selected')
 
     if goal
+      App.Goal.trigger('goal-selected')
       $(".goal-title").text(goal.name)
       @show()
 

@@ -5,7 +5,7 @@
 <div class="col-content">
   <div class="col-box">
     <div class="dollar-sign" style="float:left; padding-left:10px; position:absolute; left: 20px; top: 20px; font-size: 50px; font-family: impact;">$</div>
-    <div class="day-count" id='dollars-earned'>90</div>
+    <div class="day-count" id='dollars-earned'><%= @wallet %></div>
     <span class="day-label capitalize">earned</span>
   </div>
   <div class="button-container">
@@ -14,21 +14,15 @@
   <div class="col-stats">
     <div class="stat-well">
       <div class="stat-wrapper">
-        <span class="stat-title">Projects</span>
-        <div class="stat-three">
-          <div class="count-stat">5</div>
-        </div>
-      </div>
-      <div class="stat-wrapper">
         <span class="stat-title">Total</span>
-        <div class="stat-three" style="border-left:1px solid">
-          <div class="count-stat">$15</div>
+        <div class="stat-two">
+          <div class="count-stat">$<%= @donation_total %></div>
         </div>
       </div>
       <div class="stat-wrapper">
         <span class="stat-title">Sponsors</span>
-        <div class="stat-three" style="border-left:1px solid">
-          <div class="count-stat">15</div>
+        <div class="stat-two" style="border-left:1px solid">
+          <div class="count-stat"><%= @sponsors_count %></div>
         </div>
       </div>
     </div>

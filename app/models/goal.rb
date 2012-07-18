@@ -1,8 +1,14 @@
 class Goal < ActiveRecord::Base
-  attr_accessible :check_in_interval, :name, :reserve_amount_cents, :user_id, :wallet_amount_cents, :user, :created_at
+  attr_accessible :check_in_interval, :name, :user_id, :user, :created_at
   belongs_to :user
   has_many :check_ins
+  has_many :donations
+  has_many :contributions
   has_one :scheduler
+  has_one :wallet
+  has_one :reserve
+
+  after_create :ensure_wallet, :ensure_reserve
 
   # Calculates all streaks up to a specified end date
   #
@@ -34,4 +40,23 @@ class Goal < ActiveRecord::Base
   def checked_in_today?
     check_ins.where("date >= ? AND date < ?", Date.today, Date.today + 1).present?
   end
+
+  def donation_total
+    Money.new donations.pluck(:amount_cents).inject(0, :+)
+  end
+
+  def sponsors
+    contributions.pluck(:name)
+  end
+
+  private 
+
+  def ensure_wallet
+    wallet || create_wallet
+  end
+
+  def ensure_reserve
+    reserve || create_reserve
+  end
+
 end

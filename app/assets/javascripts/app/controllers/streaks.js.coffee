@@ -1,7 +1,6 @@
 class App.Controller.Streaks extends Spine.Controller
   constructor: ->
     super
-    # @render()
     @events()
 
   events: ->

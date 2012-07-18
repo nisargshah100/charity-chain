@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120718132131) do
+ActiveRecord::Schema.define(:version => 20120718221608) do
 
   create_table "check_ins", :force => true do |t|
     t.integer  "goal_id"
@@ -20,14 +20,46 @@ ActiveRecord::Schema.define(:version => 20120718132131) do
     t.datetime "date"
   end
 
+  create_table "contributions", :force => true do |t|
+    t.integer  "payment_id"
+    t.integer  "goal_id"
+    t.integer  "amount_per_check_in_cents"
+    t.string   "email"
+    t.string   "name"
+    t.integer  "user_id"
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+  end
+
+  create_table "donations", :force => true do |t|
+    t.integer  "project_id"
+    t.integer  "amount_cents"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.integer  "goal_id"
+  end
+
   create_table "goals", :force => true do |t|
     t.integer  "user_id"
     t.string   "name"
     t.string   "check_in_interval"
-    t.integer  "wallet_amount_cents"
-    t.integer  "reserve_amount_cents"
-    t.datetime "created_at",           :null => false
-    t.datetime "updated_at",           :null => false
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
+
+  create_table "projects", :force => true do |t|
+    t.integer  "external_id"
+    t.integer  "external_source"
+    t.text     "data"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  create_table "reserves", :force => true do |t|
+    t.integer  "goal_id"
+    t.integer  "amount_cents", :default => 0
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
   end
 
   create_table "schedulers", :force => true do |t|
@@ -51,6 +83,13 @@ ActiveRecord::Schema.define(:version => 20120718132131) do
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false
     t.string   "authentication_token"
+  end
+
+  create_table "wallets", :force => true do |t|
+    t.integer  "goal_id"
+    t.integer  "amount_cents", :default => 0
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
   end
 
 end
