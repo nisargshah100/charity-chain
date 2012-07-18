@@ -11,7 +11,19 @@ class App.Controller.Streaks extends Spine.Controller
     App.Goal.bind('goal-selected', @render)
 
   render: =>
+    if goal.streaks
+      @current_streak = goal.streaks[0]
+      @longest_streak = _.max(goal.streaks)
+      @average_streak = Math.round (@sum(goal.streaks) / goal.streaks.length)
+    else
+      @current_streak = @longest_streak = @average_streak = 0
+
     $("#streak").html @view('streak')(@)
+
+  sum: (streaks) =>
+    total = 0
+    $.each streaks, -> total += this
+    total
 
   checkIn: =>
     check_in = new App.CheckIn({goal_id: goal.id})
