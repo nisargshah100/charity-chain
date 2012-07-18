@@ -22,3 +22,4 @@ end
 gem 'jquery-rails'
 gem 'eco'
 gem 'spine-rails'
+gem 'draper'

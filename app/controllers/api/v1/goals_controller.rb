@@ -3,12 +3,12 @@ class Api::V1::GoalsController < Api::ApiController
   
   def index
     @goals = current_user.goals
-    render :json => @goals
+    render :json => GoalDecorator.decorate(@goals)
   end
 
   def create
     goal = current_user.goals.create(JSON.parse(params[:goal]))
     goal.create_scheduler(JSON.parse(params[:scheduler]))
-    render :json => goal
+    render :json => GoalDecorator.decorate(goal)
   end
 end

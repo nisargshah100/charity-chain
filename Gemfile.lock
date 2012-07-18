@@ -41,6 +41,9 @@ GEM
       execjs
     coffee-script-source (1.3.3)
     diff-lcs (1.1.3)
+    draper (0.14.0)
+      actionpack (~> 3.2)
+      activesupport (~> 3.2)
     eco (1.0.0)
       coffee-script
       eco-source
@@ -141,6 +144,7 @@ PLATFORMS
 DEPENDENCIES
   bourbon
   coffee-rails (~> 3.2.1)
+  draper
   eco
   jquery-rails
   pg
