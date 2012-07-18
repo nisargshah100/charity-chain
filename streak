@@ -4,16 +4,10 @@ class Goal < ActiveRecord::Base
   has_many :check_ins
   has_one :scheduler
 
-  # Calculates all streaks up to a specified end date
-  #
-  # Example:
-  #  goal.streaks("21/6/1988")
-  #  #=> [5, 30, 10]
-  #
-  # @param [DateTime] end_date The date up to which streaks are calculated
-  # @return [Array] kind An array of integers representing streak lengths for an instance of a goal.
+  # Returns all streak lengths for a given goal before a given end_date
   def streaks(end_date = DateTime.now)
     streak, streaks = 0, []
+    # HI I"M IN HERE!
     dates = scheduler.generate_dates(end_date)
     checkins = Set.new check_ins.pluck('date').map(&:to_date)
 

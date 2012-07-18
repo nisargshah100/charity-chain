@@ -1,7 +1,7 @@
-app/models/user.rb 405584d4964a37ec99e69c94caefa1653117d24c
-app/models/goal.rb d050046dd4e16974e32dff295b42336b3de37922
-app/models/check_in.rb 03b61357f78808e4df262748db898fc4ad4cc72b
-app/models/scheduler.rb 806fe443ec9ed88742de9caf6af67c6027712a0d
+app/models/user.rb b03d5b2aa4f3487437f49d3d6a635e7cf7a9ea66
+app/models/goal.rb 4d2e8a53b9095f6129ec355c9abd355581384d4b
+app/models/check_in.rb b9771b1e092a0b6b6dac3eb8f9dc1c17c4c334fb
+app/models/scheduler.rb 9646e2add03681dfe435f9c4355d04796d3a2a08
 app/helpers/pages_helper.rb 20e02ca3eeef0daaf0a3eebd24fb7bcc271e3a30
 app/helpers/chains_helper.rb 5e06f3b037693de32640487c925518069f57258f
 app/helpers/api/api_helper.rb 6b71adc35b8f57b49eed9d9ebd3b27476e0a47d7
@@ -15,5 +15,6 @@ app/controllers/api/api_controller.rb aa035c027f099163480c11b6b7bc4214b057cde2
 app/controllers/sessions_controller.rb 0bd26e8940cec92123a1583f48e54767d3194339
 app/helpers/api/v1/check_ins_helper.rb ccf9484b484779afe99ddb487b4d61997e91b967
 app/controllers/application_controller.rb 2036468398e54b3fc8af23cb6f9e1716293320eb
-app/controllers/api/v1/goals_controller.rb 1ad9a1ee9712cec7bde66718a1c4ec826780fc63
+app/controllers/api/v1/goals_controller.rb 801fb4824f55c3c4e5681a844bae84249f53e33d
 app/controllers/api/v1/check_ins_controller.rb 9077e57ad5cae7f3393df7c8063d63de93a6e916
+app/decorators/goal_decorator.rb 6b0fd477678d326f4bf7d9a20934c2cf3a9ba237
