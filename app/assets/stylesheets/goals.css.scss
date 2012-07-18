@@ -1,3 +1,10 @@
+#alert-bar {
+  position: absolute;
+  color: #fff;
+  padding: 5px;
+  background-color: $lilypad;
+}
+
 .form-well {
   background: lighten($endive, 12);
   border: #DDD 3px solid;
