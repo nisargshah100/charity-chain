@@ -35,11 +35,11 @@
     <%= image_tag "charitychain.png", :class => "charity-image" %>
     <div class="signup-form">
       <div class="well signup-well">
-        <div class="pitch">CharityStreak's main motivation is to introduce new potential donors to donorschoose.org.
-        Our site is for people who likely aren't already donating to the charity, but are 
+        <div class="pitch"><h2>CharityStreak's main motivation is to introduce new potential donors to donorschoose.org.</h2>
+        <h4>Our site is for people who likely aren't already donating to the charity, but are 
         both interested in self-improvement and looking for something extra to motivate 
         them down the path of betterment. We hope to see an increase in donors overall as
-        well as more people attaining their personal goals.</div>
+        well as more people attaining their personal goals.</h4></div>
         <div class="signup"><a id="signup_link" data-toggle="modal" href="#signup_modal" class="btn">Get Started</a></div>
       </div>
     </div>
@@ -78,47 +78,18 @@
   body {
     font-family: 'Century Gothic', sans-serif;
   }
+  
+  form {
+    margin-top:-270px;
+    z-index: 100;
+    opacity: 1;
+  }
 
   input {
     font-size:30px;
     margin-bottom:30px;
     padding:5px;
     border-radius: 5px;
-  }
-
-  .signup-form {
-    padding-top:0px;
-    text-align:center;
-
-  }
-
-  .charity-image{
-    width:750px;
-    height:250px;
-  }
-
-  .underliner{
-    display:block;
-    margin-top:5px;
-    background: transparent url(assets/10-black.png) repeat scroll 0 0;
-  }
-
-  .well {
-    background: #eee;
-    width: 645px;
-    height: 200px;
-    padding: 50px;
-    margin: 0 auto;
-    opacity: 0.7;
-    z-index: -1;
-    position: relative;
-    border-radius: 20px;
-  }
-
-  form {
-    margin-top:-270px;
-    z-index: 100;
-    opacity: 1;
   }
 </style>
 
