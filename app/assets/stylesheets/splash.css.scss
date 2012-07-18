@@ -9,7 +9,18 @@
 }
 
 #signin_modal, #signup_modal {
-  width: 400px;
+  .modal-header {
+    font-family: 'Cookie', cursive;
+    color: #fff;
+    font-size: 42px;
+    background-color: $goldfish;
+  }
+  border: solid 5px $goldfish;
+}
+
+#signin_submit, #signup_submit {
+  @include button('shiny', $lilypad);
+  font-size: 14px;
 }
 
 .splash-text {
@@ -35,6 +46,7 @@
 }
 
 .pitch {
+  color: darken($endive,66);
   font-size: 18px;
   font-weight: bold;
   text-align: left;
@@ -43,7 +55,6 @@
     line-height: 1em;
     padding-bottom: 10px;
   };
-  h4 {  };
 }
 
 .well {
@@ -73,9 +84,10 @@
   line-height: 16px;
   
   input {
-    width: 98%;
+    width: 97%;
     margin-bottom: 10px;
     font-size: 16px;
-    padding: 2px;
+    padding: 6px;
   }
 }
+
