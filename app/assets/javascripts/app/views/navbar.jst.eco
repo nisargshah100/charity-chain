@@ -3,6 +3,14 @@
 </div>
 <div class="row">
   <span class="logo">CharityStreak</span>
-  <span class="user-info"><img src="/assets/icons/glyphicons_003_user.png" alt="icon" class="icon"/> <%= @user_email %></span>
+  <span class="user-info">
+    <%= @user_email %>
+    <span>
+      <a href="#"><img src="/assets/icons/glyphicons_019_cogwheel.png" alt="icon" class="icon" id="settings_gear"/></a>
+      <div class="dropdown-menu" id="user_menu" style="display: none">
+        <div><a href="#" id="edit_profile">Edit profile</a></div>
+        <div><a href="#" id="signout_link">Sign out</a></div>
+      </div>
+    </span>
+  </span>
 </div>
-<span class="underliner" style="margin-top:5px; height: 5px;"></span>

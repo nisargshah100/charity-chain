@@ -127,12 +127,6 @@
   background-size: 420px;
 }
 
-.underliner{
-  display:block;
-  margin-top:0px;
-  background: transparent url(/assets/10-black.png) repeat scroll 0 0;
-}
-
 .navbar{
   background: $cloudless;
   height: 50px;
@@ -140,6 +134,7 @@
   padding-bottom: 10px;
   color: #FFF;
   opacity:0.95;
+  border-bottom: solid 5px rgba(0,0,0,0.1);
 }
 
 .logo{
@@ -186,10 +181,12 @@
   float:right;
   padding-top:20px;
   font-size: 20px;
+  text-shadow: 1px 1px 1px #aaa;
 }
 
 .icon{
   margin-right:10px;
+  opacity: 0.4;
 }
 
 .container{
@@ -308,4 +305,37 @@ button {
 
 .hide {
   display: none;
+}
+
+#settings_gear {
+  opacity: 0.2;
+  height: 18px;
+  position: relative;
+  top:2px;
+}
+
+.dropdown-menu {
+  position: relative;
+  left: -10px;
+  padding: 5px;
+  font-size: 16px;
+  text-align: right;
+  background-color: #fff;
+  border: solid 1px #ddd;
+  line-height: 16px;
+  border-radius: 5px;
+  
+  a {
+    color: #262626;
+    text-decoration: none;
+  }
+  
+  div {
+    border-bottom: solid 1px #bbb;
+    padding: 3px;
+  }
+  
+  div:last-child {
+    border: none;
+  }
 }
