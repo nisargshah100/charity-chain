@@ -3,6 +3,8 @@
 </div>
 <div class="row">
   <span class="logo">CharityStreak</span>
-  <span class="user-info"><img src="/assets/icons/glyphicons_003_user.png" alt="icon" class="icon"/> <%= @user_email %></span>
+  <span class="user-info"><img src="/assets/icons/glyphicons_003_user.png" alt="icon" class="icon"/>
+    <%= @user_email %> | <a href="#" id="signout_link">sign out</a>
+  </span>
 </div>
 <span class="underliner" style="margin-top:5px; height: 5px;"></span>
