@@ -1,6 +1,6 @@
 <div class="col-title-project">
+  <img src="/assets/icons/glyphicons_266_flag.png" class="icon"/>
   <span class="capitalize title">Project</span>
-  <span class="underliner" style="height: 5px;"></span>
 </div>
 <div class="col-content">
   <div class="col-box">
