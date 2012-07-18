@@ -20,5 +20,4 @@ class Goal < ActiveRecord::Base
 
     streaks << streak
   end
-
 end

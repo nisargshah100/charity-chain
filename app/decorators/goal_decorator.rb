@@ -4,7 +4,7 @@ class GoalDecorator < Draper::Base
   def as_json(*options)
     values = { 
       :name => model.name, 
-      :current_streak => model.current_streak_length
+      :streaks => model.streaks
     }
   end
 end

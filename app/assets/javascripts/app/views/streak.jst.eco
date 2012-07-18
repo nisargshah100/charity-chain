@@ -5,7 +5,7 @@
 </div>
 <div class="col-content">
   <div class="col-box">
-    <div class="day-count" id='streak-length'>20</div>
+    <div class="day-count" id='streak-length'><%= @current_streak %></div>
     <span class="day-label capitalize">days</span>
   </div>
   <div class="button-container">
@@ -17,14 +17,14 @@
       <div class="stat-wrapper">
         <span class="stat-title">Longest</span>
         <div class="stat-two">
-          <div class="day-count-stat" id='longest-streak-length'>20</div>
+          <div class="day-count-stat" id='longest-streak-length'><%= @longest_streak %></div>
           <span class="day-label-stat capitalize">days</span>
         </div>
       </div>
       <div class="stat-wrapper">
         <span class="stat-title">Average</span>
         <div class="stat-two" style="border-left:1px solid">
-          <div class="day-count-stat">15</div>
+          <div class="day-count-stat"><%= @average_streak %></div>
           <span class="day-label-stat capitalize">days</span>
         </div>
       </div>
