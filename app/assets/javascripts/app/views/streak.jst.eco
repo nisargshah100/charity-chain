@@ -1,7 +1,6 @@
 <div class="col-title-streak" style="position:relative">
-  <img src="/assets/icons/glyphicons_074_cup.png" style="position:absolute; left: 25%; opacity: 0.4;"/>
+  <img src="/assets/icons/glyphicons_074_cup.png" class="icon"/>
   <span class="title capitalize">streak</span>
-  <span class="underliner" style="height: 5px;"></span>
 </div>
 <div class="col-content">
   <div class="col-box">

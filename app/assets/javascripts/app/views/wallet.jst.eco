@@ -1,6 +1,6 @@
 <div class="col-title-wallet">
+  <img src="/assets/icons/glyphicons_325_wallet.png" class="icon"/>
   <span class="capitalize title">Wallet</span>
-  <span class="underliner" style="height: 5px;"></span>
 </div>
 <div class="col-content">
   <div class="col-box">

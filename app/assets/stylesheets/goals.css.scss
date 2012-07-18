@@ -135,7 +135,7 @@
 
 .navbar{
   background: $cloudless;
-  height: 50px;
+  height: 45px;
   padding-top: 10px;
   padding-bottom: 10px;
   color: #FFF;
@@ -152,10 +152,11 @@
 
 .col-title-streak, .col-title-wallet, .col-title-project {
   text-align:center;
-  height: 35px;
+  height: 30px;
   color: #FFF;
   padding-top:10px;
   background: darken($pencil,5);
+  border-bottom: solid 5px rgba(0,0,0,0.1);
 }
 
 /*.col-title-streak {
