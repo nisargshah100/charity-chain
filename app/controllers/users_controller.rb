@@ -3,9 +3,9 @@ class UsersController < ApplicationController
     @user = User.new params[:user]
     if @user.save
       auto_login @user
-      redirect_to goals_path, notice: "Signed up!"
+      render :json => { created_user: true }
     else
-      redirect_to root_url
+      render :json => { created_user: false }
     end
   end
 end

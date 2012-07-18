@@ -17,7 +17,7 @@
       <h3>Sign In</h3>
     </div>
     <div class="modal-body">
-      <%= form_tag sessions_path, method: "post", id:'signin_form' do %>
+      <%= form_tag sessions_path, method: "post", id:'signin_form', class: 'modal_form' do %>
         <input type="text" id="signin_email" name="email" placeholder="email" />
         <input type="password" id="signin_password" name="password" placeholder="password" />
       <% end %>
@@ -33,15 +33,30 @@
   <div class="splash-container">
     <p class="splash-text">A better you. A better us.</p>
     <%= image_tag "charitychain.png", :class => "charity-image" %>
-    
     <div class="signup-form">
-      <div class="well">
+      <div class="well signup-well">
+        <div class="pitch">CharityStreak's main motivation is to introduce new potential donors to donorschoose.org.
+        Our site is for people who likely aren't already donating to the charity, but are 
+        both interested in self-improvement and looking for something extra to motivate 
+        them down the path of betterment. We hope to see an increase in donors overall as
+        well as more people attaining their personal goals.</div>
+        <div class="signup"><a id="signup_link" data-toggle="modal" href="#signup_modal" class="btn">Get Started</a></div>
       </div>
-      <%= form_tag users_path, method: "post", id:'signup_form' do %>
+    </div>
+  </div>
+  <div class="modal hide" id="signup_modal">
+    <div class="modal-header">
+      <h3>Sign up</h3>
+    </div>
+    <div class="modal-body">
+      <%= form_tag sessions_path, method: "post", id:'signup_form', class: 'modal_form' do %>
         <input type="text" id="user_email" name="user[email]" placeholder="email" /><br />
         <input type="password" id="user_password" name="user[password]" placeholder="password" /><br />
-        <button type="submit" style="width:300px">Get Started</button>
       <% end %>
+    </div> 
+    <div class="modal-footer">
+      <a href="#" class="btn-cancel" data-dismiss="modal">Close</a>
+      <a href="#" class="btn" id="signup_submit">Sign up</a>
     </div>
   </div>
 
@@ -122,6 +137,24 @@
           location.href = '/goals';
         } else {
           alert('Bad login');
+        };
+      }
+    });
+  });
+  $("#signup_submit").click(function(e) {
+    var email = $("#user_email").val();
+    var password = $("#user_password").val();
+    var dataString = 'user[email]='+ email + '&user[password]=' + password
+    $.ajax({
+      type: "POST",
+      url: "/users",
+      data: dataString,
+      success: function(data) {
+        console.log(data);
+        if (data.created_user == true) {
+          location.href = '/goals';
+        } else {
+          alert('Bad credentials');
         };
       }
     });
