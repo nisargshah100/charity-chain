@@ -5,7 +5,7 @@ gem 'bourbon'
 gem 'sorcery'
 
 group :production do
-	gem 'pg'
+  gem 'pg'
 end
 
 group :assets do
@@ -17,6 +17,7 @@ end
 group :test, :development do
   gem 'rspec-rails'
   gem 'sqlite3'
+  gem 'yard'
 end
 
 gem 'jquery-rails'
