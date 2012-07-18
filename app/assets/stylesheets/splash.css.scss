@@ -15,11 +15,30 @@
   text-decoration: none;
 }
 
-#signin_modal {
+#signup_link {
+  @include button('shiny', $lilypad);
+  font-size: 24px;
+}
+
+#signin_modal, #signup_modal {
   width: 400px;
 }
 
-#signin_form {
+.pitch {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.well.signup-well {
+  opacity: 0.85;
+}
+
+.signup {
+  margin-top: 15px;
+}
+
+.modal_form {
   margin-top: 10px;
   line-height: 16px;
   
