@@ -33,6 +33,9 @@ class App extends Spine.Controller
 window.App = App
 window.App.Controller = {}
 
+window.user_email = ->
+  $('.user-meta').data('email')
+
 window.access_token = ->
   $('.user-meta').data('token')
 
