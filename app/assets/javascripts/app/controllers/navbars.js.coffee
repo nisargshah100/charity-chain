@@ -5,4 +5,5 @@ class App.Controller.Navbars extends Spine.Controller
     @render()
 
   render: ->
+    @user_email = user_email()
     $(".navbar").html @view('navbar')(@)
