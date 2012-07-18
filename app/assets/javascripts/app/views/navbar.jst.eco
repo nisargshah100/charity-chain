@@ -1,6 +1,3 @@
-<div class="container-fluid">
-  <div id="alert-bar" class="span10" style="display: none"></div>
-</div>
 <div class="row">
   <span class="logo">CharityStreak</span>
   <span class="user-info">
