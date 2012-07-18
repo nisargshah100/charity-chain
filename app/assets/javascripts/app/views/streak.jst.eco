@@ -8,7 +8,7 @@
     <span class="day-label capitalize">days</span>
   </div>
   <div class="button-container">
-    <button id='check-in-button'>+1 Day</button>
+    <button id='check-in-button' class=''>+1 Day</button>
   </div>
   <div class="col-stats">
     <div class="stat-well">

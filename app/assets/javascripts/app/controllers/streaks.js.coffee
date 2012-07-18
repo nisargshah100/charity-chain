@@ -1,5 +1,4 @@
 class App.Controller.Streaks extends Spine.Controller
-
   constructor: ->
     super
     # @render()
@@ -11,6 +10,13 @@ class App.Controller.Streaks extends Spine.Controller
     App.Goal.bind('goal-selected', @render)
 
   render: =>
+    @computeStats()
+    $("#streak").html @view('streak')(@)
+
+    if goal.checked_in_today
+      $("#check-in-button").addClass('disabled-button').attr('disabled', true);
+
+  computeStats: ->
     if goal.streaks
       @current_streak = goal.streaks[0]
       @longest_streak = _.max(goal.streaks)
@@ -18,19 +24,18 @@ class App.Controller.Streaks extends Spine.Controller
     else
       @current_streak = @longest_streak = @average_streak = 0
 
-    $("#streak").html @view('streak')(@)
-
   sum: (streaks) =>
     total = 0
     $.each streaks, -> total += this
     total
 
   checkIn: =>
-    check_in = new App.CheckIn({goal_id: goal.id})
+    check_in = new App.CheckIn(goal_id: goal.id, date: new Date())
     check_in.save()
+    App.Goal.fetch()
 
   updateStreak: (btn) ->
-    $("#streak-length").fadeOut(200, -> $(this).html("21")).fadeIn(200);
+    $("#streak-length").fadeOut(200, -> $(this).html(@current_streak)).fadeIn(200);
     $("#dollars-earned").fadeOut(200, -> $(this).html("91")).fadeIn(200);
-    $("#longest-streak-length").html("21");
+    $("#longest-streak-length").html(@longest_streak);
     $("#check-in-button").addClass('disabled-button').attr('disabled', true);

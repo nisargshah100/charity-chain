@@ -17,6 +17,8 @@ class Goal < ActiveRecord::Base
     dates = scheduler.generate_dates(end_date)
     checkins = Set.new check_ins.pluck('date').map(&:to_date)
 
+    dates.unshift Date.today if checked_in_today?
+
     dates.each do |date|
       unless checkins.include?(date)
         streaks << streak 
@@ -27,5 +29,9 @@ class Goal < ActiveRecord::Base
     end
 
     streaks << streak
+  end
+
+  def checked_in_today?
+    check_ins.where("date >= ? AND date < ?", Date.today, Date.today + 1).present?
   end
 end
