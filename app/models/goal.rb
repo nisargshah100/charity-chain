@@ -53,10 +53,12 @@ class Goal < ActiveRecord::Base
   end
 
   def process_contribution(params)
+    # TODO: fix me; this probably doesn't belong since Payment and Contribution details are here for all to see
     charge = process_transaction id, params
-    payment = Payment.create(amount: charge.amount.to_i, data: charge)
-    contributions.create(payment_id: payment.id, name: params[:cardholder_name])
-    contributions.last
+    payment = Payment.create(amount: charge.amount.to_i, data: charge, card_type: charge.card.type, last_four: charge.card.last4)
+    contribution = contributions.create(payment_id: payment.id, name: params[:cardholder_name]).last
+    payment.update_attribute(contribution_id: contribution.id)
+    contribution
   end
 
   private
