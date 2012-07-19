@@ -1,4 +1,4 @@
-#signin_modal, #signup_modal, #new_goal_modal, #donation_modal{
+#signin_modal, #signup_modal, #new_goal_modal, #review_goal_modal, #schedule_goal_modal, #sponsor_goal_modal {
   .modal-header {
     font-family: 'Cookie', cursive;
     color: #fff;
@@ -24,3 +24,27 @@
     padding: 6px;
   }
 }
+
+#password_confirmation {
+    font-size: 10px;
+    color: #262626;
+    opacity: 0.6;
+    text-align: left;
+  }
+
+.workflow {
+  float: left;
+  width: 350px;
+  margin-top: -8px;
+}
+
+#goal_review_table {
+  td {
+    margin-right: 10px;
+  }
+
+  #review_goal_schedule {
+    text-transform: uppercase;
+  }
+}
+
