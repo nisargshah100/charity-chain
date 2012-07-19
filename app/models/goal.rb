@@ -1,5 +1,7 @@
 class Goal < ActiveRecord::Base
-  attr_accessible :check_in_interval, :name, :user_id, :user, :created_at
+  include TokenHelper
+  
+  attr_accessible :check_in_interval, :name, :user_id, :user, :created_at, :token
   belongs_to :user
   has_many :check_ins
   has_many :donations
@@ -8,7 +10,7 @@ class Goal < ActiveRecord::Base
   has_one :wallet
   has_one :reserve
 
-  after_create :ensure_wallet, :ensure_reserve
+  after_create :ensure_wallet, :ensure_reserve, :set_token
 
   # Calculates all streaks up to a specified end date
   #
@@ -58,5 +60,8 @@ class Goal < ActiveRecord::Base
   def ensure_reserve
     reserve || create_reserve
   end
-
+  
+  def set_token
+    update_attribute(:token, create_token("#{name}#{user_id}#{rand(100000)}"))
+  end
 end

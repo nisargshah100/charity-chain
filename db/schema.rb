@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120718221608) do
+ActiveRecord::Schema.define(:version => 20120719205424) do
 
   create_table "check_ins", :force => true do |t|
     t.integer  "goal_id"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(:version => 20120718221608) do
     t.integer  "user_id"
     t.datetime "created_at",                :null => false
     t.datetime "updated_at",                :null => false
+    t.string   "token"
   end
 
   create_table "donations", :force => true do |t|
@@ -45,6 +46,7 @@ ActiveRecord::Schema.define(:version => 20120718221608) do
     t.string   "check_in_interval"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
+    t.string   "token"
   end
 
   create_table "projects", :force => true do |t|

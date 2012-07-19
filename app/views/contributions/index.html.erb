@@ -27,6 +27,7 @@
             <% @expiration_months = (1..12).to_a %>
             <% @expiration_years = (2012..2022).to_a %>
             <% @contribution_amounts = [10,20,25,30,40,50,100] %>
+            <%= hidden_field_tag :goal_token, @goal_token %>
             <div class="plea-text">
               <h4>Please think of the children and contribute to a worthwhile cause.</h4>
             </div>
@@ -113,9 +114,13 @@
             var form$ = $("#contribution_form");
             // token contains id, last4, and card type
             var token = response['id'];
-            console.log(token);
             // insert the token into the form so it gets submitted to the server
-            form$.append("<input type='hidden' name='stripeToken' value='" + token + "'/>");
+            form$.append("<input type='hidden' name='stripe_token' value='" + token + "'/>");
+            // remove credit card data from the form
+            $('#card_number').val("");
+            $('#card_sec_code').val("");
+            $('#card_expiration_month').val("");
+            $('#card_expiration_year').val("");
             // and submit
             form$.get(0).submit();
         }
