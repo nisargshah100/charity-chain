@@ -1,0 +1,27 @@
+<div class="modal hide" id="schedule_goal_modal">
+  <div class="modal-header">
+    <h3>Schedule</h3>
+  </div>
+  <div class="modal-body">
+    <form id='schedule_goal_form'>
+      <h6 style="padding-top: 10px; opacity: 0.6">How often would you like to do this?.</h6>
+        <br />
+        <table id='days' cellpadding='0' cellspacing='0'>
+          <tr>
+            <td data-day='sunday'>Su</td>
+            <td data-day='monday'>M</td>
+            <td data-day='tuesday'>T</td>
+            <td data-day='wednesday'>W</td>
+            <td data-day='thursday'>Th</td>
+            <td data-day='friday'>F</td>
+            <td data-day='saturday'>Sa</td>
+          </tr>
+        </table>
+      </p>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <img src="/assets/schedule.png" class="workflow">
+    <a href="#" class="btn" id='create_schedule_btn'>Next Step</a>
+  </div>
+</div>

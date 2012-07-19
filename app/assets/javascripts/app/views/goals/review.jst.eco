@@ -1,0 +1,21 @@
+<div class="modal hide" id="review_goal_modal">
+  <div class="modal-header">
+    <h3>Review Your Goal</h3>
+  </div>
+  <div class="modal-body">
+    <table cellpadding='10' cellspacing='10' id="goal_review_table">
+      <tr>
+        <td>Your Goal:</td>
+        <td id='review_goal_name'></td>
+      </tr>
+      <tr>
+        <td>Your Schedule:</td>
+        <td id='review_goal_schedule'></td>
+      </tr>
+    </table>
+  </div>
+  <div class="modal-footer">
+    <img src="/assets/review.png" class="workflow">
+    <a href="#" class="btn" id='show_sponsor_modal'>Finish Up</a>
+  </div>
+</div>

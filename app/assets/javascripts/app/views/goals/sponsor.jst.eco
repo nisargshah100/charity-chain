@@ -1,0 +1,17 @@
+<div class="modal hide" id="sponsor_goal_modal">
+  <div class="modal-header">
+    <h3>Get Sponsored</h3>
+  </div>
+  <div class="modal-body">
+    <form id='schedule_goal_form'>
+      <h6 style="padding-top: 10px; opacity: 0.6">Share this link and get sponsored.</h6>
+        <br />
+        http:www.charitystreak.org/mygoalisawesome/sponsorit
+      </p>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <img src="/assets/sponsor.png" class="workflow">
+    <a href="#" class="btn" id='thanks_btn'>Thanks</a>
+  </div>
+</div>
