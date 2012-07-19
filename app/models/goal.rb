@@ -1,5 +1,6 @@
 class Goal < ActiveRecord::Base
   include TokenHelper
+  include StripeHelper
   
   attr_accessible :check_in_interval, :name, :user_id, :user, :created_at, :token
   belongs_to :user
@@ -51,7 +52,14 @@ class Goal < ActiveRecord::Base
     contributions.pluck(:name)
   end
 
-  private 
+  def process_contribution(params)
+    charge = process_transaction id, params
+    payment = Payment.create(amount: charge.amount.to_i, data: charge)
+    contributions.create(payment_id: payment.id, name: params[:cardholder_name])
+    contributions.last
+  end
+
+  private
 
   def ensure_wallet
     wallet || create_wallet

@@ -1,10 +1,16 @@
 class Contribution < ActiveRecord::Base
+  include TokenHelper
+  
   attr_accessible :payment_id, :goal_id, :amount_per_check_in_cents, :email, :name, :token
   
   belongs_to :goal
   has_one :payment
   
   after_create :set_token
+  
+  def to_param
+    token
+  end
   
   private
   

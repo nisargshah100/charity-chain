@@ -8,12 +8,14 @@ class ContributionsController < ApplicationController
   end
   
   def show
+    @contribution = Contribution.find_by_token(params[:id])
+    raise ActionController::RoutingError.new('Not Found') unless @contribution
   end
   
   def create
     goal = Goal.find_by_token params[:goal_token]
-    if goal && has_stripe_token_param(params)
-      contribution = make_contribution goal, params
+    if goal && has_valid_params(params)
+      contribution = goal.process_contribution params
       # TODO: make sure the stripe token was valid & the contribution was successfully created
       redirect_to contribution_path contribution
     elsif goal
@@ -25,7 +27,7 @@ class ContributionsController < ApplicationController
   
   private
   
-  def has_stripe_token_param(params)
-    params && params[:stripe_token] && !params[:stripe_token].empty?
+  def has_valid_params(params)
+    params && params[:stripe_token] && !params[:stripe_token].empty? && params[:amount] && params[:amount].to_i > 0
   end
 end
