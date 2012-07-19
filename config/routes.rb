@@ -4,7 +4,7 @@ CharityChain::Application.routes.draw do
     namespace :v1 do
       resources :goals, only: [:create, :index]
       resources :check_ins, only: [:create]
-      resources :donation, only: [:index]
+      resources :donations, only: [:create]
     end
   end
 

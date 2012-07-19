@@ -1,5 +1,5 @@
 class Donation < ActiveRecord::Base
-  attr_accessible :amount_cents, :amount, :goal_id
+  attr_accessible :amount_cents, :amount, :goal_id, :project_id
   belongs_to :project
   belongs_to :goal
 
@@ -9,12 +9,12 @@ class Donation < ActiveRecord::Base
   validate do |donation|
     amount = donation.goal.wallet.amount
     if donation.amount > donation.goal.wallet.amount
-      donation.errors.add(:amount, "Donation amount must be less then wallet ($#{amount})")
+      donation.errors.add(:amount, "must be less than wallet ($#{amount})")
     end
 
     amount = donation.goal.reserve.amount
     if donation.amount > donation.goal.reserve.amount
-      donation.errors.add(:amount, "Donation amount must be less then reserve ($#{amount})")
+      donation.errors.add(:amount, "must be less than reserve ($#{amount})")
     end
   end
 

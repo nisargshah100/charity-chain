@@ -1,0 +1,80 @@
+<div class="modal hide" id="donation_modal" style='width: 35%; left: 40%;'>
+  <div class="modal-header">
+    <h3>Donate</h3>
+  </div>
+  <div class="modal-body">
+    <div class="modal-content row">
+      <div class="sevencol">
+        <div class="project-image"></div>
+      </div>
+      <div class="fivecol last">
+        <div class="project-container">
+          <div class="modal-project-info">
+            <p class="lighten">You are supporting: </p>
+            <p>Learning Center - Linlee</p>
+            <p>Lexington, KY</p>         
+          </div>
+
+          <form method='post'>
+            <p>Amount to donate: </p>
+            <input type="range" id='donate-amount' min="1" step="1" onchange="showValue(this.value)" />
+            <span id='range-value'></span>
+
+            <input type="hidden" id="donate-project" name="donate-project" value='1' />
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <a href="#" class="btn" id='create-donation'>Donate</a>
+  </div>
+</div>
+
+<script type="text/javascript">
+  function showValue(newValue) {
+    document.getElementById("range-value").innerHTML="$"+newValue;
+  }
+</script>
+
+<style>
+  p.lighten {
+    color: #AAA;
+    font-size: 15px;
+  }
+
+  .modal-form {
+    float: left;
+  }
+
+  .modal-content {
+    min-width: 0px !important;
+  }
+
+  input {
+    font-size:30px;
+    margin-bottom:30px;
+    padding:5px;
+    border-radius: 5px;
+  }
+
+  form > p {
+    font-size: 20px;
+    margin-left: 0px;
+  }
+
+  .modal-project-info {
+    margin-bottom: 175px;
+    margin-left: 0px;
+    font-size: 20px;
+  }
+
+  #donate-amount {
+    width: 100px;
+  }
+
+  .span-leader {
+    font-size: 30px;
+    padding-right: 10px;
+  }
+</style>
