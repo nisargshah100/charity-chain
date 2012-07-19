@@ -8,21 +8,6 @@
   font-size: 24px;
 }
 
-#signin_modal, #signup_modal {
-  .modal-header {
-    font-family: 'Cookie', cursive;
-    color: #fff;
-    font-size: 42px;
-    background-color: $goldfish;
-  }
-  border: solid 5px $goldfish;
-}
-
-#signin_submit, #signup_submit {
-  @include button('shiny', $lilypad);
-  font-size: 14px;
-}
-
 .splash-text {
   font-size: 100px;
   color: #FFF;
@@ -77,17 +62,5 @@
 
 .signup {
   margin-top: 25px;
-}
-
-.modal_form {
-  margin-top: 10px;
-  line-height: 16px;
-  
-  input {
-    width: 97%;
-    margin-bottom: 10px;
-    font-size: 16px;
-    padding: 6px;
-  }
 }
 
