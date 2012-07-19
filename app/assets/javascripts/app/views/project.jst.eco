@@ -4,22 +4,22 @@
 </div>
 <div class="col-content">
   <div class="col-box">
-    <div class="project-image"></div>
-    <div class="project-title">Making Music With Technology</div>
+    <div class="project-image" style="background: url('<%= goal.project.imageURL %>')"></div>
+    <div class="project-title" style='cursor: pointer' onclick='location.href="<%= goal.project.proposalURL %>"'><%= goal.project.title %></div>
   </div>
   <div class="col-stats">
     <div class="project-progress-well">
       <div class="progress progress-striped">
-        <div class="bar" style="width: 20%;"></div>
+        <div class="bar" style="width: <%= goal.project.percentFunded %>%;"></div>
       </div>
-      <div class="project-to-go-text"><span style="color:green">$310</span> to go</div>
+      <div class="project-to-go-text"><span style="color:green">$<%= goal.project.costToComplete %></span> to go</div>
     </div>
     <div class="stat-well">
       <div class="project-container">
         <div class="project-info">
-          <p>High Poverty</p>
-          <p>Learning Center - Linlee</p>
-          <p>Lexington, KY</p>
+          <p><%= goal.project.povertyLevel %></p>
+          <p><%= goal.project.schoolName %></p>
+          <p><%= goal.project.city %>, <%= goal.project.state %></p>
         </div>
       </div>
     </div>

@@ -4,6 +4,8 @@ gem 'rails', '3.2.6'
 gem 'bourbon'
 gem 'sorcery'
 gem 'money-rails'
+gem 'faraday'
+gem 'hashie'
 
 group :production do
   gem 'pg'

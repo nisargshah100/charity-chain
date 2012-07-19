@@ -10,7 +10,8 @@ class GoalDecorator < Draper::Base
       :wallet_amount => model.wallet.amount.to_s,
       :reserve_amount => model.reserve.amount.to_s,
       :sponsors => model.sponsors,
-      :donation_total => model.donation_total.to_s
+      :donation_total => model.donation_total.to_s,
+      :project => JSON.parse(Project.last.data)
     }
   end
 end
