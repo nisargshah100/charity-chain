@@ -1,0 +1,83 @@
+  <% content_for :head do %>
+    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
+  <% end %>
+
+  <div class="navbar">
+    <div class="row">
+      <span class="logo">CharityStreak</span>
+    </div>
+  </div>
+  <div class="contribution-header">
+    <p class="splash-text"><span class="owner_name_header">Conan Rimmer</span> needs your help!</p>
+  </div>
+  <div class="container">
+    <div class="contribution">
+      <div class="well contribution-well">
+        <div class="explanation">
+          <h4>This person has set the goal &quot;<span class="goal_name">Walk a mile every day</span>&quot;.</h4>
+          <p>
+            Donations made as part of their participation in Charity Streak go towards worthy <span class="donors_choose">donorschoose.org</span> projects.  <span class="owner_name">Conan Rimmer</span> is working hard to earn donations for this <span class="donors_choose">donorschoose.org</span> project:
+          </p>
+          <p class='explanation-image'><%= image_tag 'http://cdn.donorschoose.net/images/proposal/uploads/med/715000/715353/p715353_002_md.jpg' %></p>
+          <p></p>
+        </div>
+        <div class="form">
+          <%= form_tag "#", method: "post", id: 'contribution_form' do %>
+            <% @expiration_months = (1..12).to_a %>
+            <% @expiration_years = (2012..2022).to_a %>
+            <% @contribution_amounts = [10,20,25,30,40,50,100] %>
+            <div class="plea-text">
+              <h4>Please think of the children and contribute to a worthwhile cause.</h4>
+            </div>
+            <div class="contribution-amount">
+              <div class="amount-label"><%= label_tag :amount, "Contribution amount" %></div>
+              <div class="amount-select"><span class="currency">$&nbsp;</span><%= select_tag :amount, options_for_select(@contribution_amounts) %></div>
+            </div>
+            <div class="cardholder_name">
+              <%= label_tag :cardholder_name, "Cardholder's name" %><br />
+              <%= text_field_tag :cardholder_name, "", placeholder: "John Smith" %>
+            </div>
+            <div class="card_number">
+              <%= label_tag :card_number, "Card number" %><br />
+              <%= text_field_tag :card_number, "", autocomplete: "off", placeholder: "xxxx-xxxx-xxxx-xxxx" %>
+            </div>
+            <div class="expiry_and_cvc">
+              <div class="card_expiration">
+                <%= label_tag :card_expiration_month, "Expiration date" %><br />
+                <span><%= select_tag :card_expiration_month, options_for_select(@expiration_months) %></span>
+                <span><%= select_tag :card_expiration_year, options_for_select(@expiration_years) %></span>
+              </div>
+              <div class="card_cvc">
+                <%= label_tag :card_sec_code, "CVC" %><br />
+                <%= text_field_tag :card_sec_code, "", autocomplete: "off", placeholder: "123" %>
+              </div>
+            </div>
+            <div class="form_actions">
+              <button id='contribute_button'>Make a contribution</button>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<style>
+  * {
+    padding: 0;
+    margin: 0;
+  }
+
+  html {
+    background: url(assets/splash4.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    z-index: -1000;
+  }
+
+  body {
+    font-family: 'Century Gothic', sans-serif;
+  }
+</style>
