@@ -4,8 +4,11 @@ class App.Controller.Goals_New extends Spine.Controller
     @events()
 
   events: ->
-    $("#create_new_goal_button").live('click', @save)
-    $("#new_goal_form").live('submit', @save)
+    $("#name_goal_button").live('click', @show_schedule_form)
+    $("#create_schedule_btn").live('click', @show_review_modal)
+    $("#show_sponsor_modal").live('click', @show_sponsor_modal)
+    $("#thanks_btn").live('click', @hide_all_modals)
+
     $("td").live('click', @toggle_day)
     App.Goal.bind('refresh', @fetched)
 
@@ -15,13 +18,44 @@ class App.Controller.Goals_New extends Spine.Controller
 
   render: ->
     $(".dialogs").append @view('goals/new')(@)
+    $(".dialogs").append @view('goals/schedule')(@)
+    $(".dialogs").append @view('goals/review')(@)
+    $(".dialogs").append @view('goals/sponsor')(@)
+
     $('#new_goal_modal').modal(show: false);
+    $('#schedule_goal_modal').modal(show: false);
+    $('#review_goal_modal').modal(show: false);
+    $('#sponsor_goal_modal').modal(show: false);
 
   toggle_day: ->
     if $(this).hasClass('selected')
       $(this).removeClass('selected')
     else
       $(this).addClass('selected') 
+
+  hide_all_modals: =>
+    $("#sponsor_goal_modal").modal('hide');
+
+  show_sponsor_modal: =>
+    @save()
+    $("#review_goal_modal").modal('hide');
+    $("#sponsor_goal_modal").modal('show');
+
+  show_schedule_form: =>
+    $("#new_goal_modal").modal('hide');
+    $("#schedule_goal_modal").modal('show');
+
+  show_review_modal: =>
+    $("#review_goal_name").text($("#goal-name").val());
+
+    days = ""
+    $("td[data-day][class=selected]").each (index, item) ->
+      days += "#{$(item).data('day')} "
+
+    $("#review_goal_schedule").text(days)
+
+    $("#schedule_goal_modal").modal('hide');
+    $("#review_goal_modal").modal('show');
 
   show: ->
     $('#new_goal_modal').modal('show');
@@ -31,7 +65,7 @@ class App.Controller.Goals_New extends Spine.Controller
     $("#new_goal_modal").modal('hide');
 
   save: (e) =>
-    e.preventDefault();
+    e.preventDefault() if e
 
     $.ajax {
       type: 'POST',
