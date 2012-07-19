@@ -1,5 +1,5 @@
 class Contribution < ActiveRecord::Base
-  attr_accessible :payment_id, :goal_id, :amount_per_check_in_cents, :email, :name, :user_id, :token
+  attr_accessible :payment_id, :goal_id, :amount_per_check_in_cents, :email, :name, :token
   
   belongs_to :goal
   has_one :payment
