@@ -9,7 +9,7 @@
     <span class="day-label capitalize">earned</span>
   </div>
   <div class="button-container">
-    <button>Donate It!</button>
+    <button id='donate-button'>Donate It!</button>
   </div>
   <div class="col-stats">
     <div class="stat-well">
@@ -26,5 +26,24 @@
         </div>
       </div>
     </div>
+  </div>
+</div>
+
+<div class="modal hide" id="donate-modal" style='width: 900px; margin-left: -450px;'>
+  <div class="modal-header">
+    <h3>Donate</h3>
+  </div>
+  <div class="modal-body">
+    <table>
+      <tr><td>Charity 1</td></tr>
+      <tr><td>Charity 2</td></tr>
+    </table>
+
+    <form method='post'>
+      Amount to donate: <input type='text' id='donate-amount' class='big' placeholder='' />
+    </form>
+  </div>
+  <div class="modal-footer">
+    <a href="#" class="btn" id='donate-to-charity'>Donate</a>
   </div>
 </div>
