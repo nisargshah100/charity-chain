@@ -23,7 +23,7 @@
           <p></p>
         </div>
         <div class="form">
-          <%= form_tag "#", method: "post", id: 'contribution_form' do %>
+          <%= form_tag contributions_path, method: "post", id: 'contribution_form' do %>
             <% @expiration_months = (1..12).to_a %>
             <% @expiration_years = (2012..2022).to_a %>
             <% @contribution_amounts = [10,20,25,30,40,50,100] %>
@@ -54,7 +54,7 @@
               </div>
             </div>
             <div class="form_actions">
-              <button id='contribute_button'>Make a contribution</button>
+              <button id='contribute_button' type="submit">Make a contribution</button>
             </div>
           <% end %>
         </div>
@@ -81,3 +81,43 @@
     font-family: 'Century Gothic', sans-serif;
   }
 </style>
+<script type="text/javascript" src="https://js.stripe.com/v1/"></script>
+<script type="text/javascript">
+    // this identifies your website in the createToken call below
+    Stripe.setPublishableKey('pk_GUOYwDyaIdCJWD6LFJ0cKKR7CleT8');
+    
+    $(document).ready(function() {
+      $("#contribution_form").submit(function(event) {
+        // disable the submit button to prevent repeated clicks
+        $('#contribute_button').attr("disabled", "disabled");
+        console.log()
+        Stripe.createToken({
+            number: $('#card_number').val(),
+            cvc: $('#card_sec_code').val(),
+            exp_month: $('#card_expiration_month').val(),
+            exp_year: $('#card_expiration_year').val()
+        }, stripeResponseHandler);
+
+        // prevent the form from submitting with the default action
+        return false;
+      });
+    });
+    
+    function stripeResponseHandler(status, response) {
+        if (response.error) {
+            // show the errors on the form
+            $("#contribute_button").removeAttr("disabled");
+            console.log(response.error.message);
+            // $(".payment-errors").text(response.error.message);
+        } else {
+            var form$ = $("#contribution_form");
+            // token contains id, last4, and card type
+            var token = response['id'];
+            console.log(token);
+            // insert the token into the form so it gets submitted to the server
+            form$.append("<input type='hidden' name='stripeToken' value='" + token + "'/>");
+            // and submit
+            form$.get(0).submit();
+        }
+    }
+</script>
