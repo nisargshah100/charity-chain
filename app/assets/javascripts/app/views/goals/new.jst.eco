@@ -5,25 +5,13 @@
   <div class="modal-body">
     <form id='new_goal_form'>
       <p>
-        <input type='text' id='goal-name' placeholder='Goal (ex/ Walk a mile)' />
+        <input type='text' id='goal-name' placeholder='Enter name here' />
       </p>
-      <p>
-        <br />
-        <table id='days' cellpadding='0' cellspacing='0'>
-          <tr>
-            <td data-day='sunday'>Su</td>
-            <td data-day='monday'>M</td>
-            <td data-day='tuesday'>T</td>
-            <td data-day='wednesday'>W</td>
-            <td data-day='thursday'>Th</td>
-            <td data-day='friday'>F</td>
-            <td data-day='saturday'>Sa</td>
-          </tr>
-        </table>
-      </p>
+      <h6 style="padding-top: 10px; opacity: 0.6">Examples: Run a mile a day.  Quit smoking.  Eat more string cheese.</h6>
     </form>
   </div>
   <div class="modal-footer">
-    <a href="#" class="btn" id='create_new_goal_button'>Create Goal</a>
+    <img src="/assets/setgoal.png" class="workflow">
+    <a href="#" class="btn" id='name_goal_button'>Next Step</a>
   </div>
 </div>
