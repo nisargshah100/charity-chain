@@ -6,6 +6,7 @@ gem 'sorcery'
 gem 'money-rails'
 gem 'faraday'
 gem 'hashie'
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
 group :production do
   gem 'pg'
