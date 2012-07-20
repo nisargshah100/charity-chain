@@ -16,7 +16,7 @@ class ContributionsController < ApplicationController
   def create
     goal = Goal.find_by_token params[:goal_token]
     if goal && has_valid_params(params)
-      contribution = goal.process_contribution params
+      contribution = Contribution.process goal, params
       # TODO: make sure the stripe token was valid & the contribution was successfully created
       redirect_to contribution_path contribution
     elsif goal
