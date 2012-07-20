@@ -1,0 +1,55 @@
+  <% content_for :head do %>
+    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
+  <% end %>
+
+  <div class="navbar">
+    <div class="row">
+      <span class="logo">CharityStreak</span>
+    </div>
+  </div>
+  <div class="container">
+    <div class="contribution-info">
+      <div class="well contribution-well">
+        <div id="thank-you-message">Thank you very much for your contribution!</div>
+        <div id="payment-details">
+          <div class="charged-to">
+            <div class="label">Charged To</div>
+            <div class="value"><%= @contribution.name %></div>
+          </div>
+          <div class="card-number">
+            <div class="label">Credit card number</div>
+            <div class="value"><%= @payment.masked_number %></div>
+          </div>
+          <div class="card-type">
+            <div class="label">Credit card type</div>
+            <div class="value"><%= @payment.card_type %></div>
+          </div>
+          <div class="amount">
+            <div class="label">Amount</div>
+            <div class="value"><%= display_contribution_amount @contribution.amount %></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<style>
+  * {
+    padding: 0;
+    margin: 0;
+  }
+
+  html {
+    background: url(/assets/splash4.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    z-index: -1000;
+  }
+
+  body {
+    font-family: 'Century Gothic', sans-serif;
+  }
+</style>
