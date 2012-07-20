@@ -109,5 +109,35 @@
 
 .currency {
   font-size: 18px;
-/*  font-weight: bold;*/
+}
+
+#thank-you-message {
+  width: 100%;
+  font-size: 24px;
+  font-weight: bold;
+  padding-left: 78px;
+  padding-bottom: 20px;
+}
+
+#payment-details {
+  width: 100%;
+  padding-left: 78px;
+}
+
+.charged-to, .amount, .card-number, .card-type {
+  overflow: auto;
+  width: 100%;
+  padding-bottom: 8px;
+}
+
+.label {
+  color: $whale;
+  font-weight: bold;
+  float: left;
+  width: 50%;
+}
+
+.value {
+  float: right;
+  width: 50%;
 }

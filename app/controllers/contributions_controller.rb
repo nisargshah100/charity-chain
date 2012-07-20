@@ -10,6 +10,7 @@ class ContributionsController < ApplicationController
   def show
     @contribution = Contribution.find_by_token(params[:id])
     raise ActionController::RoutingError.new('Not Found') unless @contribution
+    @payment = @contribution.payment
   end
   
   def create

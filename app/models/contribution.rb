@@ -7,6 +7,7 @@ class Contribution < ActiveRecord::Base
   has_one :payment
   
   after_create :set_token
+  delegate :amount, to: :payment
   
   def to_param
     token
