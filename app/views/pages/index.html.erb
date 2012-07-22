@@ -3,14 +3,14 @@
     <link href='http://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
   <% end %>
 
-  <div class="navbar">
+<!--   <div class="navbar">
     <div class="row">
       <span class="logo">CharityStreak</span>
       <span class="user-info" style="font-weight:bold">
         <a id="signin_link" data-toggle="modal" href="#signin_modal">Sign In</a>
       </span>
     </div>
-  </div>
+  </div> -->
 
   <div class="modal hide" id="signin_modal">
     <div class="modal-header">
@@ -29,18 +29,54 @@
   </div>
 
   <div class="splash-container">
-    <p class="splash-text">A better you. A better us.</p>
-    <%= image_tag "charitychain.png", :class => "charity-image" %>
-    <div class="signup-form">
-      <div class="well signup-well">
-        <div class="pitch"><h2>CharityStreak's main motivation is to introduce new potential donors to donorschoose.org.</h2>
-        <h4>Our site is for people who likely aren't already donating to the charity, but are 
-        both interested in self-improvement and looking for something extra to motivate 
-        them down the path of betterment. We hope to see an increase in donors overall as
-        well as more people attaining their personal goals.</h4></div>
-        <div class="signup"><a id="signup_link" data-toggle="modal" href="#signup_modal" class="btn">Get Started</a></div>
+    <div class="row">
+      <div class="twocol"></div>
+      <div class="eightcol">
+        <p class="splash-text">charitystreak</p>
+        <p class="sub-headline">a better you. a better us.</p>
+      </div>
+      <div class="twocol last"></div>
+    </div>
+    <div class="row">
+      <div class="twocol"></div>
+      <div class="eightcol">
+        <div class="signup-form">
+          <div class="well signup-well">
+            <!-- <p class="splash-text show" id="charitystreak-text">a better you. a better us.</p> -->
+            <div class="pitch show"><h2>CharityStreak's main motivation is to introduce new potential donors to donorschoose.org.</h2>
+            <h4>Our site is for people who likely aren't already donating to the charity, but are 
+            both interested in self-improvement and looking for something extra to motivate 
+            them down the path of betterment. We hope to see an increase in donors overall as
+            well as more people attaining their personal goals.</h4></div>
+            <%= image_tag "placeholder.png", :class => "screengrab setgoal-screengrab hide" %>
+            <%= image_tag "emailplaceholder.png", :class => "screengrab getsponsored-screengrab hide" %>
+            <%= image_tag "checkinplaceholder.jpg", :class => "screengrab doit-screengrab hide" %>
+            <%= image_tag "donateplaceholder.jpeg", :class => "screengrab donate-screengrab hide" %>
+            <div class="signup"><a id="signup_link" data-toggle="modal" href="#signup_modal" class="btn">Get Started</a></div>
+          </div>
+        </div>
+        <div class="twocol last"></div>
       </div>
     </div>
+
+    <div class="signup-form">
+      <div class="row">
+        <div class="twocol"></div>
+        <div class="eightcol">
+          <div class="well icons-well">
+            <div>
+              <%= image_tag "splash_signup.png", :class => "charity-image", :id => "signup-image" %>
+              <%= image_tag "splash_setgoal.png", :class => "charity-image", :id => "setgoal-image" %>
+              <%= image_tag "splash_getsponsored.png", :class => "charity-image", :id => "getsponsored-image" %>
+              <%= image_tag "splash_doit.png", :class => "charity-image", :id => "doit-image" %>
+              <%= image_tag "splash_donate.png", :class => "charity-image", :id => "donate-image" %>
+            </div>
+          </div>
+        </div>
+        <div class="twocol last"></div>
+      </div>
+    </div>
+    
   </div>
   <div class="modal hide" id="signup_modal">
     <div class="modal-header">
@@ -110,6 +146,10 @@
     width: 350px;
     margin-bottom: -13px;
   }
+
+  .screengrab {
+    height: 200px;
+  }
 </style>
 
 <script type="text/javascript">
@@ -149,4 +189,44 @@
       }
     });
   });
+
+  $("#setgoal-image").hover(
+    function() {
+      $(".setgoal-screengrab").show();
+      $(".pitch").hide();
+    },
+     function() {
+      $(".setgoal-screengrab").hide();
+      $(".pitch").show();
+     });
+
+  $("#getsponsored-image").hover(
+    function() {
+      $(".getsponsored-screengrab").show();
+      $(".pitch").hide();
+    },
+     function() {
+      $(".getsponsored-screengrab").hide();
+      $(".pitch").show();
+     });
+
+  $("#doit-image").hover(
+    function() {
+      $(".doit-screengrab").show();
+      $(".pitch").hide();
+    },
+     function() {
+      $(".doit-screengrab").hide();
+      $(".pitch").show();
+     });
+
+  $("#donate-image").hover(
+    function() {
+      $(".donate-screengrab").show();
+      $(".pitch").hide();
+    },
+     function() {
+      $(".donate-screengrab").hide();
+      $(".pitch").show();
+     });
 </script>
