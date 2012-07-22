@@ -53,10 +53,10 @@
 .project-progress-well {
   background: lighten($endive, 12);
   overflow: auto;
-  margin-top:8px;
+  margin-bottom:8px;
   border: #DDD 3px solid;
   padding: 10px;
-  height:60px;
+  height:228px;
 }
 
 .progress {
@@ -114,7 +114,7 @@
 .project-info {
   display:block;
   text-align:left;
-  font-size: 20px;
+  font-size: 15px;
   padding: 10px;
 }
 
@@ -132,6 +132,14 @@
   height:315px;
   background: url('http://cdn.donorschoose.net/images/proposal/uploads/med/715000/715353/p715353_002_md.jpg') no-repeat;
   background-size: 420px;
+}
+
+.project-thumbnail {
+  background: url('http://cdn.donorschoose.net/images/proposal/uploads/small/715000/715353/p715353_001_sm.jpg') no-repeat;
+  width: 100px;
+  height: 100px;
+  margin-right: 10px;
+  float: left;
 }
 
 .underliner {

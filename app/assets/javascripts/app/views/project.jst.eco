@@ -1,27 +1,46 @@
 <div class="col-title-project">
   <img src="/assets/icons/glyphicons_266_flag.png" class="icon"/>
-  <span class="capitalize title">Project</span>
+  <span class="capitalize title">Projects</span>
 </div>
 <div class="col-content">
-  <div class="col-box">
-    <div class="project-image" style="background: url('<%= goal.project.imageURL %>')"></div>
-    <div class="project-title" style='cursor: pointer' onclick='location.href="<%= goal.project.proposalURL %>"'><%= goal.project.title %></div>
-  </div>
-  <div class="col-stats">
-    <div class="project-progress-well">
-      <div class="progress progress-striped">
-        <div class="bar" style="width: <%= goal.project.percentFunded %>%;"></div>
-      </div>
-      <div class="project-to-go-text"><span style="color:green">$<%= goal.project.costToComplete %></span> to go</div>
-    </div>
-    <div class="stat-well">
+    <div class="project-progress-well"  style="height:160px;">
       <div class="project-container">
+        <div class="project-thumbnail">
+        </div>
         <div class="project-info">
-          <p><%= goal.project.povertyLevel %></p>
+          <p>Instrumental Tuners for...</p>
           <p><%= goal.project.schoolName %></p>
           <p><%= goal.project.city %>, <%= goal.project.state %></p>
+          <p><a href="<%= goal.project.proposalURL %>">Learn more...</a></p>
         </div>
       </div>
+      <div class="progress progress-striped">
+        <div class="bar" style="width: <%= goal.project.percentFunded %>%;"><span class="project-to-go-text" style="font-size: 15px; color:black">$<%= goal.project.costToComplete %> to go</span></div>
+      </div>
     </div>
-  </div>
+    <div class="project-progress-well">
+      <div class="project-container">
+        <div class="project-thumbnail">
+        </div>
+        <div class="progress progress-striped" style="width: 200px; margin-top: 20px;">
+          <div class="bar" style="width: <%= goal.project.percentFunded %>%;"></div>
+        </div>
+        <div class="project-to-go-text"><span style="color:green">$<%= goal.project.costToComplete %></span> to go</div>
+
+        <div class="project-to-go-text"></div>
+      </div>
+      <div class="project-info">
+        <p><%= goal.project.title %></p>
+        <p><%= goal.project.schoolName %></p>
+        <p><%= goal.project.city %>, <%= goal.project.state %></p>
+      </div>
+    </div>
+
 </div>
+
+<style>
+  .project-container {
+    overflow: auto;
+    padding-bottom: 10px;
+  }
+</style>

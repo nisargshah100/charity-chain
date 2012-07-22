@@ -14,6 +14,8 @@
 //= require jquery_ujs
 //= require jquery-ui
 //= require bootstrap-modal.min
+//= require bootstrap-tooltip
+//= require bootstrap-popover
 //= require underscore.min
 //= require app
 //= require_tree .

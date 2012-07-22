@@ -10,12 +10,14 @@ class App.Controller.Wallets extends Spine.Controller
 
   render: =>
     @wallet_amount = goal.wallet_amount.split(".")[0]
+    @reserve_amount = goal.reserve_amount.split(".")[0]
     @sponsors_count = goal.sponsors.length
     @donation_total = goal.donation_total.split(".")[0]
     $("#wallet").html @view('wallet')(@)
 
     $(".modals").append @view('donation_modal')(@)
     $("#donation_modal").modal(show: false)
+    $('.reserve-amount').popover({placement:'top'})
 
     if @wallet_amount < 1
       $("#donate-button").addClass('disabled-button').attr('disabled', 'disabled');

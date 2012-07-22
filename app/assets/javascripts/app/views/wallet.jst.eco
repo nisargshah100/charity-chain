@@ -5,6 +5,7 @@
 <div class="col-content">
   <div class="col-box">
     <div class="dollar-sign" style="float:left; padding-left:10px; position:absolute; left: 20px; top: 20px; font-size: 50px; font-family: impact;">$</div>
+    <div class="reserve-amount" rel="popover" data-content="Spread the word to your friends and family and have them donate through your personal link!" data-original-title="Your reserve is empty..." style="padding-left:10px; position:absolute; right: 20px; top: 40px; font-size: 35px; font-family: impact;">/ $<%= @reserve_amount %></div>
     <div class="day-count" id='dollars-earned'><%= @wallet_amount %></div>
     <span class="day-label capitalize">earned</span>
   </div>
