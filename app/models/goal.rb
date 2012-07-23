@@ -29,7 +29,7 @@ class Goal < ActiveRecord::Base
 
     dates.each do |date|
       unless checkins.include?(date)
-        streaks << streak 
+        streaks << streak if streaks > 0
         streak = 0
       else
         streak += 1
@@ -37,7 +37,6 @@ class Goal < ActiveRecord::Base
     end
 
     streaks << streak
-    streaks.select { |x| x != 0 } if streaks.length > 1
   end
 
   def checked_in_today?
