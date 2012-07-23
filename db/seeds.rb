@@ -14,11 +14,12 @@ Goal.destroy_all
 Scheduler.destroy_all
 Contribution.destroy_all
 Payment.destroy_all
+CheckIn.destroy_all
 
 require 'timecop'
 require 'faker'
 
-Timecop.travel(15.days.ago)
+Timecop.travel(25.days.ago)
 test_user = User.create email: "tester@lsqa.net",
                         password: "password"
 goal      = test_user.goals.create name: "Walk a mile a day"
@@ -40,9 +41,16 @@ schedule  = Scheduler.create goal: goal,
   goal.add_to_reserve_amount payment.amount
 end
 
-14.times do
+15.times do
+  goal.check_ins.create date: Time.now
   Timecop.travel(1.day.from_now)
-  # check-in
+end
+
+Timecop.travel(5.days.from_now)   # took 5 days off
+
+5.times do
+  goal.check_ins.create date: Time.now
+  Timecop.travel(1.day.from_now)
 end
 
 Timecop.return
