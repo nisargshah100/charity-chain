@@ -4,9 +4,9 @@
   </div>
   <div class="modal-body">
     <form id='schedule_goal_form'>
-      <h6 style="padding-top: 10px; opacity: 0.6">Share this link and get sponsored.</h6>
+      <h6 style="padding-top: 10px; opacity: 0.6">Share this link on twitter, facebook and/or email and get sponsored.</h6>
         <br />
-        http:www.charitystreak.org/mygoalisawesome/sponsorit
+          <input type='text' id='contribute_link'></input>
       </p>
     </form>
   </div>
