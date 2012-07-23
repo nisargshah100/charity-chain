@@ -1,10 +1,10 @@
 module StripeHelper
   def self.process_transaction params
     charge = Stripe::Charge.create(
-      :amount => (params[:amount].to_i * 100), # convert dollars passed in from form to cents
+      :amount => (params["amount"].to_i * 100), # convert dollars passed in from form to cents
       :currency => "usd",
-      :card => params[:stripe_token],
-      :description => params[:transaction_description]
+      :card => params["stripe_token"],
+      :description => params["transaction_description"]
     )
     if successful_charge?(charge)
       charge
