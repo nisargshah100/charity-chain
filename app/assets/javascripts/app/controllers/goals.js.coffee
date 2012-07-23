@@ -11,10 +11,14 @@ class App.Controller.Goals_New extends Spine.Controller
 
     $("td").live('click', @toggle_day)
     App.Goal.bind('refresh', @fetched)
+    App.Goal.bind('goal-selected', @displayURL)
 
   fetched: =>
     # @show()
     @show() if App.Goal.all().length == 0
+
+  displayURL: =>
+    $("#contribute_link").val(goal.contribute_url);
 
   render: ->
     $(".dialogs").append @view('goals/new')(@)
@@ -38,7 +42,6 @@ class App.Controller.Goals_New extends Spine.Controller
 
   show_sponsor_modal: =>
     @save()
-    $("#contribute_link").val(goal.contribute_url);
     $("#review_goal_modal").modal('hide');
     $("#sponsor_goal_modal").modal('show');
 
