@@ -17,14 +17,6 @@
             <div class="label">Charged To</div>
             <div class="value"><%= @contribution.name %></div>
           </div>
-          <div class="card-number">
-            <div class="label">Credit card number</div>
-            <div class="value"><%= @payment.masked_number %></div>
-          </div>
-          <div class="card-type">
-            <div class="label">Credit card type</div>
-            <div class="value"><%= @payment.card_type %></div>
-          </div>
           <div class="amount">
             <div class="label">Amount</div>
             <div class="value"><%= display_contribution_amount @contribution.amount %></div>
