@@ -24,9 +24,8 @@
           <div class="count-stat"><%= @sponsors_count %></div>
         </div>
       </div>
-      <div>
-        Historic Donations: <%= @donation_total %>
-      </div>
+      <%- render_partial "add_this" %>
+        
     </div>
   </div>
 </div>
