@@ -24,6 +24,8 @@ group :test, :development do
   gem 'sqlite3'
   gem 'yard'
   gem 'redcarpet'
+  gem 'timecop'
+  gem 'faker'
 end
 
 gem 'jquery-rails'
