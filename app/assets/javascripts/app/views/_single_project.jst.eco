@@ -14,6 +14,6 @@
         <div class="bar" style="width: <%= @project.percentFunded %>%;"><span class="project-to-go-text" style="font-size: 15px; color:black">$<%= @project.costToComplete %> to go</span></div>
       </div>
     </div>
-    <p><button class='donate-button-small'>Donate It!</button></p>
+    <p><button class='donate-button-small' data-id='<%= @project.id %>'>Donate It!</button></p>
   </div>
 </div>

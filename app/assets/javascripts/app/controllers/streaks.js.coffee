@@ -13,7 +13,7 @@ class App.Controller.Streaks extends Spine.Controller
     $("#streak").html @view('streak')(@)
     $("#streak-stats").hover(=> $("#streak-stats").html @view('milestone')(@))
 
-    if goal.checked_in_today
+    unless goal.can_check_in
       $("#check-in-button").addClass('disabled-button').attr('disabled', true);
 
   computeStats: ->
@@ -36,6 +36,4 @@ class App.Controller.Streaks extends Spine.Controller
 
   updateStreak: (btn) ->
     $("#streak-length").fadeOut(200, -> $(this).html(@current_streak)).fadeIn(200);
-    $("#dollars-earned").fadeOut(200, -> $(this).html("91")).fadeIn(200);
-    $("#longest-streak-length").html(@longest_streak);
     $("#check-in-button").addClass('disabled-button').attr('disabled', true);

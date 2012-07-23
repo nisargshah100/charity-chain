@@ -11,8 +11,9 @@
         <div class="project-container">
           <div class="modal-project-info">
             <p class="lighten">You are supporting: </p>
-            <p>Learning Center - Linlee</p>
-            <p>Lexington, KY</p>         
+            <p id="project-title"></p>
+            <p id="project-school"></p>
+            <p id="project-location"></p>
           </div>
 
           <form method='post'>
@@ -20,7 +21,7 @@
             <input type="range" id='donate-amount' min="1" step="1" onchange="showValue(this.value)" />
             <span id='range-value'></span>
 
-            <input type="hidden" id="donate-project" name="donate-project" value='1' />
+            <input type="hidden" id="donate-project-id" name="donate-project" value='' />
           </form>
         </div>
       </div>

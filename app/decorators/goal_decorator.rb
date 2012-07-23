@@ -6,7 +6,7 @@ class GoalDecorator < Draper::Base
       :id => model.id,
       :name => model.name, 
       :streaks => model.streaks,
-      :checked_in_today => model.checked_in_today?,
+      :can_check_in => model.can_check_in?,
       :wallet_amount => model.wallet.amount.to_s,
       :reserve_amount => model.reserve.amount.to_s,
       :sponsors => model.sponsors,

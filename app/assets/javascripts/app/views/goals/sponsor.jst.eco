@@ -12,6 +12,6 @@
   </div>
   <div class="modal-footer">
     <img src="/assets/sponsor.png" class="workflow">
-    <a href="#" class="btn" id='thanks_btn'>Thanks</a>
+    <a href="#" class="btn" id='thanks_btn'>Start Tracking</a>
   </div>
 </div>
