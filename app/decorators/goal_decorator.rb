@@ -11,7 +11,8 @@ class GoalDecorator < Draper::Base
       :reserve_amount => model.reserve.amount.to_s,
       :sponsors => model.sponsors,
       :donation_total => model.donation_total.to_s,
-      :project => Project.fetch(3).map { |p| JSON.parse(p.data) }
+      :project => Project.fetch(3).map { |p| JSON.parse(p.data)},
+      :contribute_url => h.contributions_url(token: model.token)
     }
   end
 end

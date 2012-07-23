@@ -38,6 +38,7 @@ class App.Controller.Goals_New extends Spine.Controller
 
   show_sponsor_modal: =>
     @save()
+    $("#contribute_link").val(goal.contribute_url);
     $("#review_goal_modal").modal('hide');
     $("#sponsor_goal_modal").modal('show');
 
