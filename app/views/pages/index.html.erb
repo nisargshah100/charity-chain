@@ -33,17 +33,31 @@
       <div class="eightcol">
         <div class="signup-form">
           <div class="well signup-well">
-            <!-- <p class="splash-text show" id="charitystreak-text">a better you. a better us.</p> -->
-            <div class="pitch show"><h2>CharityStreak's main motivation is to introduce new potential donors to donorschoose.org.</h2>
-            <h4>Our site is for people who likely aren't already donating to the charity, but are 
-            both interested in self-improvement and looking for something extra to motivate 
-            them down the path of betterment. We hope to see an increase in donors overall as
-            well as more people attaining their personal goals.</h4></div>
-            <%= image_tag "placeholder.png", :class => "screengrab setgoal-screengrab hide" %>
-            <%= image_tag "emailplaceholder.png", :class => "screengrab getsponsored-screengrab hide" %>
-            <%= image_tag "checkinplaceholder.jpg", :class => "screengrab doit-screengrab hide" %>
-            <%= image_tag "donateplaceholder.jpeg", :class => "screengrab donate-screengrab hide" %>
-            <div class="signup"><a id="signup_link" data-toggle="modal" href="#signup_modal" class="btn">Get Started</a></div>
+            <div class="left-well">
+              <div class="pitch show"><h2>We help create good habbits & drive donations.</h2>
+              <h4>CharityStreak is for people who likely aren't already donating to the charity, but are 
+              both interested in self-improvement and looking for something extra to motivate 
+              them down the path of betterment. We hope to see an increase in donors overall as
+              well as more people attaining their personal goals.</h4></div>
+              <div><%= image_tag "placeholder.png", :class => "screengrab setgoal-screengrab hide" %></div>
+              <div><%= image_tag "emailplaceholder.png", :class => "screengrab getsponsored-screengrab hide" %></div>
+              <div><%= image_tag "checkinplaceholder.jpg", :class => "screengrab doit-screengrab hide" %></div>
+              <div><%= image_tag "donateplaceholder.jpeg", :class => "screengrab donate-screengrab hide" %></div>
+            </div>
+            <div class="right-well">
+              <ul class="signup-signin sixcol">
+                <div class="setgoal-text setgoal-screengrab hide"><h1>Set Goal</h1><br/><h4>First things first, you'll want to set yourself up with a goal. Like, drink 8oz of water a day. Tracking your goals on a daily basis will help turn them into a habbit!</h4></div>
+                <div class="setgoal-text getsponsored-screengrab hide"><h1>Get Sponsored</h1><br/><h4>Once you've got your goal set up, you'll need people to sponsor you.  Maybe your mom wants to help you quit somking, so she puts $50 in your reserve account.  You'll need to send out the unique link via email, Facebook or Twitter to get your loved ones involved in making a better you AND a better community.</h4></div>
+                <div class="setgoal-text doit-screengrab hide"><h1>Do It</h1><br/><h4>So you've got your goal, and everyone you know sponsored you for millions.  Now it's time to follow through.  Every day that you're scheduled to participate in your goal, you'll get an email from us asking if you've done it or not.  Simply check in when you've done the deed, and watch the money roll in!  The more days in a row you check in, the more money you'll unlock to donate.</h4></div>
+                <div class="setgoal-text donate-screengrab hide"><h1>Donate</h1><br/><h4>It's been a while. You've unlocked tons of money.  Now, it's time to give back.  Every day, we'll show several projects that you can complete with the amount of money in your wallet.  If you have a specific goal in mind, pop in the direct URL and you can donate to that one.</h4></div>
+                <li class="horizontal first">
+                  <a id="signin_link" data-toggle="modal" href="#signin_modal">Sign In</a>
+                </li>
+                <li class="horizontal">
+                  <a id="signup_link" data-toggle="modal" href="#signup_modal" class="btn">Get Started</a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
         <div class="twocol last"></div>
@@ -62,15 +76,14 @@
               <%= image_tag "splash_doit.png", :class => "charity-image", :id => "doit-image" %>
               <%= image_tag "splash_donate.png", :class => "charity-image", :id => "donate-image" %>
             </div>
+            <h6 id="hover-icon-text">*hover over icons for more details</h6>
           </div>
         </div>
         <div class="twocol last"></div>
       </div>
     </div>
 
-    <span class="user-info" style="font-weight:bold">
-      <a id="signin_link" data-toggle="modal" href="#signin_modal">Sign In</a>
-    </span>
+    
     
   </div>
   <div class="modal hide" id="signup_modal">
@@ -129,6 +142,44 @@
     padding-bottom: 8px;
   }
 
+  .signup-signin {
+    margin-top: 90px;
+    margin-left: 400px;
+    position: absolute;
+    bottom: 15px;
+    right: -50px;
+  }
+
+  .setgoal-text {
+    text-align: left;
+    position:absolute;
+    top: -250px;
+    left: -70px;
+    width: 375px;
+    color: #393E21;
+  }
+
+  .horizontal { 
+    display: inline; 
+    border-left: 1px solid; 
+    padding-left: 15px;
+  }
+
+  #hover-icon-text {
+    margin-top: 6px;
+    text-align: left;
+    position:absolute;
+    left: 55px;
+    top: 175px;
+    opacity: 0.6;
+  }
+
+  .first { 
+    border-left: none; 
+    padding-left: 0; 
+    margin-right: -200px;
+  }
+
   #password_confirmation {
     font-size: 10px;
     color: #262626;
@@ -143,7 +194,9 @@
   }
 
   .screengrab {
-    height: 200px;
+    height: 250px;
+    width: 250px;
+    float:left;
   }
 </style>
 
