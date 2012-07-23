@@ -11,7 +11,7 @@ class GoalDecorator < Draper::Base
       :reserve_amount => model.reserve.amount.to_s,
       :sponsors => model.sponsors,
       :donation_total => model.donation_total.to_s,
-      :project => JSON.parse(Project.fetch(3))
+      :project => Project.fetch(3).map { |p| JSON.parse(p.data) }
     }
   end
 end
