@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120719233154) do
+ActiveRecord::Schema.define(:version => 20120723135157) do
 
   create_table "check_ins", :force => true do |t|
     t.integer  "goal_id"
@@ -62,8 +62,9 @@ ActiveRecord::Schema.define(:version => 20120719233154) do
     t.integer  "external_id"
     t.integer  "external_source"
     t.text     "data"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
+    t.boolean  "active",          :default => true
   end
 
   create_table "reserves", :force => true do |t|
