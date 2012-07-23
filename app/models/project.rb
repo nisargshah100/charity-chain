@@ -13,5 +13,9 @@ class Project < ActiveRecord::Base
     where(:active => true)
   end
 
+  def self.fetch(limit=1)
+    active.order("RANDOM()").limit(limit)
+  end
+
   has_many :donations
 end
