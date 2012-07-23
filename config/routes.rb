@@ -1,5 +1,8 @@
-CharityChain::Application.routes.draw do
+require 'resque/server'
 
+CharityChain::Application.routes.draw do
+  mount Resque::Server, :at => "/resque"
+  
   namespace :api do
     namespace :v1 do
       resources :goals, only: [:create, :index]
