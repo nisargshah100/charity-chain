@@ -5,19 +5,17 @@
 <div class="col-content">
   <div class="col-box">
     <div class="dollar-sign" style="float:left; padding-left:10px; position:absolute; left: 20px; top: 20px; font-size: 50px; font-family: impact;">$</div>
-    <div class="reserve-amount" rel="popover" data-content="Spread the word to your friends and family and have them donate through your personal link!" data-original-title="Your reserve is empty..." style="padding-left:10px; position:absolute; right: 20px; top: 40px; font-size: 35px; font-family: impact;">/ $<%= @reserve_amount %></div>
     <div class="day-count" id='dollars-earned'><%= @wallet_amount %></div>
     <span class="day-label capitalize">earned</span>
-  </div>
-  <div class="button-container">
-    <button id='donate-button'>Donate It!</button>
   </div>
   <div class="col-stats">
     <div class="stat-well">
       <div class="stat-wrapper">
-        <span class="stat-title">Total</span>
-        <div class="stat-two">
-          <div class="count-stat">$<%= @donation_total %></div>
+        <div class="reserve-amount" rel="popover" data-content="Spread the word to your friends and family and have them donate through your personal link below!" data-original-title="Your reserve is empty...">
+          <span class="stat-title">Reserve</span>
+          <div class="stat-two">
+            <div class="count-stat">$<%= @reserve_amount %></div>
+          </div>
         </div>
       </div>
       <div class="stat-wrapper">
@@ -25,6 +23,9 @@
         <div class="stat-two" style="border-left:1px solid">
           <div class="count-stat"><%= @sponsors_count %></div>
         </div>
+      </div>
+      <div>
+        Historic Donations: <%= @donation_total %>
       </div>
     </div>
   </div>

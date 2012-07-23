@@ -56,7 +56,7 @@
   margin-bottom:8px;
   border: #DDD 3px solid;
   padding: 10px;
-  height:228px;
+  height:170px;
 }
 
 .progress {
@@ -74,8 +74,6 @@
   height: 25px;
   line-height: 25px;
   overflow-x: auto;
-  width: 100%;
-  margin-bottom:10px;
 }
 
 .bar {
@@ -115,7 +113,7 @@
   display:block;
   text-align:left;
   font-size: 15px;
-  padding: 10px;
+  padding: 0px 10px;
 }
 
 .project-title {
@@ -135,11 +133,11 @@
 }
 
 .project-thumbnail {
-  background: url('http://cdn.donorschoose.net/images/proposal/uploads/small/715000/715353/p715353_001_sm.jpg') no-repeat;
   width: 100px;
   height: 100px;
   margin-right: 10px;
   float: left;
+  margin-bottom: 5px;
 }
 
 .underliner {

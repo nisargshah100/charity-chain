@@ -11,8 +11,7 @@
     <button id='check-in-button' class=''>+1 Day</button>
   </div>
   <div class="col-stats">
-    <div class="stat-well">
-
+    <div class="stat-well" id="streak-stats">
       <div class="stat-wrapper">
         <span class="stat-title">Longest</span>
         <div class="stat-two">

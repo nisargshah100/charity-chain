@@ -1,0 +1,19 @@
+<div class="project-progress-well">
+  <div class="project-container">
+    <div class="project-info" style="padding-left: 0px;">
+      <h3 class="truncate-header"><a class="header-link" href="<%= @project.proposalURL %>"><%= @project.title %></a></h3>
+    </div>
+    <div class="project-thumbnail">
+      <img src="<%= @project.imageURL %>" alt="project-image"/>
+    </div>
+    <div class="project-info">
+      <p class="truncate"><%= @project.schoolName %></p>
+      <p class="truncate"><%= @project.city %>, <%= @project.state %></p>
+      <p class="truncate"><a href="<%= @project.proposalURL %>">Learn more...</a></p>
+      <div class="progress progress-striped">
+        <div class="bar" style="width: <%= @project.percentFunded %>%;"><span class="project-to-go-text" style="font-size: 15px; color:black">$<%= @project.costToComplete %> to go</span></div>
+      </div>
+    </div>
+    <p><button class='donate-button-small'>Donate It!</button></p>
+  </div>
+</div>

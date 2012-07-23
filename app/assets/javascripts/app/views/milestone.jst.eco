@@ -1,0 +1,9 @@
+<div class="milestone" style="height: 121px; padding: 0px 10px;">
+  <div style="padding-top:10px;">
+    <span class="stat-title">Next Milestone</span>
+    <div class="progress progress-striped">
+      <div class="bar" style="width: <%= goal.project.percentFunded %>%;"><span class="project-to-go-text" style="font-size: 15px; color:black">10 days to go</span></div>
+    </div>
+  </div>
+</div>
+

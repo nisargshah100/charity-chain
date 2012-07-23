@@ -3,44 +3,42 @@
   <span class="capitalize title">Projects</span>
 </div>
 <div class="col-content">
-    <div class="project-progress-well"  style="height:160px;">
-      <div class="project-container">
-        <div class="project-thumbnail">
-        </div>
-        <div class="project-info">
-          <p>Instrumental Tuners for...</p>
-          <p><%= goal.project.schoolName %></p>
-          <p><%= goal.project.city %>, <%= goal.project.state %></p>
-          <p><a href="<%= goal.project.proposalURL %>">Learn more...</a></p>
-        </div>
-      </div>
-      <div class="progress progress-striped">
-        <div class="bar" style="width: <%= goal.project.percentFunded %>%;"><span class="project-to-go-text" style="font-size: 15px; color:black">$<%= goal.project.costToComplete %> to go</span></div>
-      </div>
-    </div>
-    <div class="project-progress-well">
-      <div class="project-container">
-        <div class="project-thumbnail">
-        </div>
-        <div class="progress progress-striped" style="width: 200px; margin-top: 20px;">
-          <div class="bar" style="width: <%= goal.project.percentFunded %>%;"></div>
-        </div>
-        <div class="project-to-go-text"><span style="color:green">$<%= goal.project.costToComplete %></span> to go</div>
-
-        <div class="project-to-go-text"></div>
-      </div>
-      <div class="project-info">
-        <p><%= goal.project.title %></p>
-        <p><%= goal.project.schoolName %></p>
-        <p><%= goal.project.city %>, <%= goal.project.state %></p>
-      </div>
-    </div>
-
+  <%- render_partial "single_project", project: goal.project[0] %>
+  <%- render_partial "single_project", project: goal.project[1] %>
+  <%- render_partial "single_project", project: goal.project[2] %>
 </div>
 
 <style>
-  .project-container {
-    overflow: auto;
-    padding-bottom: 10px;
+  .truncate {
+    width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #666;
+  }
+
+  .truncate-header {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-bottom:5px;
+  }
+
+  .donate-button-small {
+    width: 100%;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-family: 'Century Gothic', sans-serif;
+    margin-top: 7px;
+  }
+
+  .progress {
+    margin-top: 10px;
+  }
+
+  .header-link {
+    color:black;
+    text-decoration:none;
   }
 </style>
