@@ -1,13 +1,13 @@
 <div class="modal hide" id="donation_modal" style='width: 35%; left: 40%;'>
   <div class="modal-header">
-    <h3>Donate</h3>
+    <h3>Donate!</h3>
   </div>
   <div class="modal-body">
     <div class="modal-content row">
-      <div class="sevencol">
-        <div class="project-image"></div>
+      <div class="fivecol">
+        <div class="project-image"><img src="" id='project-image-tag'></img></div>
       </div>
-      <div class="fivecol last">
+      <div class="sevencol last">
         <div class="project-container">
           <div class="modal-project-info">
             <p class="lighten">You are supporting: </p>
@@ -42,6 +42,7 @@
   p.lighten {
     color: #AAA;
     font-size: 15px;
+    margin-bottom:10px;
   }
 
   .modal-form {
@@ -71,11 +72,18 @@
   }
 
   #donate-amount {
-    width: 100px;
+    width: 150px;
   }
 
   .span-leader {
     font-size: 30px;
     padding-right: 10px;
+  }
+
+  .project-image img {
+    width:225px;
+    border:3px;
+    border-style:solid;
+    border-color:#DDD;
   }
 </style>

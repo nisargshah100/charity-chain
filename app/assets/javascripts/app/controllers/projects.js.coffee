@@ -24,6 +24,7 @@ class App.Controller.Projects extends Spine.Controller
     $('#project-school').html(@project.schoolName)
     $('#project-location').html("#{@project.city}, #{@project.state}")
     $("#donate-project-id").val(@id)
+    $("#project-image-tag").attr('src', @project.imageURL)
 
   createDonation: =>
     $.ajax {
