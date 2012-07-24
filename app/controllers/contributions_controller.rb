@@ -1,8 +1,13 @@
 class ContributionsController < ApplicationController
   def index
-    goal = Goal.find_by_token params[:id]
-    if goal
-      @goal_token = goal.token
+    @goal = Goal.find_by_token params[:id]
+    if @goal
+      @user_name = @goal.user.name
+      @project_title = "Midsummer Madness!  Plays for everyone!"
+      @project_school_name = "Robert E. Lee High School"
+      @project_city = "Springfield"
+      @project_state = "VA"
+      @project_proposal_url = "http://www.livingsocial.com"
     else
       redirect_to root_path
     end
