@@ -16,7 +16,9 @@ class App.Controller.Projects extends Spine.Controller
     @id = $(this).data('id')
     @project = App.Project.find(@id)
 
-    $("#donate-amount").attr('max', @amount).attr('value', @amount)
+    # $("#donate-amount").attr('max', @amount).attr('value', @amount)
+    $(".slider").slider("option", "max", @amount).slider("option", "value", @amount);
+
     $("#range-value").text("$#{@amount}")
     $("#donation_modal").modal('show')
 
@@ -35,7 +37,7 @@ class App.Controller.Projects extends Spine.Controller
         donation: {
           goal_id: goal.id,
           project_id: $("#donate-project-id").val(),
-          amount: $("#donate-amount").val()
+          amount: $(".slider").slider('option', 'value')
         }
       },
       success: (data) =>

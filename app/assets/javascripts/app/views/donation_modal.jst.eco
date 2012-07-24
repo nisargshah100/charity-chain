@@ -43,8 +43,8 @@
     $('.slider').slider({
       animate: true,
       range: "min",
-      min: 0,
-      max: 100,
+      min: 1,
+      max: 1,
 
      //this updates the hidden form field so we can submit the data using a form
      slide: function(event, ui) {
