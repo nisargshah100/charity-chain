@@ -12,18 +12,28 @@
   </div>
   <div class="col-stats">
     <div class="stat-well" id="streak-stats">
-      <div class="stat-wrapper">
-        <span class="stat-title">Longest</span>
-        <div class="stat-two">
-          <div class="day-count-stat" id='longest-streak-length'><%= @longest_streak %></div>
-          <span class="day-label-stat capitalize">days</span>
+      <div class="centered">
+        <div class="stat-wrapper">
+          <span class="stat-title">Longest</span>
+          <div class="stat-two">
+            <div class="day-count-stat" id='longest-streak-length'><%= @longest_streak %></div>
+            <span class="day-label-stat capitalize">days</span>
+          </div>
         </div>
-      </div>
-      <div class="stat-wrapper">
-        <span class="stat-title">Average</span>
-        <div class="stat-two" style="border-left:1px solid">
-          <div class="day-count-stat"><%= @average_streak %></div>
-          <span class="day-label-stat capitalize">days</span>
+        <div class="stat-wrapper">
+          <span class="stat-title">Average</span>
+          <div class="stat-two" style="border-left:1px solid">
+            <div class="day-count-stat"><%= @average_streak %></div>
+            <span class="day-label-stat capitalize">days</span>
+          </div>
+        </div>
+
+        <div class="milestone">
+          <span class="stat-title">Next Milestone</span>
+          <div class="progress progress-striped">
+            <span class="project-to-go-text" style="font-size: 15px; color:black; float: left;">10 days to go</span>
+            <div class="bar" style="width: <%= goal.project.percentFunded %>%;"></div>
+          </div>
         </div>
       </div>
     </div>

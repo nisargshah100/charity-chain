@@ -100,7 +100,6 @@
   overflow: auto;
   margin-top:15px;
   border: #DDD 3px solid;
-  padding-left:5px;
 }
 
 .goal-title {
@@ -208,6 +207,7 @@
 .day-count{
   font-size:200px;
   font-family:'impact';
+  line-height:1.25em;
 }
 
 .day-label{
@@ -225,6 +225,7 @@
   line-height:20px;
   color: #222;
   padding-bottom:20px;
+  width: 50%;
 }
 
 .stat-title {
@@ -235,7 +236,6 @@
 }
 
 .stat-two {
-  width: 160px;
   height: 50px;
 }
 
@@ -253,7 +253,7 @@
 }
 
 .button-container{
-  padding-top:10px;
+  padding-top:15px;
 }
 
 button {
@@ -344,6 +344,23 @@ button {
   }
 }
 
-#contribute_link {
-  width: 97%;
+a.addthis {
+  margin-right: 10px;
+}
+
+.contribution-link {
+  margin-top: 10px;
+  width: 283px;
+  margin-bottom: 20px !important;
+}
+
+.social-container {
+  text-align: center;
+  margin: 0 auto;
+  width: 90%;
+  min-height: 258px;
+}
+
+#streak-stats {
+  height: 200px;
 }

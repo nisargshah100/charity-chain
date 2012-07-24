@@ -11,7 +11,6 @@ class App.Controller.Streaks extends Spine.Controller
   render: =>
     @computeStats()
     $("#streak").html @view('streak')(@)
-    $("#streak-stats").hover(=> $("#streak-stats").html @view('milestone')(@))
 
     unless goal.can_check_in
       $("#check-in-button").addClass('disabled-button').attr('disabled', true);

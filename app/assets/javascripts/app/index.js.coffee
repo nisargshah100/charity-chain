@@ -27,6 +27,7 @@ class App extends Spine.Controller
     @append(new App.Controller.Wallets)
     @append(new App.Controller.Projects)
     @append(new App.Controller.Goals)
+    @append(new App.Controller.ContributionLink)
     
     Spine.Route.setup()  
 
