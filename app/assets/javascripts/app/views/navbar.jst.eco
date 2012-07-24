@@ -3,7 +3,7 @@
   <span class="user-info">
     <%= @user_email %>
     <span>
-      <a href="#"><img src="/assets/icons/glyphicons_352_nameplate.png" alt="icon" class="icon" id="settings_gear"/></a>
+      | <a href="#" id="signout_link"style="color:#FFF; text-decoration:none;">sign out</a>
       <div class="dropdown-menu" id="user_menu" style="display: none">
         <div><a href="#" id="signout_link">Sign out</a></div>
       </div>

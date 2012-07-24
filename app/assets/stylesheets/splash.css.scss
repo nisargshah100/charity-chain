@@ -1,5 +1,5 @@
 #signin_link {
-  @include button('shiny', #262626);
+  @include button('shiny');
   text-decoration: none;
   margin-right: 210px;
   font-size: 20px;
@@ -47,6 +47,12 @@
 
 .charity-image:hover{
   opacity: 1;
+  height: 135px;
+}
+
+.charity-image-default {
+  opacity: 1;
+  height: 135px;
 }
 
 .pitch {
