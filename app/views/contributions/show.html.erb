@@ -11,15 +11,22 @@
   <div class="container">
     <div class="contribution-info">
       <div class="well contribution-well">
-        <div id="thank-you-message">Thank you very much for your contribution!</div>
-        <div id="payment-details">
-          <div class="charged-to">
-            <div class="label">Charged To</div>
-            <div class="value"><%= @contribution.name %></div>
+        
+        <div id="thank-you-header" class="contribution-cell">Thank you for your contribution!</div>
+        <div id="thank-you-body" class="contribution-cell">Your generous contribution will help children in every community have the tools and experiences needed for an excellent education.</div>
+        <div id="contributed-text" class="contribution-cell">
+          <div id="project-picture">
+            <%= image_tag 'sample_project2.jpeg' %>
           </div>
-          <div class="amount">
-            <div class="label">Amount</div>
-            <div class="value"><%= display_contribution_amount @contribution.amount %></div>
+          <div id="payment-details">
+            <div class="charged-to">
+              <div class="label">Charged To</div>
+              <div class="value"><%= @contribution.name %></div>
+            </div>
+            <div class="amount">
+              <div class="label">Amount</div>
+              <div class="value"><%= display_contribution_amount @contribution.amount %></div>
+            </div>
           </div>
         </div>
       </div>
