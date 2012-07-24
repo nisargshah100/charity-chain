@@ -51,16 +51,6 @@ class App.Controller.Goals_New extends Spine.Controller
     
     $('#days-text').text(dayText)
     
-  # refreshScheduleText: =>
-  #   # only weekends
-  #   # only weekdays
-  #   # every day
-  #   # no days
-  #   # else, just the days
-  #   
-  #   # determine which elements are selected
-  #   console.log("changed day")
-    
   hide_all_modals: =>
     $("#sponsor_goal_modal").modal('hide');
 
