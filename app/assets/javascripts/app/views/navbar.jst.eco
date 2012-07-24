@@ -3,9 +3,8 @@
   <span class="user-info">
     <%= @user_email %>
     <span>
-      <a href="#"><img src="/assets/icons/glyphicons_019_cogwheel.png" alt="icon" class="icon" id="settings_gear"/></a>
+      <a href="#"><img src="/assets/icons/glyphicons_352_nameplate.png" alt="icon" class="icon" id="settings_gear"/></a>
       <div class="dropdown-menu" id="user_menu" style="display: none">
-        <div><a href="#" id="edit_profile">Edit profile</a></div>
         <div><a href="#" id="signout_link">Sign out</a></div>
       </div>
     </span>
