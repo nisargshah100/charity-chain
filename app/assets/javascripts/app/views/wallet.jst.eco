@@ -1,10 +1,10 @@
 <div class="col-title-wallet">
-  <img src="/assets/icons/glyphicons_325_wallet.png" class="icon"/>
+  <img src="/assets/icons/glyphicons_267_credit_card.png" class="icon"/>
   <span class="capitalize title">Wallet</span>
 </div>
 <div class="col-content">
   <div class="col-box">
-    <div class="dollar-sign" style="float:left; padding-left:10px; position:absolute; left: 20px; top: 20px; font-size: 50px; font-family: impact;">$</div>
+    <div class="dollar-sign" style="float:left; padding-left:10px; position:absolute; left: 20px; top: 20px; font-size: 50px; font-family: impact; opacity: 0.4;">$</div>
     <div class="day-count" id='dollars-earned'><%= @wallet_amount %></div>
     <span class="day-label capitalize">earned</span>
   </div>

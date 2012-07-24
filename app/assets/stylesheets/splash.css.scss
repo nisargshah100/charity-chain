@@ -1,13 +1,14 @@
 #signin_link {
-  color: $goldfish;
+  @include button('shiny', #262626);
   text-decoration: none;
   margin-right: 210px;
-  font-weight: bold;
+  font-size: 20px;
+  opacity: 0.7;
 }
 
 #signup_link {
   @include button('shiny', $lilypad);
-  font-size: 24px;
+  font-size: 20px;
 }
 
 .splash-text {
@@ -41,7 +42,11 @@
   float: left;
   margin: 12px 12px -15px 12px;
   text-align: center;
+  opacity: 0.6;
+}
 
+.charity-image:hover{
+  opacity: 1;
 }
 
 .pitch {
