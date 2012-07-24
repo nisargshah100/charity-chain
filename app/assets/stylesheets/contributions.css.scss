@@ -117,8 +117,8 @@
 }
 
 .contribution-cell {
-  width: 80%;
-  padding: 0 10% 0 10%;
+  width: 90%;
+  padding: 0 5% 0 5%;
 }
 
 #thank-you-header {
@@ -160,15 +160,12 @@
   color: $whale;
   font-weight: bold;
   float: left;
-  width: 50%;
+  width: 40%;
 }
 
 .value {
   float: right;
-  width: 50%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  width: 60%;
 }
 
 #project-info {
