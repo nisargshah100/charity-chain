@@ -28,10 +28,9 @@
           </div>
         </div>
         <% if @milestone: %>
-          <div class="milestone">
-            <img src="/assets/icons/glyphicons_074_cup.png" class="icon"/>
-            <span class="stat-title">Next Milestone</span>
-            <div class="progress progress-striped" style="position:relative;">
+          <div class="milestone" style="text-align:left">
+            <span class="stat-title">Next Milestone:</span><span style="padding-left: 10px; color: gray;"><%= @milestone.currentMilestone() %> days in a row</span>
+            <div class="progress progress-striped" style="position:relative; margin-top:0px;">
               <div class="project-to-go-text" style="text-align:center; font-size: 15px; color:black; position: absolute; left: 100px;"><%= @milestone.daysLeft() %> days to go</div>
               <div class="bar" style="border-top-left-radius: 5px; border-bottom-left-radius: 5px; width:<%= @milestone.percentComplete() %>%;"></div>
             </div>
