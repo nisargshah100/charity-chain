@@ -23,7 +23,6 @@ class App.Controller.Streaks extends Spine.Controller
     @showMilestoneFlash() if @showFlash
 
   showMilestoneFlash: ->
-    @log @milestone
     if @milestone.completed()
       $("#alert-bar").addClass('alert-success').text('You just hit a milestone! Way to go!').hide()
       $("#alert-bar").slideDown().delay(3000).slideUp()
@@ -42,10 +41,8 @@ class App.Controller.Streaks extends Spine.Controller
     total
 
   checkIn: =>
-    check_in = new App.CheckIn(goal_id: goal.id, date: new Date())
-    check_in.save()
-    App.Goal.fetch()
-
+    checkin = App.CheckIn.create(goal_id: goal.id, date: new Date())
+    checkin.bind "ajaxSuccess", (status, xhr) => App.Goal.fetch()
     @showFlash = true
 
   updateStreak: (btn) ->
