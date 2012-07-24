@@ -1,15 +1,12 @@
+#small-well {
+  height: 310px;
+}
+
 .well.contribution-well {
   background: $pondwater;
   opacity: 0.8;
   border: solid 5px $goldfish;
   height: 350px;
-}
-
-/*.well.contribution-well > div {
-  width: 50%;
-}
-*/
-.well {
 }
 
 .splash-text.help-me-header {
@@ -128,7 +125,7 @@
   width: 100%;
   font-size: 36px;
   font-weight: bold;
-  padding-bottom: 23px;
+  padding-bottom: 30px;
 }
 
 #thank-you-body {
@@ -144,9 +141,12 @@
   }
 }
 
-#payment-details {
+#contribution-text {
   width: 55%;
   float: right;
+}
+
+#payment-details {
   font-size: 20px;
 }
 
