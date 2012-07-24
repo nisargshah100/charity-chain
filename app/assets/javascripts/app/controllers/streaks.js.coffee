@@ -10,11 +10,23 @@ class App.Controller.Streaks extends Spine.Controller
 
   render: =>
     @computeStats()
-    $("#streak").html @view('streak')(@)
+    @computeMilestone()
+    @showFlash = false
 
+    $("#streak").html @view('streak')(@)
     if not goal.check_in_day or goal.checked_in_today
       message = if not goal.check_in_day then "Off Day!" else "Nice!"
       $("#check-in-button").attr('disabled', true).html(message)
+
+  computeMilestone: (flash) ->
+    @milestone = new App.Milestone(currentStreak: @current_streak)
+    @showMilestoneFlash() if @showFlash
+
+  showMilestoneFlash: ->
+    @log @milestone
+    if @milestone.completed()
+      $("#alert-bar").addClass('alert-success').text('You just hit a milestone! Way to go!').hide()
+      $("#alert-bar").slideDown().delay(3000).slideUp()
 
   computeStats: ->
     if goal.streaks
@@ -33,6 +45,8 @@ class App.Controller.Streaks extends Spine.Controller
     check_in = new App.CheckIn(goal_id: goal.id, date: new Date())
     check_in.save()
     App.Goal.fetch()
+
+    @showFlash = true
 
   updateStreak: (btn) ->
     $("#streak-length").fadeOut(200, -> $(this).html(@current_streak)).fadeIn(200);

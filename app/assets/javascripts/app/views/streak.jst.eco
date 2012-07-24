@@ -1,5 +1,5 @@
 <div class="col-title-streak" style="position:relative">
-  <img src="/assets/icons/glyphicons_074_cup.png" class="icon"/>
+  <img src="/assets/icons/glyphicons_241_flash.png" class="icon"/>
   <span class="title capitalize">streak</span>
 </div>
 <div class="col-content">
@@ -27,14 +27,16 @@
             <span class="day-label-stat capitalize">days</span>
           </div>
         </div>
-
-        <div class="milestone">
-          <span class="stat-title">Next Milestone</span>
-          <div class="progress progress-striped">
-            <span class="project-to-go-text" style="font-size: 15px; color:black; float: left;">10 days to go</span>
-            <div class="bar" style="width: <%= goal.project.percentFunded %>%;"></div>
+        <% if @milestone: %>
+          <div class="milestone">
+            <img src="/assets/icons/glyphicons_074_cup.png" class="icon"/>
+            <span class="stat-title">Next Milestone</span>
+            <div class="progress progress-striped" style="position:relative;">
+              <div class="project-to-go-text" style="text-align:center; font-size: 15px; color:black; position: absolute; left: 100px;"><%= @milestone.daysLeft() %> days to go</div>
+              <div class="bar" style="border-top-left-radius: 5px; border-bottom-left-radius: 5px; width:<%= @milestone.percentComplete() %>%;"></div>
+            </div>
           </div>
-        </div>
+        <% end %>
       </div>
     </div>
   </div>
