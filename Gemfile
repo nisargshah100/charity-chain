@@ -29,6 +29,8 @@ group :test, :development do
   gem 'timecop'
   gem 'faker'
   gem 'simplecov'
+  gem 'capybara'
+  gem 'launchy'
 end
 
 gem 'jquery-rails'
