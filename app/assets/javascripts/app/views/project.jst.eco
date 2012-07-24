@@ -30,7 +30,6 @@
     font-size: 15px;
     text-transform: uppercase;
     font-family: 'Century Gothic', sans-serif;
-    margin-top: 5px;
   }
 
   .disabled-button {
@@ -44,7 +43,6 @@
     font-size: 15px;
     text-transform: uppercase;
     font-family: 'Century Gothic', sans-serif;
-    margin-top: 5px;
     background-color:$lilypad
   }
 
