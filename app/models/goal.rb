@@ -43,9 +43,12 @@ class Goal < ActiveRecord::Base
     check_ins.where("date >= ? AND date < ?", Date.today, Date.today + 1).present?
   end
 
+  def check_in_day?
+    scheduler.days.include? DateTime.now.wday
+  end
+
   def can_check_in?
-    today = DateTime.now.wday
-    scheduler.days.include? today and not checked_in_today?
+    check_in_day? and not checked_in_today?
   end
 
   def donation_total

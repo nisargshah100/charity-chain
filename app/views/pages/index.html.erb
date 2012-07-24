@@ -149,8 +149,8 @@
     margin-top: 90px;
     margin-left: 400px;
     position: absolute;
-    bottom: 15px;
-    right: -50px;
+    bottom: 30px;
+    right: -30px;
   }
 
   .setgoal-text {
@@ -213,7 +213,6 @@
       url: "/sessions",
       data: dataString,
       success: function(data) {
-        console.log(data);
         if (data.logged_in == true) {
           location.href = '/goals';
         } else {
@@ -239,7 +238,6 @@
       url: "/users",
       data: dataString,
       success: function(data) {
-        console.log(data);
         if (data.created_user == true) {
           location.href = '/goals';
         } else {

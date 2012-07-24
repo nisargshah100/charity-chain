@@ -37,8 +37,20 @@ class App.Controller.Goals_New extends Spine.Controller
     if $(this).hasClass('selected')
       $(this).removeClass('selected')
     else
-      $(this).addClass('selected') 
-
+      $(this).addClass('selected')
+      
+    days = ""
+    $("td[data-day][class=selected]").each (index, item) ->
+      days += "#{$(item).text()} "
+    switch days
+      when "Su Sa " then dayText = "only weekends"
+      when "M T W Th F " then dayText = "only weekdays"
+      when "Su M T W Th F Sa " then dayText = "every day"
+      when "" then dayText = "please select at least one day"
+      else dayText = days
+    
+    $('#days-text').text(dayText)
+    
   hide_all_modals: =>
     $("#sponsor_goal_modal").modal('hide');
 
@@ -60,11 +72,7 @@ class App.Controller.Goals_New extends Spine.Controller
   show_review_modal: =>
     $("#review_goal_name").text($("#goal-name").val());
 
-    days = ""
-    $("td[data-day][class=selected]").each (index, item) ->
-      days += "#{$(item).data('day')} "
-
-    $("#review_goal_schedule").text(days)
+    $("#review_goal_schedule").text($('#days-text').text())
 
     $("#schedule_goal_modal").modal('hide');
     $("#review_goal_modal").modal('show');
@@ -113,8 +121,32 @@ class App.Controller.Goals extends Spine.Controller
     App.Goal.fetch()
     @events()
 
+    # $(document).ready ->
+    #   $('.goal-title').editable('/api/v1/goals', {
+    #     tooltip   : 'Click to edit...',
+    #     submitdata: {
+    #       'token': access_token(),
+    #       '_method': 'put'
+    #     }
+    #   });
+
   events: ->
     App.Goal.bind 'refresh', @fetched
+    App.Goal.bind 'goal-selected', @selected
+
+  selected: =>
+    $('.goal-title').editable((
+      (v,s) ->
+        $.post "/api/v1/goals/#{goal.id}", { 
+          'token': access_token(), 
+          '_method': 'put',
+          'goal[name]': v
+        }
+
+        return v
+      ), {
+      tooltip   : 'Click to edit...'
+    });
 
   fetched: =>
     window.goal = App.Goal.first()

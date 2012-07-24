@@ -30,7 +30,10 @@
     font-size: 15px;
     text-transform: uppercase;
     font-family: 'Century Gothic', sans-serif;
-    margin-top: 5px;
+    margin-top: 3px;
+  }
+
+  .disabled-button {
     background-color: #9a98a0;
     background-image: none;
     border-color: #9a98a0;
@@ -41,8 +44,8 @@
     font-size: 15px;
     text-transform: uppercase;
     font-family: 'Century Gothic', sans-serif;
-    margin-top: 5px;
     background-color:$lilypad
+    margin-top: 3px;
   }
 
   .progress {

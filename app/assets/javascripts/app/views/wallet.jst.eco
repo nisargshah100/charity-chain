@@ -9,7 +9,7 @@
     <span class="day-label capitalize">earned</span>
   </div>
   <div class="col-stats">
-    <div class="stat-well">
+    <div class="stat-well" style="height:261px;">
       <div class="centered">
         <div class="stat-wrapper">
           <div class="reserve-amount" rel="popover" data-content="Spread the word to your friends and family and have them donate through your personal link below!" data-original-title="Your reserve is empty...">

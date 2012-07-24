@@ -8,6 +8,8 @@ gem 'faraday'
 gem 'hashie'
 gem 'resque'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+gem 'timecop'
+gem 'faker'
 
 group :production do
   gem 'pg'
@@ -30,6 +32,7 @@ group :test, :development do
 end
 
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem 'eco'
 gem 'spine-rails'
 gem 'draper'

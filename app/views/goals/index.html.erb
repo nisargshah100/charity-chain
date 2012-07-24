@@ -8,14 +8,14 @@
   
   <div class="alerts">
     <div class="row">
-      <div id="alert-bar" class="tencol" style="display: none"></div>
+      <div id="alert-bar" style="display: none"></div>
     </div>
   </div>
   
   <div class="container hide" id='main-container'>
     <div class="row">
       <div class="twelvecol">
-        <p class="goal-title">My Goal</p>
+        <p class="goal-title" class="edit">My Goal</p>
       </div>
     </div>
     <div class="row">
@@ -30,12 +30,11 @@
 
   <div class='addthis-buttons' style="display:none;">
     <span style="float: left; color: gray; padding-right: 20px; padding-top: 5px;">Get Sponsored!</span>
-    <input type="text" name="contribution-link" class="contribution-link" val="Hello" style="font-size: 15px"/>
+    <input type="text" name="contribution-link" class="contribution-link" val="Hello" style="font-size: 15px;"/>
     <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
       <span style="float: left; color: gray; padding-right: 20px">Share</span>
       <a class="addthis addthis_button_preferred_1"  addthis:title="An excellent website"></a>
       <a class="addthis addthis_button_preferred_2" addthis:url="" addthis:title="An excellent website"></a>
-      <a class="addthis addthis_button_preferred_3" addthis:url="" addthis:title="An excellent website"></a>
       <a class="addthis addthis_button_gmail" addthis:url="" addthis:title="An excellent website"></a>
       <a class="addthis addthis_button_compact"></a>
     </div>
@@ -48,7 +47,7 @@
 
   <div class='modals'>
   </div>
-
+  
 <style>
   * {
     padding: 0;
@@ -66,6 +65,5 @@
   $(document).ready(function() {
     new App();
   });
-
 
 </script>

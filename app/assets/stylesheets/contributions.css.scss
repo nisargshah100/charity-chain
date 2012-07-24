@@ -1,15 +1,12 @@
+#small-well {
+  height: 310px;
+}
+
 .well.contribution-well {
   background: $pondwater;
   opacity: 0.8;
   border: solid 5px $goldfish;
   height: 350px;
-}
-
-/*.well.contribution-well > div {
-  width: 50%;
-}
-*/
-.well {
 }
 
 .splash-text.help-me-header {
@@ -120,15 +117,15 @@
 }
 
 .contribution-cell {
-  width: 80%;
-  padding: 0 10% 0 10%;
+  width: 90%;
+  padding: 0 5% 0 5%;
 }
 
 #thank-you-header {
   width: 100%;
   font-size: 36px;
   font-weight: bold;
-  padding-bottom: 23px;
+  padding-bottom: 30px;
 }
 
 #thank-you-body {
@@ -144,9 +141,12 @@
   }
 }
 
-#payment-details {
+#contribution-text {
   width: 55%;
   float: right;
+}
+
+#payment-details {
   font-size: 20px;
 }
 
@@ -160,15 +160,12 @@
   color: $whale;
   font-weight: bold;
   float: left;
-  width: 50%;
+  width: 40%;
 }
 
 .value {
   float: right;
-  width: 50%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  width: 60%;
 }
 
 #project-info {
