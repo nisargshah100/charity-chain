@@ -26,9 +26,13 @@ group :test, :development do
   gem 'sqlite3'
   gem 'yard'
   gem 'redcarpet'
+  gem 'timecop'
+  gem 'faker'
+  gem 'simplecov'
 end
 
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem 'eco'
 gem 'spine-rails'
 gem 'draper'
