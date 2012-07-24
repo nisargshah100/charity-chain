@@ -1,5 +1,5 @@
 #signin_link {
-  @include button('shiny');
+  @include button('shiny', #999);
   text-decoration: none;
   margin-right: 210px;
   font-size: 20px;
