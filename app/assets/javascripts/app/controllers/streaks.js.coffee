@@ -12,8 +12,9 @@ class App.Controller.Streaks extends Spine.Controller
     @computeStats()
     $("#streak").html @view('streak')(@)
 
-    unless goal.can_check_in
-      $("#check-in-button").addClass('disabled-button').attr('disabled', true);
+    if not goal.check_in_day or goal.checked_in_today
+      message = if not goal.check_in_day then "Off Day!" else "Nice!"
+      $("#check-in-button").attr('disabled', true).html(message)
 
   computeStats: ->
     if goal.streaks

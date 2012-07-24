@@ -31,6 +31,9 @@
     text-transform: uppercase;
     font-family: 'Century Gothic', sans-serif;
     margin-top: 5px;
+  }
+
+  .disabled-button {
     background-color: #9a98a0;
     background-image: none;
     border-color: #9a98a0;
