@@ -375,5 +375,51 @@ a.addthis {
   }
 }
 
-.donation-header {
+.modal-project-info {
+  color: $whale;
+  padding-bottom: 15px;
+  margin-left: 0px;
+  font-size: 20px;
+}
+
+#project-title {
+  padding-bottom: 10px;
+}
+
+#project-school {
+  padding-bottom: 10px;
+}
+
+#project-location {
+  padding-bottom: 10px;
+}
+
+#donation-amount-label {
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1em;
+  padding-bottom: 10px;
+}
+
+#donation-amount {
+  padding-right: 10px;
+}
+
+#range-value {
+  color: $lilypad;
+  padding-left: 10px;
+}
+
+#donate-amount {
+  width: 95%;
+}
+
+#project-image {
+  height: 200px;
+
+  img {
+    height: 180px;
+    width:  180px;
+    border: solid 1px $goldfish;
+  }
 }
