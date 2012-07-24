@@ -40,6 +40,7 @@ class App.Controller.Projects extends Spine.Controller
       },
       success: (data) =>
         $("#donation_modal").modal('hide')
+        $("#thankyou_modal").modal('show')
         App.Goal.fetch()
 
       error: (data) ->
@@ -51,6 +52,8 @@ class App.Controller.Projects extends Spine.Controller
     $("#project").html @view('project')(@) unless $("#project").html().trim()
     $(".modals").append @view('donation_modal')(@)
     $("#donation_modal").modal(show: false)
+    $(".modals").append @view('thankyou_modal')(@)
+    $("#thankyou_modal").modal(show: false)
     
   renderButtons: =>
     if goal.wallet_amount < 1 || goal.reserve_amount < 1
