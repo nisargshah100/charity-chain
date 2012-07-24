@@ -14,11 +14,12 @@ Goal.destroy_all
 Scheduler.destroy_all
 Contribution.destroy_all
 Payment.destroy_all
+CheckIn.destroy_all
 
 require 'timecop'
 require 'faker'
 
-Timecop.travel(15.days.ago)
+Timecop.travel(25.days.ago)
 test_user = User.create email: "tester@lsqa.net",
                         password: "password"
 goal      = test_user.goals.create name: "Walk a mile a day"
@@ -33,16 +34,23 @@ schedule  = Scheduler.create goal: goal,
 4.times do
   contribution = goal.contributions.create name: Faker::Name.name
   payment = Payment.create  contribution: contribution,
-                            amount: amounts[rand(0..amounts.size-1)],
-                            last_four: rand(1..9999).to_s.rjust(4, '0'),
-                            card_type: card_types[rand(0..amounts.size-1)]
+                            amount: amounts[rand(amounts.size)],
+                            last_four: (rand(9999) + 1).to_s.rjust(4, '0'),
+                            card_type: card_types[rand(amounts.size)]
   contribution.update_attribute :payment, payment
   goal.add_to_reserve_amount payment.amount
 end
 
-14.times do
+15.times do
+  goal.check_ins.create date: Time.now
   Timecop.travel(1.day.from_now)
-  # check-in
+end
+
+Timecop.travel(5.days.from_now)   # took 5 days off
+
+5.times do
+  goal.check_ins.create date: Time.now
+  Timecop.travel(1.day.from_now)
 end
 
 Timecop.return

@@ -29,7 +29,7 @@ class Goal < ActiveRecord::Base
 
     dates.each do |date|
       unless checkins.include?(date)
-        streaks << streak
+        streaks << streak if streak > 0
         streak = 0
       else
         streak += 1
@@ -72,6 +72,6 @@ class Goal < ActiveRecord::Base
   end
   
   def set_token
-    update_attribute(:token, create_token("#{name}#{user_id}#{rand(100000)}"))
+    update_attribute(:token, create_token)
   end
 end

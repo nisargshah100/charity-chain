@@ -31,6 +31,16 @@
     text-transform: uppercase;
     font-family: 'Century Gothic', sans-serif;
     margin-top: 5px;
+    background-color:#9a98a0
+  }
+
+  .donate-button-small:hover {
+    width: 100%;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-family: 'Century Gothic', sans-serif;
+    margin-top: 7px;
+    background-color:$lilypad
   }
 
   .progress {

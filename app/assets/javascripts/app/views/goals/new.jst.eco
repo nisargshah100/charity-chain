@@ -1,13 +1,12 @@
 <div class="modal hide" id="new_goal_modal">
   <div class="modal-header">
-    <h3>New Goal</h3>
+    <h3>What would you like to track?</h3>
   </div>
   <div class="modal-body">
     <form id='new_goal_form'>
       <p>
-        <input type='text' id='goal-name' placeholder='Enter name here' />
+        <input type='text' id='goal-name' placeholder='Examples: Run a mile a day.  Quit smoking.' />
       </p>
-      <h6 style="padding-top: 10px; opacity: 0.6">Examples: Run a mile a day.  Quit smoking.  Eat more string cheese.</h6>
     </form>
   </div>
   <div class="modal-footer">
