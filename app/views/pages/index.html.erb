@@ -11,6 +11,7 @@
       <%= form_tag sessions_path, method: "post", id:'signin_form', class: 'modal_form' do %>
         <input type="text" id="signin_email" name="email" placeholder="email" />
         <input type="password" id="signin_password" name="password" placeholder="password" />
+        <input type='submit' value='/' style='position: absolute; left: -9999px; width: 1px; height: 1px;'>
       <% end %>
     </div> 
     <div class="modal-footer">
@@ -94,7 +95,9 @@
       <h6>CharityStreak is free to use.  All we need is your email and password.</h6>
       <%= form_tag sessions_path, method: "post", id:'signup_form', class: 'modal_form' do %>
         <input type="text" id="user_email" name="user[email]" placeholder="email" /><br />
-        <input type="password" id="user_password" name="user[password]" placeholder="password" /><br />
+        <input type="password" id="user_password" name="user[password]" placeholder="password" />
+        <input type='submit' value='/' style='position: absolute; left: -9999px; width: 1px; height: 1px;'>
+        <br />
       <% end %>
       <p id="password_confirmation">* no password confirmation necessary.  You can always reset it later.</p>
     </div> 
@@ -200,7 +203,8 @@
 </style>
 
 <script type="text/javascript">
-  $("#signin_submit").click(function(e) {
+
+  function signin(e) {
     var email = $("#signin_email").val();
     var password = $("#signin_password").val();
     var dataString = 'email='+ email + '&password=' + password
@@ -217,8 +221,15 @@
         };
       }
     });
+  }
+
+  $("#signin_submit").click(signin);
+  $("#signin_form").live('submit', function(e) {
+    e.preventDefault();
+    signin();
   });
-  $("#signup_submit").click(function(e) {
+
+  function signup(e) {
     var email = $("#user_email").val();
     var password = $("#user_password").val();
     var dataString = 'user[email]='+ email + '&user[password]=' + password
@@ -235,6 +246,12 @@
         };
       }
     });
+  }
+
+  $("#signup_submit").click(signup);
+  $("#signup_form").live('submit', function(e) {
+    e.preventDefault();
+    signup();
   });
 
   $("#setgoal-image").hover(
