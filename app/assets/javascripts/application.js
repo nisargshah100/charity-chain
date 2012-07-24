@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui
+//= require jeditable
 //= require bootstrap-modal.min
 //= require bootstrap-tooltip
 //= require bootstrap-popover

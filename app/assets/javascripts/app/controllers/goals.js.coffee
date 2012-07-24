@@ -113,8 +113,32 @@ class App.Controller.Goals extends Spine.Controller
     App.Goal.fetch()
     @events()
 
+    # $(document).ready ->
+    #   $('.goal-title').editable('/api/v1/goals', {
+    #     tooltip   : 'Click to edit...',
+    #     submitdata: {
+    #       'token': access_token(),
+    #       '_method': 'put'
+    #     }
+    #   });
+
   events: ->
     App.Goal.bind 'refresh', @fetched
+    App.Goal.bind 'goal-selected', @selected
+
+  selected: =>
+    $('.goal-title').editable((
+      (v,s) ->
+        $.post "/api/v1/goals/#{goal.id}", { 
+          'token': access_token(), 
+          '_method': 'put',
+          'goal[name]': v
+        }
+
+        return v
+      ), {
+      tooltip   : 'Click to edit...'
+    });
 
   fetched: =>
     window.goal = App.Goal.first()

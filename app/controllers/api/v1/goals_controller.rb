@@ -11,4 +11,11 @@ class Api::V1::GoalsController < Api::ApiController
     goal.create_scheduler(JSON.parse(params[:scheduler]))
     render :json => GoalDecorator.decorate(goal)
   end
+
+  def update
+    goal = current_user.goals.find(params[:id])
+    goal.update_attributes(params[:goal])
+    goal.save()
+    render :json => GoalDecorator.decorate(goal)
+  end
 end

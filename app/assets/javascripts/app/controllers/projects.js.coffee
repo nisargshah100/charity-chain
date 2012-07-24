@@ -25,8 +25,6 @@ class App.Controller.Projects extends Spine.Controller
     $('#project-location').html("#{@project.city}, #{@project.state}")
     $("#donate-project-id").val(@id)
 
-
-
   createDonation: =>
     $.ajax {
       url: "/api/v1/donations",
