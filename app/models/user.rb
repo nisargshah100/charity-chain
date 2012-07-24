@@ -1,12 +1,15 @@
 class User < ActiveRecord::Base
   authenticates_with_sorcery!
-  attr_accessible :email, :password, :authentication_token
-  has_many :goals
+  attr_accessible :name, :email, :password, :authentication_token
   before_create :ensure_authentication_token
-  validates :email, presence: true,
-                    uniqueness: true,
-                    format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/ }
-  validates :password, presence: true
+  
+  has_many :goals
+  
+  validates :name,      presence: true
+  validates :email,     presence: true,
+                        uniqueness: true,
+                        format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/ }
+  validates :password,  presence: true
 
   # Creates an authentication token for a user
   # 
