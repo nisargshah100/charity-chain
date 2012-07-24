@@ -1,6 +1,6 @@
 <div class="modal hide" id="new_goal_modal">
   <div class="modal-header">
-    <h3>What would you like to track?</h3>
+    <h3>What do you wish you did more?</h3>
   </div>
   <div class="modal-body">
     <form id='new_goal_form'>
