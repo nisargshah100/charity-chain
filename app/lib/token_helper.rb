@@ -1,8 +1,7 @@
 module TokenHelper
-  require 'digest/sha2'
+  require 'securerandom'
   
-  def create_token(seed="")
-    sec_hash = Digest::SHA2.new << "asdf1234#{Time.now.to_i}#{seed}"
-    sec_hash.to_s
+  def create_token
+    SecureRandom.hex 10
   end
 end

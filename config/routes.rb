@@ -18,6 +18,7 @@ CharityChain::Application.routes.draw do
   resources :sessions, only: [:create, :destroy]
   resources :users, only: [:create]
   
+  match "/:id", to: "contributions#index"
   root :to => 'pages#index'
   
   # The priority is based upon order of creation:

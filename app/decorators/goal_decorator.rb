@@ -12,7 +12,14 @@ class GoalDecorator < Draper::Base
       :sponsors => model.sponsors,
       :donation_total => model.donation_total.to_s,
       :project => Project.fetch(3).map { |p| JSON.parse(p.data)},
-      :contribute_url => h.contributions_url(token: model.token)
+      :contribute_url => short_contribution_link
     }
   end
+  
+  private
+  
+  def short_contribution_link
+    h.root_url + model.token
+  end
+  
 end

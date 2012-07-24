@@ -1,9 +1,10 @@
 class ContributionsController < ApplicationController
   def index
-    unless params && params[:token]
-      redirect_to root_path
+    goal = Goal.find_by_token params[:id]
+    if goal
+      @goal_token = goal.token
     else
-      @goal_token = params[:token]
+      redirect_to root_path
     end
   end
   
