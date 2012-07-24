@@ -19,3 +19,6 @@
 
 # Ignore Pow files
 .powenv
+
+# Ignore coverage
+/coverage
