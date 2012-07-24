@@ -26,6 +26,7 @@ group :test, :development do
   gem 'redcarpet'
   gem 'timecop'
   gem 'faker'
+  gem 'simplecov'
 end
 
 gem 'jquery-rails'

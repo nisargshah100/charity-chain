@@ -149,6 +149,10 @@ GEM
       railties (~> 3.2.0)
       sass (>= 3.1.10)
       tilt (~> 1.3)
+    simplecov (0.6.4)
+      multi_json (~> 1.0)
+      simplecov-html (~> 0.5.3)
+    simplecov-html (0.5.3)
     sinatra (1.3.2)
       rack (~> 1.3, >= 1.3.6)
       rack-protection (~> 1.2)
@@ -198,6 +202,7 @@ DEPENDENCIES
   resque
   rspec-rails
   sass-rails (~> 3.2.3)
+  simplecov
   sorcery
   spine-rails
   sqlite3
