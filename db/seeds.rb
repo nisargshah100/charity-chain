@@ -20,7 +20,8 @@ require 'timecop'
 require 'faker'
 
 Timecop.travel(25.days.ago)
-test_user = User.create email: "tester@lsqa.net",
+test_user = User.create name: Faker::Name.name,
+                        email: "tester@lsqa.net",
                         password: "password"
 goal      = test_user.goals.create name: "Walk a mile a day"
 schedule  = Scheduler.create goal: goal,

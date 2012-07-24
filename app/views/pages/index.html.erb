@@ -94,6 +94,7 @@
     <div class="modal-body">
       <h6>CharityStreak is free to use.  All we need is your email and password.</h6>
       <%= form_tag sessions_path, method: "post", id:'signup_form', class: 'modal_form' do %>
+        <input type="text" id="user_name" name="user[name]" placeholder="name" /><br />
         <input type="text" id="user_email" name="user[email]" placeholder="email" /><br />
         <input type="password" id="user_password" name="user[password]" placeholder="password" />
         <input type='submit' value='/' style='position: absolute; left: -9999px; width: 1px; height: 1px;'>
@@ -229,10 +230,11 @@
     signin();
   });
 
-  function signup(e) {
+  $("#signup_submit").click(function(e) {
+    var name = $("#user_name").val();
     var email = $("#user_email").val();
     var password = $("#user_password").val();
-    var dataString = 'user[email]='+ email + '&user[password]=' + password
+    var dataString = 'user[name]='+ name + '&user[email]='+ email + '&user[password]=' + password
     $.ajax({
       type: "POST",
       url: "/users",
@@ -242,7 +244,7 @@
         if (data.created_user == true) {
           location.href = '/goals';
         } else {
-          alert('Bad credentials');
+          alert('Bad credentials.  Please enter a name, email & password in the fields provided.');
         };
       }
     });
