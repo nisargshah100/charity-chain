@@ -34,8 +34,8 @@ schedule  = Scheduler.create goal: goal,
 4.times do
   contribution = goal.contributions.create name: Faker::Name.name
   payment = Payment.create  contribution: contribution,
-                            amount: amounts[rand(0..amounts.size-1)],
-                            last_four: rand(1..9999).to_s.rjust(4, '0'),
+                            amount: amounts[rand(amounts.size)],
+                            last_four: (rand(9999) + 1).to_s.rjust(4, '0'),
                             card_type: card_types[rand(0..amounts.size-1)]
   contribution.update_attribute :payment, payment
   goal.add_to_reserve_amount payment.amount
