@@ -111,12 +111,13 @@ class App.Controller.Goals extends Spine.Controller
   fetched: =>
     window.goal = App.Goal.first()
 
-    if App.Project.count() == 0
-      for project in goal.project
-        Spine.Ajax.disable ->
-          App.Project.create(project)
 
     if goal
+      if App.Project.count() == 0
+        for project in goal.project
+          Spine.Ajax.disable ->
+            App.Project.create(project)
+      
       App.Goal.trigger('goal-selected')
       $(".goal-title").text(goal.name)
       @show()

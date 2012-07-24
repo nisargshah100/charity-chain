@@ -29,7 +29,7 @@ class Goal < ActiveRecord::Base
 
     dates.each do |date|
       unless checkins.include?(date)
-        streaks << streak 
+        streaks << streak
         streak = 0
       else
         streak += 1

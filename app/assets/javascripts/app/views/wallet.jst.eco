@@ -24,7 +24,8 @@
           <div class="count-stat"><%= @sponsors_count %></div>
         </div>
       </div>
-      <%- render_partial "add_this" %>
+      <div class="social-container">
+      </div>
     </div>
   </div>
 </div>

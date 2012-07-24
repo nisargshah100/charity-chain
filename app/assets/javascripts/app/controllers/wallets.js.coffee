@@ -13,3 +13,4 @@ class App.Controller.Wallets extends Spine.Controller
     @donation_total = goal.donation_total.split(".")[0]
     $("#wallet").html @view('wallet')(@)
     $('.reserve-amount').popover({placement:'top'})
+    $('.social-container').html($('.addthis-buttons').html())

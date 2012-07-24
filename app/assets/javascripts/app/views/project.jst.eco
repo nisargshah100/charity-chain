@@ -10,7 +10,7 @@
 
 <style>
   .truncate {
-    width: 200px;
+    width: 190px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -30,7 +30,7 @@
     font-size: 15px;
     text-transform: uppercase;
     font-family: 'Century Gothic', sans-serif;
-    margin-top: 7px;
+    margin-top: 5px;
   }
 
   .progress {

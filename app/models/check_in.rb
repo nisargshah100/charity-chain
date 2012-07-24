@@ -4,6 +4,14 @@ class CheckIn < ActiveRecord::Base
   default_scope :order => 'date DESC'
 
   after_create :increase_wallet
+  validate :no_checkin_for_today
+
+  def no_checkin_for_today
+    today = DateTime.now.wday
+    if (not goal.scheduler.days.include? today) || goal.checked_in_today?
+      errors.add(:date, "Already checked in today or not in schedule.")
+    end
+  end
 
   private
 
