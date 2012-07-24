@@ -51,7 +51,7 @@
                 <div class="setgoal-text doit-screengrab hide"><h1>Do It</h1><br/><h4>So you've got your goal, and everyone you know sponsored you for millions.  Now it's time to follow through.  Every day that you're scheduled to participate in your goal, you'll get an email from us asking if you've done it or not.  Simply check in when you've done the deed, and watch the money roll in!  The more days in a row you check in, the more money you'll unlock to donate.</h4></div>
                 <div class="setgoal-text donate-screengrab hide"><h1>Donate</h1><br/><h4>It's been a while. You've unlocked tons of money.  Now, it's time to give back.  Every day, we'll show several projects that you can complete with the amount of money in your wallet.  If you have a specific goal in mind, pop in the direct URL and you can donate to that one.</h4></div>
                 <li class="horizontal first">
-                  <a id="signin_link" data-toggle="modal" href="#signin_modal">Sign In</a>
+                  <a class="btn btn-shiny" id="signin_link" data-toggle="modal" href="#signin_modal">Sign In</a>
                 </li>
                 <li class="horizontal">
                   <a id="signup_link" data-toggle="modal" href="#signup_modal" class="btn">Get Started</a>
@@ -91,7 +91,7 @@
       <h3>Sign up</h3>
     </div>
     <div class="modal-body">
-      <h6>CharityStreak is free to use.  All we need is your email & a password.</h6>
+      <h6>CharityStreak is free to use.  All we need is your email and password.</h6>
       <%= form_tag sessions_path, method: "post", id:'signup_form', class: 'modal_form' do %>
         <input type="text" id="user_email" name="user[email]" placeholder="email" /><br />
         <input type="password" id="user_password" name="user[password]" placeholder="password" /><br />
