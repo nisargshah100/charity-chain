@@ -4,24 +4,22 @@
   </div>
   <div class="modal-body">
     <div class="modal-content row">
-      <p class="donation-header lighten">You are donating to: </p>
+      <p class="donation-header lighten">You are donating to this DonorsChoose.org project: </p>
     </div>
     <div class="modal-content row">
-      <div class="fivecol">
-        <div class="project-image"><img src="" id='project-image-tag'></img></div>
+      <div class="fourcol">
+        <div id="project-image"><img src="" id='project-image-tag'></img></div>
       </div>
-      <div class="sevencol last">
+      <div class="eightcol last">
         <div class="project-container">
           <div class="modal-project-info">
             <p id="project-title"></p>
             <p id="project-school"></p>
             <p id="project-location"></p>
           </div>
-
           <form method='post'>
-            <p>Amount to donate: <span id='range-value'></span></p>
+            <div id="donation-amount-label">Amount to donate: <span id='range-value'></span></div>
             <div id="donate-amount" class="slider"></div>
-            <!-- <input type="range" id='donate-amount' min="1" step="1" onchange="showValue(this.value)" /> -->
             <input type="hidden" id="donate-amount-value" name="donate-amount-value" value='' />
             <input type="hidden" id="donate-project-id" name="donate-project" value='' />
           </form>
@@ -58,7 +56,7 @@
 <style>
   p.lighten {
     color: #AAA;
-    font-size: 15px;
+    font-size: 20px;
     margin-bottom:10px;
   }
 
@@ -80,16 +78,6 @@
   form > p {
     font-size: 20px;
     margin-left: 0px;
-  }
-
-  .modal-project-info {
-    margin-bottom: 175px;
-    margin-left: 0px;
-    font-size: 20px;
-  }
-
-  #donate-amount {
-    width: 150px;
   }
 
   .span-leader {
