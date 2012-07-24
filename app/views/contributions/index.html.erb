@@ -124,7 +124,6 @@
         if (response.error) {
             // show the errors on the form
             $("#contribute_button").removeAttr("disabled");
-            console.log(response.error.message);
             alert("Your payment information was invalid.  Please check the information that you entered and try again.")
         } else {
             var form$ = $("#contribution_form");
