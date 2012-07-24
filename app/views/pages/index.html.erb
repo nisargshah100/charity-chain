@@ -11,6 +11,7 @@
       <%= form_tag sessions_path, method: "post", id:'signin_form', class: 'modal_form' do %>
         <input type="text" id="signin_email" name="email" placeholder="email" />
         <input type="password" id="signin_password" name="password" placeholder="password" />
+        <input type='submit' value='/' style='position: absolute; left: -9999px; width: 1px; height: 1px;'>
       <% end %>
     </div> 
     <div class="modal-footer">
@@ -34,7 +35,7 @@
         <div class="signup-form">
           <div class="well signup-well">
             <div class="left-well">
-              <div class="pitch show"><h2>We help create good habbits & drive donations.</h2>
+              <div class="pitch show"><h2>We help create good habits & drive donations.</h2>
               <h4>CharityStreak is for people who likely aren't already donating to the charity, but are 
               both interested in self-improvement and looking for something extra to motivate 
               them down the path of betterment. We hope to see an increase in donors overall as
@@ -46,12 +47,12 @@
             </div>
             <div class="right-well">
               <ul class="signup-signin sixcol">
-                <div class="setgoal-text setgoal-screengrab hide"><h1>Set Goal</h1><br/><h4>First things first, you'll want to set yourself up with a goal. Like, drink 8oz of water a day. Tracking your goals on a daily basis will help turn them into a habbit!</h4></div>
+                <div class="setgoal-text setgoal-screengrab hide"><h1>Set Goal</h1><br/><h4>First things first, you'll want to set yourself up with a goal. Like, drink 8oz of water a day. Tracking your goals on a daily basis will help turn them into a habit!</h4></div>
                 <div class="setgoal-text getsponsored-screengrab hide"><h1>Get Sponsored</h1><br/><h4>Once you've got your goal set up, you'll need people to sponsor you.  Maybe your mom wants to help you quit somking, so she puts $50 in your reserve account.  You'll need to send out the unique link via email, Facebook or Twitter to get your loved ones involved in making a better you AND a better community.</h4></div>
                 <div class="setgoal-text doit-screengrab hide"><h1>Do It</h1><br/><h4>So you've got your goal, and everyone you know sponsored you for millions.  Now it's time to follow through.  Every day that you're scheduled to participate in your goal, you'll get an email from us asking if you've done it or not.  Simply check in when you've done the deed, and watch the money roll in!  The more days in a row you check in, the more money you'll unlock to donate.</h4></div>
                 <div class="setgoal-text donate-screengrab hide"><h1>Donate</h1><br/><h4>It's been a while. You've unlocked tons of money.  Now, it's time to give back.  Every day, we'll show several projects that you can complete with the amount of money in your wallet.  If you have a specific goal in mind, pop in the direct URL and you can donate to that one.</h4></div>
                 <li class="horizontal first">
-                  <a class="btn btn-shiny" id="signin_link" data-toggle="modal" href="#signin_modal">Sign In</a>
+                  <a class="btn" id="signin_link" data-toggle="modal" href="#signin_modal">Sign In</a>
                 </li>
                 <li class="horizontal">
                   <a id="signup_link" data-toggle="modal" href="#signup_modal" class="btn">Get Started</a>
@@ -70,7 +71,7 @@
         <div class="eightcol">
           <div class="well icons-well">
             <div>
-              <%= image_tag "splash_signup.png", :class => "charity-image", :id => "signup-image" %>
+              <%= image_tag "splash_signup.png", :class => "charity-image charity-image-default", :id => "signup-image" %>
               <%= image_tag "splash_setgoal.png", :class => "charity-image", :id => "setgoal-image" %>
               <%= image_tag "splash_getsponsored.png", :class => "charity-image", :id => "getsponsored-image" %>
               <%= image_tag "splash_doit.png", :class => "charity-image", :id => "doit-image" %>
@@ -93,8 +94,11 @@
     <div class="modal-body">
       <h6>CharityStreak is free to use.  All we need is your email and password.</h6>
       <%= form_tag sessions_path, method: "post", id:'signup_form', class: 'modal_form' do %>
+        <input type="text" id="user_name" name="user[name]" placeholder="name" /><br />
         <input type="text" id="user_email" name="user[email]" placeholder="email" /><br />
-        <input type="password" id="user_password" name="user[password]" placeholder="password" /><br />
+        <input type="password" id="user_password" name="user[password]" placeholder="password" />
+        <input type='submit' value='/' style='position: absolute; left: -9999px; width: 1px; height: 1px;'>
+        <br />
       <% end %>
       <p id="password_confirmation">* no password confirmation necessary.  You can always reset it later.</p>
     </div> 
@@ -160,7 +164,6 @@
 
   .horizontal { 
     display: inline; 
-    border-left: 1px solid; 
     padding-left: 15px;
   }
 
@@ -200,7 +203,8 @@
 </style>
 
 <script type="text/javascript">
-  $("#signin_submit").click(function(e) {
+
+  function signin(e) {
     var email = $("#signin_email").val();
     var password = $("#signin_password").val();
     var dataString = 'email='+ email + '&password=' + password
@@ -217,11 +221,19 @@
         };
       }
     });
+  }
+
+  $("#signin_submit").click(signin);
+  $("#signin_form").live('submit', function(e) {
+    e.preventDefault();
+    signin();
   });
-  $("#signup_submit").click(function(e) {
+
+  function signup(e) {
+    var name = $("#user_name").val();
     var email = $("#user_email").val();
     var password = $("#user_password").val();
-    var dataString = 'user[email]='+ email + '&user[password]=' + password
+    var dataString = 'user[name]='+ name + '&user[email]='+ email + '&user[password]=' + password
     $.ajax({
       type: "POST",
       url: "/users",
@@ -231,49 +243,63 @@
         if (data.created_user == true) {
           location.href = '/goals';
         } else {
-          alert('Bad credentials');
+          alert('Bad credentials.  Please enter a name, email & password in the fields provided.');
         };
       }
     });
+  }
+
+  $("#signup_submit").click(signup);
+  $("#signup_form").live('submit', function(e) {
+    e.preventDefault();
+    signup();
   });
 
   $("#setgoal-image").hover(
     function() {
       $(".setgoal-screengrab").show();
       $(".pitch").hide();
+      $(".charity-image-default").removeClass("charity-image-default")
     },
      function() {
       $(".setgoal-screengrab").hide();
       $(".pitch").show();
+      $("#signup-image").addClass("charity-image-default")
      });
 
   $("#getsponsored-image").hover(
     function() {
       $(".getsponsored-screengrab").show();
       $(".pitch").hide();
+      $(".charity-image-default").removeClass("charity-image-default")
     },
      function() {
       $(".getsponsored-screengrab").hide();
       $(".pitch").show();
+      $("#signup-image").addClass("charity-image-default")
      });
 
   $("#doit-image").hover(
     function() {
       $(".doit-screengrab").show();
       $(".pitch").hide();
+      $(".charity-image-default").removeClass("charity-image-default")
     },
      function() {
       $(".doit-screengrab").hide();
       $(".pitch").show();
+      $("#signup-image").addClass("charity-image-default")
      });
 
   $("#donate-image").hover(
     function() {
       $(".donate-screengrab").show();
       $(".pitch").hide();
+      $(".charity-image-default").removeClass("charity-image-default")
     },
      function() {
       $(".donate-screengrab").hide();
       $(".pitch").show();
+      $("#signup-image").addClass("charity-image-default")
      });
 </script>

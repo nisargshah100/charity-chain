@@ -5,19 +5,24 @@
   height: 350px;
 }
 
-.well.contribution-well > div {
+/*.well.contribution-well > div {
   width: 50%;
 }
-
+*/
 .well {
-  
 }
 
-.form {
-  float: right;
+.splash-text.help-me-header {
+  margin-left: 30px;
+  font-size: 64px;
 }
 
-.explanation {
+.contribution-header {
+  padding: 10px 0 100px 0;
+}
+
+#explanation-section {
+  width: 50%;
   float: left;
   
   h4 {
@@ -25,11 +30,9 @@
   }
 }
 
-.explanation-image {
-  padding-top: 15px;
-  img {
-    height: 125px;
-  }
+#contribution-section {
+  width: 50%;
+  float: right;
 }
 
 #contribution_form {
@@ -112,17 +115,39 @@
   font-size: 18px;
 }
 
-#thank-you-message {
+.plea-text {
+  color: $ladybug;
+}
+
+.contribution-cell {
+  width: 80%;
+  padding: 0 10% 0 10%;
+}
+
+#thank-you-header {
   width: 100%;
-  font-size: 24px;
+  font-size: 36px;
   font-weight: bold;
-  padding-left: 78px;
-  padding-bottom: 20px;
+  padding-bottom: 23px;
+}
+
+#thank-you-body {
+  padding-bottom: 23px;
+}
+
+#project-picture {
+  width: 45%;
+  float: left;
+  
+  img {
+    border: solid 1px $goldfish;
+  }
 }
 
 #payment-details {
-  width: 100%;
-  padding-left: 78px;
+  width: 55%;
+  float: right;
+  font-size: 20px;
 }
 
 .charged-to, .amount, .card-number, .card-type {
@@ -141,4 +166,51 @@
 .value {
   float: right;
   width: 50%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#project-info {
+  margin-top: 20px;
+  
+  a {
+    color: $whale;
+    text-decoration: none;
+  }
+  
+  .explanation-image {
+    float: left;
+    width: 43%;
+  
+    img {
+      height: 130px;
+      border: solid 1px $goldfish;
+    }
+  }
+  
+  .school-info {
+    float: right;
+    width: 57%;
+  }
+  
+  .truncate {
+    width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #666;
+  }
+
+  .truncate-header {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-bottom: 15px;
+  }
+
+  .progress {
+    margin-top: 10px;
+  }
 }

@@ -9,6 +9,8 @@ class App.Controller.Goals_New extends Spine.Controller
     $("#show_sponsor_modal").live('click', @show_sponsor_modal)
     $("#thanks_btn").live('click', @hide_all_modals)
 
+    $("#new_goal_form").live('submit', @show_schedule_form)
+
     $("td").live('click', @toggle_day)
     App.Goal.bind('refresh', @fetched)
     App.Goal.bind('goal-selected', @displayURL)
@@ -45,7 +47,13 @@ class App.Controller.Goals_New extends Spine.Controller
     $("#review_goal_modal").modal('hide');
     $("#sponsor_goal_modal").modal('show');
 
-  show_schedule_form: =>
+  show_schedule_form: (e) =>
+    e.preventDefault() if e
+
+    unless $("#goal-name").val()
+      alert 'A goal is required'
+      return false
+
     $("#new_goal_modal").modal('hide');
     $("#schedule_goal_modal").modal('show');
 
