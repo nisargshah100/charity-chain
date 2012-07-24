@@ -25,6 +25,6 @@ class Contribution < ActiveRecord::Base
   private
   
   def set_token
-    update_attribute(:token, create_token("#{name}#{email}#{rand(100000)}"))
+    update_attribute(:token, create_token)
   end
 end
