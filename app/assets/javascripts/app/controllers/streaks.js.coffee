@@ -5,7 +5,7 @@ class App.Controller.Streaks extends Spine.Controller
 
   events: ->
     $("#check-in-button").live('click', @checkIn)
-    App.CheckIn.bind('create', @updateStreak)
+    # App.CheckIn.bind('create', @updateStreak)
     App.Goal.bind('goal-selected', @render)
 
   render: =>
@@ -44,7 +44,3 @@ class App.Controller.Streaks extends Spine.Controller
     checkin = App.CheckIn.create(goal_id: goal.id, date: new Date())
     checkin.bind "ajaxSuccess", (status, xhr) => App.Goal.fetch()
     @showFlash = true
-
-  updateStreak: (btn) ->
-    $("#streak-length").fadeOut(200, -> $(this).html(@current_streak)).fadeIn(200);
-    $("#check-in-button").addClass('disabled-button').attr('disabled', true);

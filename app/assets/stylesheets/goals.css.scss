@@ -1,8 +1,11 @@
 #alert-bar {
   position: absolute;
+  width:1100px;
   color: #fff;
-  padding: 5px;
   background-color: $lilypad;
+  border-bottom: solid 5px rgba(0,0,0,0.1);
+  padding:20px;
+  font-size: 25px;
 }
 
 .form-well {
