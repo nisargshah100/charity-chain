@@ -6,29 +6,32 @@ class Donation < ActiveRecord::Base
   monetize :amount_cents
   after_save :reduce_wallet_amount, :reduce_reserve_amount
 
-  validate do |donation|
-    amount = donation.goal.wallet.amount
-    if donation.amount > donation.goal.wallet.amount
-      donation.errors.add(:amount, "must be less than wallet ($#{amount})")
-    end
+  validate :ensure_less_than_wallet
+  validate :ensure_less_than_reserve
 
-    amount = donation.goal.reserve.amount
-    if donation.amount > donation.goal.reserve.amount
-      donation.errors.add(:amount, "must be less than reserve ($#{amount})")
+  extend Forwardable
+  def_delegators :goal, :wallet, :reserve
+
+
+  def ensure_less_than_wallet
+    if amount > goal.wallet_amount
+      errors.add(:amount, "must be less than wallet ($#{goal.wallet_amount})")
+    end
+  end
+
+  def ensure_less_than_reserve
+    if amount > goal.reserve_amount
+      errors.add(:amount, "must be less than reserve ($#{goal.reserve_amount})")
     end
   end
 
   private
 
   def reduce_wallet_amount
-    wallet = goal.wallet
-    wallet.amount = wallet.amount - self.amount
-    wallet.save()
+    wallet.update_attribute(:amount, goal.wallet_amount - amount)
   end
 
   def reduce_reserve_amount
-    reserve = goal.reserve
-    reserve.amount = reserve.amount - self.amount
-    reserve.save()
+    reserve.update_attribute(:amount, goal.reserve_amount - amount)
   end
 end

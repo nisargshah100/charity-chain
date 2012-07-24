@@ -12,6 +12,10 @@ class Goal < ActiveRecord::Base
 
   after_create :ensure_wallet, :ensure_reserve, :set_token
 
+  extend Forwardable
+  def_delegator :wallet, :amount, :wallet_amount
+  def_delegator :reserve, :amount, :reserve_amount
+
   # Calculates all streaks up to a specified end date
   #
   # Example:
