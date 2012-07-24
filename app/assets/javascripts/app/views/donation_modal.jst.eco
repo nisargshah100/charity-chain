@@ -1,4 +1,4 @@
-<div class="modal hide" id="donation_modal" style='width: 35%; left: 40%;'>
+<div class="modal hide" id="donation_modal" style='width: 35%; left: 50%;'>
   <div class="modal-header">
     <h3>Donate!</h3>
   </div>
