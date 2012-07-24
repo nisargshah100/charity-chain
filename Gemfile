@@ -29,6 +29,7 @@ group :test, :development do
 end
 
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem 'eco'
 gem 'spine-rails'
 gem 'draper'
