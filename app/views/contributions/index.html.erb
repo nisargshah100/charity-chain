@@ -27,7 +27,9 @@
             </p>
             <div id="project-info">
               <h4 class="truncate-header"><a class="header-link" href="<%= @project_proposal_url %>"><%= @project_title %></a></h4>
-              <div class='explanation-image'><%= image_tag 'http://cdn.donorschoose.net/images/proposal/uploads/med/715000/715353/p715353_002_md.jpg' %></div>
+              <div class='explanation-image'>
+                <a href="<%= @project_proposal_url %>"><%= image_tag @project_image_url %></a>
+              </div>
               <div class='school-info'>
                 <p class="truncate"><%= @project_school_name %></p>
                 <p class="truncate"><%= @project_city %>, <%= @project_state %></p>
