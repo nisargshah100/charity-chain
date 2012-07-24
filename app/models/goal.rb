@@ -72,6 +72,6 @@ class Goal < ActiveRecord::Base
   end
   
   def set_token
-    update_attribute(:token, create_token("#{name}#{user_id}#{rand(100000)}"))
+    update_attribute(:token, create_token)
   end
 end
