@@ -5,10 +5,10 @@
   height: 350px;
 }
 
-.well.contribution-well > div {
+/*.well.contribution-well > div {
   width: 50%;
 }
-
+*/
 .well {
 }
 
@@ -21,7 +21,17 @@
   padding: 10px 0 100px 0;
 }
 
-.form {
+#explanation-section {
+  width: 50%;
+  float: left;
+  
+  h4 {
+    padding-bottom: 10px;
+  }
+}
+
+#contribution-section {
+  width: 50%;
   float: right;
 }
 
@@ -109,17 +119,35 @@
   color: $ladybug;
 }
 
-#thank-you-message {
+.contribution-cell {
+  width: 80%;
+  padding: 0 10% 0 10%;
+}
+
+#thank-you-header {
   width: 100%;
-  font-size: 24px;
+  font-size: 36px;
   font-weight: bold;
-  padding-left: 78px;
-  padding-bottom: 20px;
+  padding-bottom: 23px;
+}
+
+#thank-you-body {
+  padding-bottom: 23px;
+}
+
+#project-picture {
+  width: 45%;
+  float: left;
+  
+  img {
+    border: solid 1px $goldfish;
+  }
 }
 
 #payment-details {
-  width: 100%;
-  padding-left: 78px;
+  width: 55%;
+  float: right;
+  font-size: 20px;
 }
 
 .charged-to, .amount, .card-number, .card-type {
@@ -138,14 +166,9 @@
 .value {
   float: right;
   width: 50%;
-}
-
-.explanation {
-  float: left;
-  
-  h4 {
-    padding-bottom: 10px;
-  }
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 #project-info {

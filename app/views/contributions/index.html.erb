@@ -20,7 +20,7 @@
     <div class="row">
       <div class="contribution">
         <div class="well contribution-well">
-          <div class="explanation">
+          <div id="explanation-section">
             <h4><%= content_tag :span, @user_name, class: "owner_name" %> has set the goal &quot;<%= content_tag :span, @goal.name, class: "goal_name" %>&quot;.</h4>
             <p>
               Donations made as part of their participation in Charity Streak go towards worthy <span class="donors_choose">donorschoose.org</span> projects.  <%= content_tag :span, @user_name, class: "owner_name" %> is working hard to earn donations for <span class="donors_choose">donorschoose.org</span> projects like this:
@@ -37,12 +37,12 @@
               </div>
             </div>
           </div>
-          <div class="form">
+          <div id="contribution-section">
             <%= form_tag contributions_path, method: "post", id: 'contribution_form' do %>
               <% @expiration_months = (1..12).to_a %>
               <% @expiration_years = (2012..2022).to_a %>
               <% @contribution_amounts = [10,20,25,30,40,50,100] %>
-              <%= hidden_field_tag :goal_token, @goal_token %>
+              <%= hidden_field_tag :goal_token, @goal.token %>
               <div class="plea-text">
                 <h4>Please think of the children and contribute to a worthwhile cause.</h4>
               </div>
