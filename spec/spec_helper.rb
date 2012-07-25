@@ -28,8 +28,6 @@ RSpec.configure do |config|
   # rspec-rails.
   config.infer_base_class_for_anonymous_controllers = false
 
-  config.include Sorcery::TestHelpers::Rails
-
   Capybara.javascript_driver = :webkit
 
   FactoryGirl.find_definitions
@@ -41,25 +39,10 @@ RSpec.configure do |config|
 
   config.before(:suite) do
     DatabaseCleaner.strategy = :truncation
-    DatabaseCleaner.clean_with(:truncation)
   end
-  
-  config.before(:each) do
-    DatabaseCleaner.start
-  end
-  
+
   config.after(:each) do
     DatabaseCleaner.clean
-  end
-end
-
-module Sorcery
-  module TestHelpers
-    module Rails
-      def login_user(email, password = '')
-        page.driver.post(sessions_url, { email: email, password: password })
-      end
-    end
   end
 end
 
