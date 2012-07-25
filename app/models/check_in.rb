@@ -7,7 +7,7 @@ class CheckIn < ActiveRecord::Base
   validate :no_checkin_for_today
 
   def no_checkin_for_today
-    today = DateTime.now.wday
+    today = DateHelper.wday
     if (not goal.scheduler.days.include? today) || goal.checked_in_today?
       errors.add(:date, "Already checked in today or not in schedule.")
     end

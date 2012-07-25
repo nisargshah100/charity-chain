@@ -9,7 +9,7 @@ class CheckInMailer < ActionMailer::Base
   end
 
   def send_reminder(user)
-    today = DateTime.now.wday
+    today = DateHelper.wday
 
     for goal in user.goals
       if goal.scheduler.days.include? today and not goal.checked_in_today?

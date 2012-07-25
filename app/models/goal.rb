@@ -24,14 +24,15 @@ class Goal < ActiveRecord::Base
   #
   # @param [DateTime] end_date The date up to which streaks are calculated
   # @return [Array] kind An array of integers representing streak lengths for an instance of a goal.
-  def streaks(end_date = DateTime.now)
+  def streaks(end_date = DateHelper.now)
     streak, streaks = 0, []
     dates = scheduler.generate_dates(end_date)
-    checkins = Set.new check_ins.pluck('date').map(&:to_date)
+    checkins = Set.new check_ins.pluck('date').map{ |d| DateHelper.date_in_timezone(d) }
 
-    dates.unshift DateTime.now.utc.to_date if checked_in_today?
+    dates.unshift DateHelper.date if checked_in_today?
 
     dates.each do |date|
+
       unless checkins.include?(date)
         streaks << streak if streak > 0
         streak = 0
@@ -44,11 +45,11 @@ class Goal < ActiveRecord::Base
   end
 
   def checked_in_today?
-    check_ins.where("date >= ? AND date < ?", DateTime.now.utc.to_date, DateTime.now.utc.to_date + 1).present?
+    check_ins.where("date >= ? AND date < ?", DateHelper.date.to_time, DateHelper.date.to_time + 1.day).present?
   end
 
   def check_in_day?
-    scheduler.days.include? DateTime.now.wday
+    scheduler.days.include? DateHelper.wday
   end
 
   def can_check_in?

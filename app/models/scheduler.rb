@@ -27,13 +27,13 @@ class Scheduler < ActiveRecord::Base
   # @param [DateTime] end_date The last date in the generated set of dates
   # @return [Array] kind A collection of dates that range from the first check-in to the end_date specified.
 
-  def generate_dates(end_date=DateTime.now)
-    check_in = goal.check_ins.order('date DESC').last
+  def generate_dates(end_date=DateHelper.now)
+    check_in = goal.check_ins.last
     dates = []
 
     if check_in
-      start_date = check_in.date.to_date
-      prev_date = end_date.to_date - 1
+      start_date = DateHelper.date_in_timezone(check_in.date)
+      prev_date = DateHelper.date_in_timezone(end_date) - 1
 
       dates = prev_date.downto(start_date).select do |date|
         date if days.include?(date.wday)
