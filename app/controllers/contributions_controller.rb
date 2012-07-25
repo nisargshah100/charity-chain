@@ -5,7 +5,7 @@ class ContributionsController < ApplicationController
     @goal = Goal.find_by_token params[:id]
     if @goal
       @user_name = @goal.user.name
-      @project = Hashie::Mash.new(JSON.parse(Project.where(:active => true).first.data))
+      @project = Hashie::Mash.new(JSON.parse(Project.all_active.first.data))
     else
       redirect_to root_path
     end
