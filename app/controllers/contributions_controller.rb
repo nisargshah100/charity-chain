@@ -1,4 +1,6 @@
 class ContributionsController < ApplicationController
+  before_filter :ensure_goal_by_token, only: :create
+
   def index
     @goal = Goal.find_by_token params[:id]
     if @goal
@@ -10,27 +12,29 @@ class ContributionsController < ApplicationController
   end
   
   def show
-    @contribution = Contribution.find_by_token(params[:id])
-    raise ActionController::RoutingError.new('Not Found') unless @contribution
+    @contribution = Contribution.find_by_token!(params[:id])
     @payment = @contribution.payment
   end
   
+  # TODO: make sure the stripe token was valid & the contribution was successfully created
   def create
-    goal = Goal.find_by_token params[:goal_token]
-    if goal && has_valid_params(params)
-      contribution = Contribution.process goal, params
-      # TODO: make sure the stripe token was valid & the contribution was successfully created
+    if has_valid_contribution_params(params)
+      contribution = Contribution.process @goal, params
       redirect_to contribution_path contribution
-    elsif goal
-      redirect_to contributions_path token: goal.token
     else
-      redirect_to root_path
+      redirect_to contributions_path(token: @goal.token)
     end
   end
   
   private
   
-  def has_valid_params(params)
-    params && params[:stripe_token] && !params[:stripe_token].empty? && params[:amount] && params[:amount].to_i > 0
+  def has_valid_contribution_params(params)
+    !params[:stripe_token].blank? && params[:amount].to_i > 0
   end
+
+  def ensure_goal_by_token
+    @goal = Goal.find_by_token params[:goal_token]
+    redirect_to root_path unless @goal and return
+  end
+
 end

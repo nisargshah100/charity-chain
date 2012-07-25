@@ -3,3 +3,12 @@
 
 en:
   hello: "Hello world"
+  pitch_title: "We help create good habits & drive donations."
+  pitch: "CharityStreak is for people who likely aren't already donating to the charity, but are 
+            both interested in self-improvement and looking for something extra to motivate 
+            them down the path of betterment. We hope to see an increase in donors overall as
+            well as more people attaining their personal goals."
+  setgoal: "First things first, you'll want to set yourself up with a goal. Like, drink 8oz of water a day. Tracking your goals on a daily basis will help turn them into a habit!"
+  getsponsored: "Once you've got your goal set up, you'll need people to sponsor you.  Maybe your mom wants to help you quit somking, so she puts $50 in your reserve account.  You'll need to send out the unique link via email, Facebook or Twitter to get your loved ones involved in making a better you AND a better community."
+  doit: "So you've got your goal, and everyone you know sponsored you for millions.  Now it's time to follow through.  Every day that you're scheduled to participate in your goal, you'll get an email from us asking if you've done it or not.  Simply check in when you've done the deed, and watch the money roll in!  The more days in a row you check in, the more money you'll unlock to donate."
+  donate: "It's been a while. You've unlocked tons of money.  Now, it's time to give back.  Every day, we'll show several projects that you can complete with the amount of money in your wallet.  If you have a specific goal in mind, pop in the direct URL and you can donate to that one."

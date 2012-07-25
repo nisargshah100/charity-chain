@@ -8,11 +8,49 @@ describe DonorsChoose do
     end
   end
 
+  describe ".fetch_projects" do
+    let(:proposal_mock) { double }
+    before do
+      DonorsChoose.stub(:get_proposals).and_return(proposal_mock)
+      DonorsChoose.stub(:set_active_projects).and_return(double)
+      DonorsChoose.stub(:set_inactive_projects).and_return(double)
+    end
+    context "when no parameters are passed in" do
+      it "calls get_proposals with default values" do
+        DonorsChoose.should_receive(:get_proposals).with(50, 1)
+        DonorsChoose.fetch_projects
+      end
+      it "calls set inactive projects" do
+        DonorsChoose.should_receive(:set_inactive_projects)
+        DonorsChoose.fetch_projects
+      end
+      it "sends the response from get_proposals to set active projects" do
+        DonorsChoose.should_receive(:set_active_projects).with(proposal_mock)
+        DonorsChoose.fetch_projects
+      end
+    end
+    context "when parameters are passed in" do
+      it "calls get_proposals with passed in values" do
+        DonorsChoose.should_receive(:get_proposals).with(17, 3)
+        DonorsChoose.fetch_projects(17, 3)
+      end
+      it "calls set inactive projects" do
+
+        DonorsChoose.should_receive(:set_inactive_projects)
+        DonorsChoose.fetch_projects
+      end
+      it "sends the response from get_proposals to set active projects" do
+        DonorsChoose.should_receive(:set_active_projects).with(proposal_mock)
+        DonorsChoose.fetch_projects
+      end
+    end
+  end
+
   describe ".get_proposals" do
     let(:conn) { double }
     let(:response) { double }
 
-    before(:each) do 
+    before(:each) do
       response.stub(:body).and_return('{"proposals":""}')
       DonorsChoose.stub(:conn).and_return(conn)
     end
@@ -63,5 +101,11 @@ describe DonorsChoose do
       end
     end
 
+  end
+
+  describe '.clean_project_title' do
+    it 'removes escaped characters' do
+      DonorsChoose.clean_project_title('this&amp;that').should == 'this&that'
+    end
   end
 end

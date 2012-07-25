@@ -1,0 +1,99 @@
+<script type="text/javascript">
+
+  function signin(e) {
+    var email = $("#signin_email").val();
+    var password = $("#signin_password").val();
+    var dataString = 'email='+ email + '&password=' + password
+    $.ajax({
+      type: "POST",
+      url: "/sessions",
+      data: dataString,
+      success: function(data) {
+        if (data.logged_in == true) {
+          location.href = '/goals';
+        } else {
+          alert('Bad login');
+        };
+      }
+    });
+  }
+
+  $("#signin_submit").click(signin);
+  $("#signin_form").live('submit', function(e) {
+    e.preventDefault();
+    signin();
+  });
+
+  function signup(e) {
+    var name = $("#user_name").val();
+    var email = $("#user_email").val();
+    var password = $("#user_password").val();
+    var dataString = 'user[name]='+ name + '&user[email]='+ email + '&user[password]=' + password
+    $.ajax({
+      type: "POST",
+      url: "/users",
+      data: dataString,
+      success: function(data) {
+        if (data.created_user == true) {
+          location.href = '/goals';
+        } else {
+          alert('Bad credentials.  Please enter a name, email & password in the fields provided.');
+        };
+      }
+    });
+  }
+
+  $("#signup_submit").click(signup);
+  $("#signup_form").live('submit', function(e) {
+    e.preventDefault();
+    signup();
+  });
+
+  $("#setgoal-image").hover(
+    function() {
+      $(".setgoal-screengrab").show();
+      $(".pitch").hide();
+      $(".charity-image-default").removeClass("charity-image-default")
+    },
+     function() {
+      $(".setgoal-screengrab").hide();
+      $(".pitch").show();
+      $("#signup-image").addClass("charity-image-default")
+     });
+
+  $("#getsponsored-image").hover(
+    function() {
+      $(".getsponsored-screengrab").show();
+      $(".pitch").hide();
+      $(".charity-image-default").removeClass("charity-image-default")
+    },
+     function() {
+      $(".getsponsored-screengrab").hide();
+      $(".pitch").show();
+      $("#signup-image").addClass("charity-image-default")
+     });
+
+  $("#doit-image").hover(
+    function() {
+      $(".doit-screengrab").show();
+      $(".pitch").hide();
+      $(".charity-image-default").removeClass("charity-image-default")
+    },
+     function() {
+      $(".doit-screengrab").hide();
+      $(".pitch").show();
+      $("#signup-image").addClass("charity-image-default")
+     });
+
+  $("#donate-image").hover(
+    function() {
+      $(".donate-screengrab").show();
+      $(".pitch").hide();
+      $(".charity-image-default").removeClass("charity-image-default")
+    },
+     function() {
+      $(".donate-screengrab").hide();
+      $(".pitch").show();
+      $("#signup-image").addClass("charity-image-default")
+     });
+</script>

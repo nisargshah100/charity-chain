@@ -1,99 +1,179 @@
-#signin_link {
-  @include button('shiny', #999);
-  text-decoration: none;
-  margin-right: 210px;
-  font-size: 20px;
-  opacity: 0.7;
-}
+* {
+    padding: 0;
+    margin: 0;
+  }
 
-#signup_link {
-  @include button('shiny', $lilypad);
-  font-size: 20px;
-}
+  body {
+    font-family: 'Century Gothic', sans-serif;
+  }
 
-.splash-text {
-  font-size: 200px;
-  color: #FFF;
-  font-family: 'Cookie', cursive;
-  text-shadow: 3px 3px 3px #666;
-  margin-bottom: -55px;
-}
+  input {
+    font-size:30px;
+    padding:5px;
+    border-radius: 5px;
+  }
 
-.sub-headline {
-  font-size: 45px;
-  color: $cloudless;
-  font-family: 'Cookie', cursive;
-  text-align: right;
-  text-shadow: 1px 1px 1px #666;
-  margin-bottom:30px;
-}
+  h6 {
+    color: #262626;
+    padding-bottom: 8px;
+  }
 
-.splash-container {
-  text-align:center;
-}
+  .signup-signin {
+    margin-top: 90px;
+    margin-left: 400px;
+    position: absolute;
+    bottom: 30px;
+    right: -30px;
+  }
 
-.signup-form {
-  padding-top:0px;
-  text-align:center;
-}
+  .setgoal-text {
+    text-align: left;
+    position:absolute;
+    top: -250px;
+    left: -70px;
+    width: 375px;
+    color: #393E21;
+  }
 
-.charity-image{
-  height:125px;
-  float: left;
-  margin: 12px 12px -15px 12px;
-  text-align: center;
-  opacity: 0.6;
-}
+  .horizontal { 
+    display: inline; 
+    padding-left: 15px;
+  }
 
-.charity-image:hover{
-  opacity: 1;
-  height: 135px;
-}
+  #hover-icon-text {
+    margin-top: 6px;
+    text-align: left;
+    position:absolute;
+    left: 55px;
+    top: 175px;
+    opacity: 0.6;
+  }
 
-.charity-image-default {
-  opacity: 1;
-  height: 135px;
-}
+  .first { 
+    border-left: none; 
+    padding-left: 0; 
+    margin-right: -200px;
+  }
 
-.pitch {
-  color: darken($endive,66);
-  font-size: 18px;
-  font-weight: bold;
-  text-align: left;
-  
-  h2 {
-    line-height: 1em;
-    padding-bottom: 10px;
-  };
-}
+  #password_confirmation {
+    font-size: 10px;
+    color: #262626;
+    opacity: 0.6;
+    text-align: left;
+  }
 
-.well {
-  background: #eee;
-  width: 670px;
-  padding: 27px 35px 35px 35px;
-  margin: 0 auto;
-  opacity: 0.7;
-  position: relative;
-  border-radius: 20px;
-}
+  .workflow-goal {
+    float: left;
+    width: 350px;
+    margin-bottom: -13px;
+  }
 
-.well.signup-well {
-  background: $pondwater;
-  opacity: 0.8;
-  height: 250px;
-  padding-bottom: 60px;
-  border: solid 5px $goldfish;
-}
+  .screengrab {
+    width: 250px;
+    height:250px;
+    float:left;
+  }
 
-.well.icons-well {
-  background: $pondwater;
-  opacity: 0.8;
-  border: solid 5px $goldfish;
-  margin-top: 25px;
-  height: 150px;
-}
+  #signin_link {
+    @include button('shiny', #999);
+    text-decoration: none;
+    margin-right: 210px;
+    font-size: 20px;
+    opacity: 0.7;
+  }
 
-.signup {
-  margin-top: 25px;
-}
+  #signup_link {
+    @include button('shiny', $lilypad);
+    font-size: 20px;
+  }
+
+  .splash-text {
+    font-size: 200px;
+    color: #FFF;
+    font-family: 'Cookie', cursive;
+    text-shadow: 3px 3px 3px #666;
+    margin-bottom: -55px;
+  }
+
+  .sub-headline {
+    font-size: 45px;
+    color: $cloudless;
+    font-family: 'Cookie', cursive;
+    text-align: right;
+    text-shadow: 1px 1px 1px #666;
+    margin-bottom:30px;
+  }
+
+  .splash-container {
+    text-align:center;
+  }
+
+  .signup-form {
+    padding-top:0px;
+    text-align:center;
+  }
+
+  .charity-image{
+    transition: height .5s;
+    -moz-transition:height .5s; /* Firefox 4 */
+    -webkit-transition:height .5s; /* Safari and Chrome */
+    -o-transition:height .5s; /* Opera */
+    height:125px;
+    float: left;
+    margin: 12px 12px -15px 12px;
+    text-align: center;
+    opacity: 0.6;
+  }
+
+  .charity-image:hover{
+    opacity: 1;
+    height: 135px;
+  }
+
+  .charity-image-default {
+    opacity: 1;
+    height: 135px;
+  }
+
+  .pitch {
+    color: darken($endive,66);
+    font-size: 18px;
+    font-weight: bold;
+    text-align: left;
+    
+    h2 {
+      line-height: 1em;
+      padding-bottom: 10px;
+    };
+  }
+
+  .well {
+    background: #eee;
+    width: 670px;
+    padding: 27px 35px 35px 35px;
+    margin: 0 auto;
+    opacity: 0.7;
+    position: relative;
+    border-radius: 20px;
+  }
+
+  .well.signup-well {
+    background: $pondwater;
+    opacity: 0.8;
+    height: 250px;
+    padding-bottom: 60px;
+    border: solid 5px $goldfish;
+  }
+
+  .well.icons-well {
+    background: $pondwater;
+    opacity: 0.8;
+    border: solid 5px $goldfish;
+    margin-top: 25px;
+    height: 150px;
+  }
+
+  .signup {
+    margin-top: 25px;
+  }
 
