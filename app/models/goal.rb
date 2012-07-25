@@ -1,6 +1,6 @@
 class Goal < ActiveRecord::Base
   include TokenHelper
-  
+
   attr_accessible :check_in_interval, :name, :user_id, :user, :created_at, :token
   belongs_to :user
   has_many :check_ins
@@ -25,14 +25,13 @@ class Goal < ActiveRecord::Base
   # @param [DateTime] end_date The date up to which streaks are calculated
   # @return [Array] kind An array of integers representing streak lengths for an instance of a goal.
   def streaks(end_date = DateHelper.now)
-    streak, streaks = 0, []
     dates = scheduler.generate_dates(end_date)
-    checkins = Set.new check_ins.pluck('date').map{ |d| DateHelper.date_in_timezone(d) }
+    accumulate_streaks(dates, check_in_dates)
+  end
 
-    dates.unshift DateHelper.date if checked_in_today?
-
+  def accumulate_streaks(dates, checkins)
+    streak, streaks = 0, []
     dates.each do |date|
-
       unless checkins.include?(date)
         streaks << streak
         streak = 0
@@ -40,8 +39,11 @@ class Goal < ActiveRecord::Base
         streak += 1
       end
     end
-
     streaks << streak
+  end
+
+  def check_in_dates
+    Set.new check_ins.pluck('date').map{ |d| DateHelper.date_in_timezone(d) }
   end
 
   def checked_in_today?(date_param = DateHelper.date)
@@ -63,7 +65,7 @@ class Goal < ActiveRecord::Base
   def sponsors
     contributions.pluck(:name)
   end
-  
+
   def add_to_reserve_amount amount
     reserve.amount = reserve.amount + Money.new(amount, "USD")
     reserve.save()
@@ -78,7 +80,7 @@ class Goal < ActiveRecord::Base
   def ensure_reserve
     reserve || create_reserve
   end
-  
+
   def set_token
     update_attribute(:token, create_token)
   end
