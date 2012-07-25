@@ -1,0 +1,16 @@
+<div class="modal hide" id="signin_modal">
+  <div class="modal-header">
+    <h3>Sign In</h3>
+  </div>
+  <div class="modal-body">
+    <%= form_tag sessions_path, method: "post", id:'signin_form', class: 'modal_form' do %>
+      <input type="text" id="signin_email" name="email" placeholder="email" />
+      <input type="password" id="signin_password" name="password" placeholder="password" />
+      <input type='submit' value='/' style='position: absolute; left: -9999px; width: 1px; height: 1px;'>
+    <% end %>
+  </div> 
+  <div class="modal-footer">
+    <a href="#" class="btn-cancel" data-dismiss="modal">Cancel</a>
+    <a href="#" class="btn" id="signin_submit">Sign In</a>
+  </div>
+</div>
