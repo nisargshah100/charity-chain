@@ -16,7 +16,6 @@ class ContributionsController < ApplicationController
     @payment = @contribution.payment
   end
   
-  # TODO: make sure the stripe token was valid & the contribution was successfully created
   def create
     if has_valid_contribution_params(params)
       contribution = Contribution.process @goal, params
