@@ -351,6 +351,9 @@ a.addthis {
 }
 
 .contribution-link {
+  &:hover {
+    cursor: text;
+  }
   margin-top: 10px;
   width: 283px;
   margin-bottom: 20px !important;
