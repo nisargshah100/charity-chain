@@ -3,16 +3,17 @@
     <h3>On which days?</h3>
   </div>
   <div class="modal-body">
-    <div id="schedule-text"><span class="schedule-label">your schedule:&nbsp;</span><span id="days-text">M W F</span></div>
+    <div id="schedule-text"><span class="schedule-label">your schedule:&nbsp;</span><span id="days-text">Select At Least One Day</span></div>
+    <hr>
     <form id='schedule_goal_form'>
         <table id='days' cellpadding='0' cellspacing='0'>
           <tr>
             <td data-day='sunday'>Su</td>
-            <td data-day='monday' class='selected'>M</td>
+            <td data-day='monday'>M</td>
             <td data-day='tuesday'>T</td>
-            <td data-day='wednesday' class='selected'>W</td>
+            <td data-day='wednesday'>W</td>
             <td data-day='thursday'>Th</td>
-            <td data-day='friday' class='selected'>F</td>
+            <td data-day='friday'>F</td>
             <td data-day='saturday'>Sa</td>
           </tr>
         </table>
