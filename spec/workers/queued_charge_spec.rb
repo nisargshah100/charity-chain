@@ -11,7 +11,7 @@ describe "queued charge" do
     Stripe::Charge.stub(:create).and_return(charge_data)
   end
 
-  it "processes a pending charge & returns the updated payment record" do
+  it "processes a pending charge & updates the associated payment record" do
     QueuedCharge.perform(payment.id, params)
     payment.reload
     payment.card_type.should == charge_data.card.type
