@@ -64,4 +64,15 @@ CharityChain::Application.configure do
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address        => 'smtp.mailgun.org',
+    :user_name      => 'postmaster@app5853930.mailgun.org',
+    :password       => '30ski97vxqe2',
+    :domain         => 'charitystreak.herokuapp.com',
+    :authentication => :plain,
+  }
+
+  config.action_mailer.default_url_options = {host: "localhost:3000"}
 end
