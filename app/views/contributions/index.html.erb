@@ -26,14 +26,14 @@
               Donations made as part of their participation in Charity Streak go towards worthy <span class="donors_choose">donorschoose.org</span> projects.  <%= content_tag :span, @user_name, class: "owner_name" %> is working hard to earn donations for <span class="donors_choose">donorschoose.org</span> projects like this:
             </p>
             <div id="project-info">
-              <h4 class="truncate-header"><a class="header-link" href="<%= @project_proposal_url %>"><%= @project_title %></a></h4>
+              <h4 class="truncate-header"><a class="header-link" href="<%= @project.proposalURL %>"><%= @project.title %></a></h4>
               <div class='explanation-image'>
-                <a href="<%= @project_proposal_url %>"><%= image_tag @project_image_url %></a>
+                <a href="<%= @project.proposalURL %>"><%= image_tag @project.imageURL %></a>
               </div>
               <div class='school-info'>
-                <p class="truncate"><%= @project_school_name %></p>
-                <p class="truncate"><%= @project_city %>, <%= @project_state %></p>
-                <p class="truncate"><a href="<%= @project_proposal_url %>">Learn more...</a></p>
+                <p class="truncate"><%= @project.schoolName %></p>
+                <p class="truncate"><%= @project.city %>, <%= @project.state %></p>
+                <p class="truncate"><a href="<%= @project.proposalURL %>">Learn more...</a></p>
               </div>
             </div>
           </div>

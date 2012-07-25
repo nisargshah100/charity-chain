@@ -3,12 +3,7 @@ class ContributionsController < ApplicationController
     @goal = Goal.find_by_token params[:id]
     if @goal
       @user_name = @goal.user.name
-      @project_image_url = "sample_project.jpeg"
-      @project_title = "Sensory Integration in Speech Therapy"
-      @project_school_name = "Ps 11 William T Harris"
-      @project_city = "New York City"
-      @project_state = "NY"
-      @project_proposal_url = "http://donorschoose.org"
+      @project = Hashie::Mash.new(JSON.parse(Project.where(:active => true).first.data))
     else
       redirect_to root_path
     end

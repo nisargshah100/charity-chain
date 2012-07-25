@@ -6,7 +6,7 @@ class DonorsChoose
   end
 
   def self.fetch_projects(amount=50, max=1)
-    get_proposals(amount, max)
+    projects = get_proposals(amount, max)
     set_inactive_projects
     set_active_projects(projects)
   end
