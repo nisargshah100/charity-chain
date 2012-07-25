@@ -1,6 +1,6 @@
 require 'faraday'
 
-class DonorsChoose
+module DonorsChoose
   def self.conn
     Faraday.new(:url => "http://api.donorschoose.org")
   end
