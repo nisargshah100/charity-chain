@@ -2,7 +2,7 @@ require 'hashie'
 
 class Project < ActiveRecord::Base
   attr_accessible :external_id, :external_source, :data, :active
-
+  has_many :donations
   # validates :external_id, :uniqueness => true, :presence => true
 
   def details
@@ -16,6 +16,4 @@ class Project < ActiveRecord::Base
   def self.fetch(limit=1)
     active.order("RANDOM()").limit(limit)
   end
-
-  has_many :donations
 end
