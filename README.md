@@ -1,14 +1,52 @@
 # Getting Setup:
-	* pull it down
-	* bundle
-	* migrate the databse: "rake db:migrate"
-	* set up database for tests: "rake db:test:prepare"
-	* seed the database: "rake db:seed"
-	* if you don't have redis: "brew install redis"
-	* start redis: "redis-server /usr/local/etc/redis.conf"
-	* run the tests: "rake spec"
-	* start up the server: "rails s"
-	* load it up: "localhost:3000"
+
+### pull it down
+
+```
+bundle
+```
+
+### migrate the databse: 
+
+```
+rake db:migrate
+```
+
+### set up database for tests: 
+
+```
+rake db:test:prepare
+```
+
+### seed the database:
+
+```
+rake db:seed
+```
+
+### if you don't have redis: 
+```
+brew install redis
+```
+
+### start redis: 
+```
+redis-server /usr/local/etc/redis.conf
+```
+
+### run the tests: 
+```
+rake spec
+```
+
+### start up the server: 
+```
+rails s
+```
+### load it up: 
+```
+localhost:3000
+```
 
 
 # Domain Language:
