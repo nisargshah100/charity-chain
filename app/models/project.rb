@@ -4,6 +4,7 @@ class Project < ActiveRecord::Base
   attr_accessible :external_id, :external_source, :data, :active
   has_many :donations
   # validates :external_id, :uniqueness => true, :presence => true
+  scope :all_active, :conditions => ["active = ?", true]
 
   def details
     Hashie::Mash.new JSON.parse(data)
