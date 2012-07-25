@@ -26,7 +26,9 @@ class Goal < ActiveRecord::Base
   # @return [Array] kind An array of integers representing streak lengths for an instance of a goal.
   def streaks(end_date = DateHelper.now)
     dates = scheduler.generate_dates(end_date)
-    accumulate_streaks(dates, check_in_dates)
+    dates.unshift DateHelper.date if checked_in_today?
+
+    accumulate_streaks(dates, checkin_dates)
   end
 
   def accumulate_streaks(dates, checkins)
@@ -42,7 +44,7 @@ class Goal < ActiveRecord::Base
     streaks << streak
   end
 
-  def check_in_dates
+  def checkin_dates
     Set.new check_ins.pluck('date').map{ |d| DateHelper.date_in_timezone(d) }
   end
 

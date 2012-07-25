@@ -37,7 +37,6 @@ class Scheduler < ActiveRecord::Base
         date if days.include?(date.wday)
       end
     end
-    dates.unshift DateHelper.date if goal.checked_in_today?
     dates
   end
 end

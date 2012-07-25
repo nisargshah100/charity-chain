@@ -10,7 +10,7 @@ describe Goal do
   }
 
   it 'counts the proper streak counts' do
-    goal.streaks(datetime).should == [1,1]
+    goal.streaks(datetime).should == [0,1,1]
   end
 
   
