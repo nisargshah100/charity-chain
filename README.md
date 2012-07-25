@@ -1,11 +1,23 @@
 # Getting Setup:
 
 ### pull it down
-## bundle
+
+```
+bundle
+```
+
 ### migrate the databse: 
-	## "rake db:migrate"
+
+```
+rake db:migrate
+```
+
 ### set up database for tests: 
-	## "rake db:test:prepare"
+
+```
+rake db:test:prepare
+```
+
 ### seed the database: 
 	## "rake db:seed"
 ### if you don't have redis: 
