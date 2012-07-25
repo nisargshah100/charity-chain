@@ -102,4 +102,10 @@ describe DonorsChoose do
     end
 
   end
+
+  describe '.clean_project_title' do
+    it 'removes escaped characters' do
+      DonorsChoose.clean_project_title('this&amp;that').should == 'this&that'
+    end
+  end
 end
