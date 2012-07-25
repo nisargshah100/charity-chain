@@ -11,11 +11,9 @@ class Scheduler < ActiveRecord::Base
   # @return [Array] kind A collection of integers representing the weekdays, e.g. (Monday is 1, Tuesday is 2)
 
   def days
-    days = {:sunday => 0, :monday => 1, :tuesday => 2, :wednesday => 3, :thursday => 4, :friday => 5, :saturday => 6}
-    wdays = days.select do |day, wday|
+    DateHelper.days_hash.select do |day, wday|
       wday if self.send(day) == true
-    end
-    wdays.values
+    end.values
   end
 
   # Returns dates between an end date and the initial check-in date with the object's specified periodicity.

@@ -1,4 +1,8 @@
 module DateHelper
+  def self.days_hash
+    {:sunday => 0, :monday => 1, :tuesday => 2, :wednesday => 3, :thursday => 4, :friday => 5, :saturday => 6}
+  end
+
   def self.now(timezone='Eastern Time (US & Canada)')
     DateTime.now.utc.in_time_zone(timezone)
   end
