@@ -45,7 +45,7 @@ class Goal < ActiveRecord::Base
   end
 
   def checked_in_today?
-    check_ins.where("date >= ? AND date < ?", DateHelper.date.to_time, DateHelper.date.to_time + 1.day).present?
+    check_ins.where("date >= ? AND date < ?", DateHelper.date.to_time.utc, DateHelper.date.to_time.utc + 1.day).present?
   end
 
   def check_in_day?
