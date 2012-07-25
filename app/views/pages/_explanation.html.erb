@@ -1,0 +1,61 @@
+<div class="splash-container">
+  <div class="row">
+    <div class="twocol"></div>
+    <div class="eightcol">
+      <p class="splash-text">charitystreak</p>
+      <p class="sub-headline">a better you. a better us.</p>
+    </div>
+    <div class="twocol last"></div>
+  </div>
+  <div class="row">
+    <div class="twocol"></div>
+    <div class="eightcol">
+      <div class="signup-form">
+        <div class="well signup-well">
+          <div class="left-well">
+            <div class="pitch show"><h2><%= t(:pitch_title) %></h2>
+            <h4><%= t(:pitch) %></h4></div>
+            <div><%= image_tag "setgoal_screen.png", :class => "screengrab setgoal-screengrab hide" %></div>
+            <div><%= image_tag "getsponsored_screen.png", :class => "screengrab getsponsored-screengrab hide" %></div>
+            <div><%= image_tag "doit_screen.png", :class => "screengrab doit-screengrab hide" %></div>
+            <div><%= image_tag "donateplaceholder.jpeg", :class => "screengrab donate-screengrab hide" %></div>
+          </div>
+          <div class="right-well">
+            <ul class="signup-signin sixcol">
+              <div class="setgoal-text setgoal-screengrab hide"><h1>Set Goal</h1><br/><h4><%= t(:setgoal) %></h4></div>
+              <div class="setgoal-text getsponsored-screengrab hide"><h1>Get Sponsored</h1><br/><h4><%= t(:getsponsored) %></h4></div>
+              <div class="setgoal-text doit-screengrab hide"><h1>Do It</h1><br/><h4><%= t(:doit) %></h4></div>
+              <div class="setgoal-text donate-screengrab hide"><h1>Donate</h1><br/><h4><%= t(:donate) %></h4></div>
+              <li class="horizontal first">
+                <a class="btn" id="signin_link" data-toggle="modal" href="#signin_modal">Sign In</a>
+              </li>
+              <li class="horizontal">
+                <a id="signup_link" data-toggle="modal" href="#signup_modal" class="btn">Get Started</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="twocol last"></div>
+    </div>
+  </div>
+
+  <div class="signup-form">
+    <div class="row">
+      <div class="twocol"></div>
+      <div class="eightcol">
+        <div class="well icons-well">
+          <div>
+            <%= image_tag "splash_signup.png", :class => "charity-image charity-image-default", :id => "signup-image" %>
+            <%= image_tag "splash_setgoal.png", :class => "charity-image", :id => "setgoal-image" %>
+            <%= image_tag "splash_getsponsored.png", :class => "charity-image", :id => "getsponsored-image" %>
+            <%= image_tag "splash_doit.png", :class => "charity-image", :id => "doit-image" %>
+            <%= image_tag "splash_donate.png", :class => "charity-image", :id => "donate-image" %>
+          </div>
+          <h6 id="hover-icon-text">*hover over icons for more details</h6>
+        </div>
+      </div>
+      <div class="twocol last"></div>
+    </div>
+  </div>
+</div>
