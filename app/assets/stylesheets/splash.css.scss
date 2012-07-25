@@ -75,11 +75,11 @@
   }
 
   #signin_link {
-    @include button('shiny', #999);
+    @include button('shiny', lighten($whale,30));
     text-decoration: none;
     margin-right: 210px;
     font-size: 20px;
-    opacity: 0.7;
+    opacity: 0.9;
   }
 
   #signup_link {
