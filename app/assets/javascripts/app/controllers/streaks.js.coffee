@@ -32,7 +32,7 @@ class App.Controller.Streaks extends Spine.Controller
       @current_streak = goal.streaks[0]
       @longest_streak = _.max(goal.streaks)
       non_zero_streaks = _.filter(goal.streaks, (num) -> return num != 0);
-      @average_streak = Math.round (@sum(goal.streaks) / non_zero_streaks.length)
+      @average_streak = Math.round (@sum(goal.streaks) / (non_zero_streaks.length || 1))
     else
       @current_streak = @longest_streak = @average_streak = 0
 
