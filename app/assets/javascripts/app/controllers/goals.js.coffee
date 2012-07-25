@@ -70,6 +70,10 @@ class App.Controller.Goals_New extends Spine.Controller
     $("#schedule_goal_modal").modal('show');
 
   show_review_modal: =>
+    if $.trim($("#days-text").text()) == "please select at least one day"
+      alert 'At least one day is required'
+      return false
+      
     $("#review_goal_name").text($("#goal-name").val());
 
     $("#review_goal_schedule").text($('#days-text').text())
