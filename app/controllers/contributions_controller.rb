@@ -35,7 +35,7 @@ class ContributionsController < ApplicationController
 
   def ensure_goal_by_token
     @goal = Goal.find_by_token params[:goal_token]
-    return redirect_to root_path unless @goal
+    redirect_to root_path unless @goal and return
   end
 
 end
