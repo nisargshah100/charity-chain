@@ -6,13 +6,13 @@
 bundle
 ```
 
-### migrate the databse: 
+### migrate the databse:
 
 ```
 rake db:migrate
 ```
 
-### set up database for tests: 
+### set up database for tests:
 
 ```
 rake db:test:prepare
@@ -24,26 +24,26 @@ rake db:test:prepare
 rake db:seed
 ```
 
-### if you don't have redis: 
+### if you don't have redis:
 ```
 brew install redis
 ```
 
-### start redis: 
+### start redis:
 ```
 redis-server /usr/local/etc/redis.conf
 ```
 
-### run the tests: 
+### run the tests:
 ```
 rake spec
 ```
 
-### start up the server: 
+### start up the server:
 ```
 rails s
 ```
-### load it up: 
+### load it up:
 ```
 localhost:3000
 ```
@@ -59,7 +59,7 @@ localhost:3000
  * this is meant to be a self-improvement objective whose progress can be easily measured on a periodic basis (e.g., "lose a pound a week")
  * a goal has a wallet amount (current amount earned by user for check-ins)
  * a goal has a reserve amount (total yet-to-be-donated funds from contributions)
- 
+
 ### "check-in"
  * user-entered indication that the user meet their goal for that day
 
