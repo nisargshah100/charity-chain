@@ -44,8 +44,8 @@ class Goal < ActiveRecord::Base
     streaks << streak
   end
 
-  def checked_in_today?
-    check_ins.where("date >= ? AND date < ?", DateHelper.date.to_time.utc, DateHelper.date.to_time.utc + 1.day).present?
+  def checked_in_today?(date_param = DateHelper.date)
+    check_ins.where("date >= ? AND date < ?", date_param.to_time.utc, date_param.to_time.utc + 1.day).present?
   end
 
   def check_in_day?

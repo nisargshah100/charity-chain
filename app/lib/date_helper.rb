@@ -11,11 +11,15 @@ module DateHelper
     date(timezone).wday
   end
 
+  def self.wday_in_timezone(datetime, timezone='Eastern Time (US & Canada)')
+    datetime.utc.in_time_zone(timezone).wday
+  end
+
   def self.in_timezone(date, timezone='Eastern Time (US & Canada)')
-    date(timezone)
+    date.to_time.utc.in_time_zone(timezone)
   end
 
   def self.date_in_timezone(date, timezone='Eastern Time (US & Canada)')
-    in_timezone(timezone).to_date
+    in_timezone(date, timezone).to_date
   end
 end
