@@ -13,13 +13,17 @@ class Contribution < ActiveRecord::Base
     token
   end
   
-  def self.process goal, params
+  def self.process(goal, params)
     params[:transaction_description] = "Contribution to Goal ##{goal.id} by #{params[:cardholder_name]}"
-    payment = Payment.process params
-    contribution = goal.contributions.create(payment: payment, name: params[:cardholder_name])
+    payment = Payment.process(params)
+    contribution = create_contribution(goal, payment, params)
     payment.update_attribute(:contribution, contribution)
-    goal.add_to_reserve_amount payment.amount
+    goal.add_to_reserve_amount(payment.amount)
     contribution
+  end
+
+  def self.create_contribution(goal, payment, params)
+    Contribution.create(goal: goal, payment: payment, name: params[:cardholder_name])
   end
   
   private
