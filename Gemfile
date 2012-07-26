@@ -31,6 +31,9 @@ group :test, :development do
   gem 'simplecov'
   gem 'capybara'
   gem 'launchy'
+  gem 'capybara-webkit'
+  gem 'database_cleaner'
+  gem 'factory_girl'
 end
 
 gem 'jquery-rails'
