@@ -28,7 +28,7 @@ RSpec.configure do |config|
   # rspec-rails.
   config.infer_base_class_for_anonymous_controllers = false
 
-  Capybara.javascript_driver = :webkit
+  # Capybara.javascript_driver = :webkit
 
   FactoryGirl.find_definitions
 
